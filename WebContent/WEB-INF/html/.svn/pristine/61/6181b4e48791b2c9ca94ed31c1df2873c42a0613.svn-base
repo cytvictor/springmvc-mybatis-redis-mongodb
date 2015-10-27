@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/department.css" />
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="departmentManage.shtml">&lt;&lt;返回</a>
+				添加教育厅(厅)/电教馆
+			</h4>
+			<div class="otContent">
+				<div class="basicMsg addMsg">
+					<h5>基本信息</h5>
+					<ul class="detailBox">
+						<li>
+							<label class="cName">名称</label>
+							<select name="" id="">
+								<option value="">请选择</option>
+							</select>
+						</li>
+						<li>
+							<label class="cName">邮箱</label>
+							<input type="text" />
+						</li>
+						<li>
+							<label class="cName">联系人</label>
+							<input type="text" />
+						</li>
+						<li>
+							<label class="cName">联系电话</label>
+							<input type="text" />
+						</li>
+						<li>
+							<label class="cName">辖区范围</label>
+							<select name="" id="">
+								<option value="">请选择</option>
+							</select>
+							<select name="" id="">
+								<option value="">请选择</option>
+							</select>
+							<select name="" id="">
+								<option value="">请选择</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				<div class="manageMsg addMsg">
+					<h5>管理信息</h5>
+					<ul class="detailBox">
+						<li>
+							<label class="cName">帐号名</label>
+							<input type="text" />
+						</li>
+						<li>
+							<label class="cName">密码</label>
+							<input type="text" />
+						</li>
+						<li>
+							<label class="cName">确认密码</label>
+							<input type="text" />
+						</li>
+					</ul>
+				</div>
+				<div class="submitBtn">
+					<a href="" class="btn mr20">确认</a>
+					<a href="" class="ml20">取消</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

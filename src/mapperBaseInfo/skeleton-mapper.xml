@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.codyy.rrt.baseinfo.mapper.SkeletonMapper">
+
+	<resultMap id="resultBaseSemester" type="baseSemester">
+		<result property="id" column="BASE_SEMESTER_ID" />
+		<result property="semesterName" column="SEMESTER_NAME" />
+	</resultMap>
+	
+	<resultMap id="resultBaseClassLevel" type="baseClassLevel">
+		<result property="id" column="BASE_CLASSLEVEL_ID" />
+		<result property="classLevelName" column="CLASSLEVEL_NAME" />
+		<result property="baseSemesterId" column="BASE_SEMESTER_ID" />
+		<result property="sort" column="SORT" />
+	</resultMap>
+	
+	<resultMap id="resultBaseDiscipline" type="baseDiscipline">
+		<result property="id" column="BASE_DISCIPLINE_ID" />
+		<result property="disciplineName" column="DISCIPLINE_NAME" />
+		<result property="classlevelId" column="BASE_CLASSLEVEL_ID" />
+	</resultMap>
+	
+	<resultMap id="resultBaseVersion" type="baseVersion">
+		<result property="id" column="BASE_VERSION_ID" />
+		<result property="name" column="NAME" />
+		<result property="disciplineId" column="BASE_DISCIPLINE_ID" />
+		<result property="classlevelId" column="BASE_CLASSLEVEL_ID" />
+	</resultMap>
+	
+	<resultMap id="resultBaseCatalog" type="baseCatalog">
+		<result property="id" column="BASE_CATALOG_ID" />
+		<result property="catalogName" column="CATALOG_NAME" />
+		<result property="parentId" column="PARENT_ID" />
+	</resultMap>
+	
+	<resultMap id="resultBaseKnowledge" type="baseKnowledge">
+		<result property="id" column="BASE_KNOWLEDGE_ID" />
+		<result property="baseSemesterId" column="BASE_SEMESTER_ID" />
+		<result property="baseDisciplineId" column="BASE_DISCIPLINE_ID" />
+		<result property="knowledgeName" column="KNOWLEDGE_NAME" />
+		<result property="parentId" column="PARENT_ID" />
+	</resultMap>
+	
+	<resultMap id="resultResourceColumn" type="resourceColumn">
+		<result property="id" column="RESOURCE_COLUMN_ID" />
+		<result property="sort" column="SORT" />
+		<result property="columnName" column="COLUMN_NAME" />
+		<result property="columnType" column="COLUMN_TYPE" />
+		<result property="baseCatalogKnowledgeFlag" column="BOUND_BASIC_CATALOG_KNOWLEDGE" />
+		<result property="resourceCatalogFlag" column="BOUND_RESOURCE_CATALOG" />
+	</resultMap>
+	
+	<resultMap id="resultBaseResourceCatalog" type="baseResourceCatalog">
+		<result property="id" column="BASE_RESOURCE_CATALOG_ID" />
+		<result property="catalogName" column="CATALOG_NAME" />
+		<result property="catalogLevel" column="CATALOG_LEVEL" />
+		<result property="parentId" column="PARENT_ID" />
+		<result property="resourceColumnId" column="RESOURCE_COLUMN_ID" />
+	</resultMap>
+	
+	<!-- 获取学段列表 -->
+	<select id="findAllSemester" resultMap="resultBaseSemester" >
+		SELECT * FROM BASE_SEMESTER ORDER BY SORT
+	</select>
+	
+	<!-- 根据Id查询学段 -->
+	<select id="findSemesterById" resultMap="resultBaseSemester" parameterType="string">
+		SELECT * FROM BASE_SEMESTER WHERE BASE_SEMESTER_ID = #{semesterId}
+	</select>
+	
+	<!-- 获取年级列表 -->
+	<select id="findClasslevelBySemesterId" resultMap="resultBaseClassLevel" parameterType="string">
+		SELECT * FROM BASE_CLASSLEVEL c WHERE c.BASE_SEMESTER_ID = #{semesterId} ORDER BY c.SORT
+	</select>
+	
+	<!-- 根据Id查询年级 -->
+	<select id="findClasslevelById" resultMap="resultBaseClassLevel" parameterType="string">
+		SELECT * FROM BASE_CLASSLEVEL c WHERE c.BASE_CLASSLEVEL_ID = #{classlevelId} 
+	</select>
+	
+	<!-- 获取全部学科列表 -->
+	<select id="findAllDiscipline" resultMap="resultBaseDiscipline" parameterType="string">
+		SELECT d.* FROM BASE_DISCIPLINE d ORDER BY d.SORT
+	</select>
+	
+	<!-- 根据id查询学科 -->
+	<select id="findDisciplineById" resultMap="resultBaseDiscipline" parameterType="string">
+		SELECT d.* FROM BASE_DISCIPLINE d WHERE d.BASE_DISCIPLINE_ID = #{disciplineId}
+	</select>
+	
+	<!-- 根据年级获取学科列表 -->
+	<select id="findDisciplineByClassLevelId" resultMap="resultBaseDiscipline" parameterType="string">
+		SELECT d.*, cd.BASE_CLASSLEVEL_ID  
+		FROM BASE_DISCIPLINE d, BASE_CLASSLEVEL_DISCIPLINE cd
+		WHERE d.BASE_DISCIPLINE_ID = cd.BASE_DISCIPLINE_ID
+		AND cd.BASE_CLASSLEVEL_ID= #{classlevelId}
+		ORDER BY d.SORT
+	</select>
+	
+	<!-- 根据年级Id、学科Id查询版本列表 -->
+	<select id="findVersionByClasslevelIdAndDisciplineId" resultMap="resultBaseVersion" parameterType="map">
+		SELECT v.*, cd.BASE_DISCIPLINE_ID, cd.BASE_CLASSLEVEL_ID  
+		FROM BASE_VERSION v, BASE_VER_CLSLVL_DISPL vcd, BASE_CLASSLEVEL_DISCIPLINE cd
+		WHERE v.BASE_VERSION_ID = vcd.BASE_VERSION_ID AND vcd.BASE_CLSLVL_DISPL_ID = cd.BASE_CLASSLEVEL_DISCIPLINE_ID
+		AND cd.BASE_CLASSLEVEL_ID = #{classlevelId} 
+		AND cd.BASE_DISCIPLINE_ID = #{disciplineId}
+		ORDER BY v.SORT
+	</select>
+	
+	<!-- 根据版本Id、年级Id、学科Id查询分册列表 -->
+	<select id="findFascicleByVCD" resultMap="resultBaseCatalog" parameterType="map">
+		SELECT c.* 
+		FROM BASE_CATALOG c, BASE_VER_CLSLVL_DISPL vcd, BASE_CLASSLEVEL_DISCIPLINE cd, BASE_VERSION v
+		WHERE c.BASE_VER_CLSLVL_DISPL_ID = vcd.BASE_VER_CLSLVL_DISPL_ID
+		AND vcd.BASE_CLSLVL_DISPL_ID = cd.BASE_CLASSLEVEL_DISCIPLINE_ID
+		AND vcd.BASE_VERSION_ID = v.BASE_VERSION_ID
+		AND c.CATALOG_LEVEL = '1' 
+		AND v.BASE_VERSION_ID = #{versionId} 
+		AND cd.BASE_CLASSLEVEL_ID = #{classlevelId} 
+		AND cd.BASE_DISCIPLINE_ID = #{disciplineId} 
+		ORDER BY c.SORT
+	</select>
+	
+	<!-- 根据父级Id查询章、节 -->
+	<select id="findCatalogByParentId" resultMap="resultBaseCatalog" parameterType="string">
+		SELECT * FROM BASE_CATALOG c WHERE c.PARENT_ID= #{parentId}
+		ORDER BY c.SORT
+	</select>
+	
+	<!-- 根据学段Id、学科Id和parentId查询知识点列表 -->
+	<select id="findKnowledgeBySemesterIdAndDisciplineIdAndParentId" resultMap="resultBaseKnowledge" parameterType="map">
+		SELECT * FROM BASE_KNOWLEDGE k 
+		WHERE k.BASE_SEMESTER_ID = #{semesterId} 
+		AND k.BASE_DISCIPLINE_ID = #{disciplineId} 
+		AND k.PARENT_ID = #{parentId} 
+		ORDER BY k.SORT
+	</select>
+	
+	<!-- 根据parentId查询知识点列表 -->
+	<select id="findKnowledgeByParentId" resultMap="resultBaseKnowledge" parameterType="map">
+		SELECT * FROM BASE_KNOWLEDGE k 
+		WHERE k.PARENT_ID = #{parentId} 
+		ORDER BY k.SORT
+	</select>
+	
+	<!-- 根据知识点Id递归查询所有父级知识点列表，包含本身知识点 -->
+	<select id="findAllParentKnowledge" resultMap="resultBaseKnowledge" parameterType="string">
+		SELECT * FROM BASE_KNOWLEDGE START WITH BASE_KNOWLEDGE_ID = #{knowledgeId} 
+		CONNECT BY PRIOR PARENT_ID = BASE_KNOWLEDGE_ID
+	</select>
+	
+	<!-- 查询所有资源栏目 -->
+	<select id="findAllResourceColumn" resultMap="resultResourceColumn" >
+		SELECT * FROM RESOURCE_COLUMN WHERE STATUS = '1' ORDER BY SORT
+	</select>
+	
+	<!-- 根据Id查询资源栏目 -->
+	<select id="findResourceColumnById" resultMap="resultResourceColumn"  parameterType="string">
+		SELECT * FROM RESOURCE_COLUMN WHERE RESOURCE_COLUMN_ID = #{resourceColumnId}  AND STATUS = '1'
+	</select>
+	
+	<!-- 根据资源栏目查找根资源分类列表 -->
+	<select id="findRootResourceCatalog" resultMap="resultBaseResourceCatalog" parameterType="string">
+		SELECT * FROM BASE_RESOURCE_CATALOG rc WHERE rc.RESOURCE_COLUMN_ID = #{resourceColumnId} AND rc.PARENT_ID = '-1'
+		ORDER BY rc.SORT
+	</select>
+	
+	<!-- 根据Id查询资源分类 -->
+	<select id="findResourceCatalogById" resultMap="resultBaseResourceCatalog" parameterType="string">
+		SELECT * FROM BASE_RESOURCE_CATALOG rc WHERE rc.BASE_RESOURCE_CATALOG_ID = #{resourceCatalogId}
+	</select>
+	
+	<!-- 根据资源分类父级Id查找资源分类列表 -->
+	<select id="findResourceCatalogByParentId" resultMap="resultBaseResourceCatalog" parameterType="string">
+		SELECT * FROM BASE_RESOURCE_CATALOG rc WHERE rc.PARENT_ID = #{parentId}
+		ORDER BY rc.SORT
+	</select>
+</mapper>

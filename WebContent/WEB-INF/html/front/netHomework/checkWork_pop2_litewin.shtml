@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body style="background:#f8f7f7;">
+
+<ul class='correct'>
+	<li>
+		<label class='ckName'>学生：</label>
+		<span class='ckCont'>郭小小</span>
+	</li>
+	<li>
+		<label class='ckName'>学生答题；</label>
+		<p class='ckCont stAnswer'>这对于一位忧国忧民的爱国志士来说，能无怨乎？这对于一位忧国忧民的爱国志士来说，能无怨乎？这对于一位忧国忧民的爱国志士来说，能无怨乎？这对于一位忧国忧民的爱国志士来说，能无怨乎？这对于一位忧国忧民的爱国志士来说，能无怨乎？这对于一位忧国忧民的爱国志士来说，能无怨乎？</p>
+	</li>
+ 	<li>
+ 		<label class='ckName'>附件：</label>
+ 		<div class='ckCont'>
+ 			<p>
+	 			<span class="blue">诗歌《离骚》讲解.doc</span>
+	 			大小12m
+	 			<a href='#' class="blue">下载</a>
+ 			</p>
+ 			<p>
+	 			<span class="blue">诗歌《离骚》讲解.doc</span>
+	 			大小12m
+	 			<a href='#' class="blue">下载</a>
+ 			</p>
+		</div>
+	</li>
+	<li>
+		<label class='ckName'>评价：</label>
+		<form class='ckCont'>
+			<label class="mr20"><input type='radio' name='judge' value='' />完全正确</label>
+			<label class="mr20"><input type='radio' name='judge' value='' />一般</label>
+			<label class="mr20"><input type='radio' name='judge' value='' />错误</label>
+		</form>
+	</li>
+	<li>
+		<label class='ckName'>批语：</label>
+		<textarea class="ckCont" ></textarea>
+	</li>
+	<li>
+		<label class='ckName'>评分：</label>
+		<input class='ckCont score' /> 分
+	</li>
+	<div class="submitBtn">
+		<a href="javascript:;" class="btn">确定</a>
+	</div>
+</ul>
+	
+</body>
+</html>

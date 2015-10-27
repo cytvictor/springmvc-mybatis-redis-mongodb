@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.codyy.rrt.resource.mapper.ResourceMapper">
+		
+	<resultMap id="result" type="resource">
+		<result property="id" column="RESOURCE_ID" />
+		<result property="resourceSource" column="RESOURCE_SOURCE" />
+		<result property="resourcePrice" column="RESOURCE_PRICE" />
+		<result property="transferFlag" column="TRANSFER_FLAG" />
+		<result property="baseUserId" column="BASE_USER_ID" />
+		<result property="baseSemesterId" column="BASE_SEMESTER_ID" />
+		<result property="baseClasslevelId" column="BASE_CLASSLEVEL_ID" />
+		<result property="baseDisciplineId" column="BASE_DISCIPLINE_ID" />
+		<result property="baseVersionId" column="BASE_VERSION_ID" />
+		<result property="baseFascicleId" column="BASE_FASCICLE_ID" />
+		<result property="baseChapterId" column="BASE_CHAPTER_ID" />
+		<result property="basePartId" column="BASE_PART_ID" />
+		<result property="resourceCatalogFirstId" column="RESOURCE_CATALOG_FIRST_ID" />
+		<result property="resourceCatalogSecondId" column="RESOURCE_CATALOG_SECOND_ID" />
+		<result property="deleteBaseUserId" column="DELETE_BASE_USER_ID" />
+		<result property="resourceName" column="RESOURCE_NAME" />
+		<result property="resourceColumnId" column="RESOURCE_COLUMN_ID" />
+		<result property="resourceColumnType" column="RESOURCE_COLUMN_TYPE" />
+		<result property="description" column="DESCRIPTION" />
+		<result property="thumb" column="THUMB" />
+		<result property="highDefine" column="HIGH_DEFINE" />
+		<result property="normalDefine" column="NORMAL_DEFINE" />
+		<result property="duration" column="DURATION" />
+		<result property="studyResource" column="STUDY_RESOURCE" />
+		<result property="studyResourceType" column="STUDY_RESOURCE_TYPE" />
+		<result property="studyResourceSize" column="STUDY_RESOURCE_SIZE" />
+		<result property="commentClosed" column="COMMENT_CLOSED" />
+		<result property="createTime" column="CREATE_TIME" />
+		<result property="deleteFlag" column="DELETE_FLAG" />
+		<result property="deleteTime" column="DELETE_TIME" />
+		<result property="funType" column="FUN_TYPE" />
+		<result property="evaluate" column="EVALUATE" />
+		<result property="evaluateAvg" column="EVALUATE_AVG" />
+		<result property="evaluateCount" column="EVALUATE_COUNT" />
+		<result property="reviewFlag" column="REVIEW_FLAG" />
+		<result property="transFlag" column="TRANS_FLAG" />
+		<result property="transPageCount" column="TRANS_PAGE_COUNT" />
+		<result property="funContent" column="FUN_CONTENT" />
+		<result property="holdType" column="HOLD_TYPE" />
+		<result property="holdId" column="HOLD_ID" />
+		<result property="orgSource" column="ORG_SOURCE" />
+		<result property="commentCount" column="COMMENT_COUNT" />
+		<result property="downloadCount" column="DOWNLOAD_COUNT" />
+		<result property="viewCount" column="VIEW_COUNT" />
+		<result property="favoriteCount" column="FAVORITE_COUNT" />
+		<result property="author" column="AUTHOR" />
+	</resultMap>
+	
+	<select id="findUploadedResource" resultMap="result" parameterType="java.util.Map">
+		SELECT * FROM
+		(
+			SELECT R.*, ROWNUM RN
+			FROM (SELECT * FROM RESOURCES 
+			WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' AND RESOURCE_SOURCE = 'SPACE' AND RESOURCE_COLUMN_ID=#{resourceColumnId} 
+			<if test="baseSemesterId != null and baseSemesterId != ''"> and BASE_SEMESTER_ID = #{baseSemesterId} </if>
+			<if test="baseClasslevelId != null and baseClasslevelId != ''"> and BASE_CLASSLEVEL_ID = #{baseClasslevelId} </if>
+			<if test="baseDisciplineId != null and baseDisciplineId != ''"> and BASE_DISCIPLINE_ID = #{baseDisciplineId} </if>
+			<if test="resourceCatalogFirstId != null and resourceCatalogFirstId != ''"> and RESOURCE_CATALOG_FIRST_ID = #{resourceCatalogFirstId} </if>
+			<if test="resourceCatalogSecondId != null and resourceCatalogSecondId != ''"> and RESOURCE_CATALOG_SECOND_ID = #{resourceCatalogSecondId} </if>
+			<if test="holdType != null and holdType != ''"> and HOLD_TYPE = #{holdType} </if>
+			<if test="holdId != null and holdId != ''"> and HOLD_ID = #{holdId} </if>
+			<if test="startTime != null and startTime != ''"> and CREATE_TIME >= #{startTime} </if>
+			<if test="endTime != null and endTime != ''"> <![CDATA[ and CREATE_TIME <= #{endTime}  ]]> </if>
+			<!-- 模糊查询 -->
+			<if test="resourceName != null and resourceName != ''">and RESOURCE_NAME like '%'||#{resourceName}||'%' 
+				<if test="charEscape != null and charEscape != ''"> ESCAPE #{charEscape} </if>
+			</if>
+			ORDER BY CREATE_TIME DESC) R
+			WHERE <![CDATA[ ROWNUM <= #{endNum} ]]>
+		)
+		WHERE RN > #{startNum}
+	</select>
+	
+	<select id="countUploadedResource" resultType ="long" parameterType="java.util.Map">
+		SELECT COUNT(*) FROM RESOURCES
+		WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' AND RESOURCE_SOURCE = 'SPACE' AND RESOURCE_COLUMN_ID=#{resourceColumnId}
+		<if test="baseSemesterId != null and baseSemesterId != ''"> and BASE_SEMESTER_ID = #{baseSemesterId} </if>
+		<if test="baseClasslevelId != null and baseClasslevelId != ''"> and BASE_CLASSLEVEL_ID = #{baseClasslevelId} </if>
+		<if test="baseDisciplineId != null and baseDisciplineId != ''"> and BASE_DISCIPLINE_ID = #{baseDisciplineId} </if>
+		<if test="resourceCatalogFirstId != null and resourceCatalogFirstId != ''"> and RESOURCE_CATALOG_FIRST_ID = #{resourceCatalogFirstId} </if>
+		<if test="resourceCatalogSecondId != null and resourceCatalogSecondId != ''"> and RESOURCE_CATALOG_SECOND_ID = #{resourceCatalogSecondId} </if>
+		<if test="holdType != null and holdType != ''"> and HOLD_TYPE = #{holdType} </if>
+		<if test="holdId != null and holdId != ''"> and HOLD_ID = #{holdId} </if>
+		<if test="startTime != null and startTime != ''"> and CREATE_TIME >= #{startTime} </if>
+		<if test="endTime != null and endTime != ''"> <![CDATA[ and CREATE_TIME <= #{endTime}  ]]> </if>
+		<!-- 模糊查询 -->
+		<if test="resourceName != null and resourceName != ''">and RESOURCE_NAME like '%'||#{resourceName}||'%' 
+			<if test="charEscape != null and charEscape != ''"> ESCAPE #{charEscape} </if>
+		</if>
+	</select>
+	
+	<select id="findUploadedResourceExcludeDelete" resultMap="result" parameterType="java.util.Map">
+		SELECT * FROM
+		(
+			SELECT R.*, ROWNUM RN
+			FROM (SELECT * FROM RESOURCES 
+			WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' AND RESOURCE_SOURCE = 'SPACE' AND RESOURCE_COLUMN_ID=#{resourceColumnId} AND TRANS_FLAG = 'TRANS_SUCCESS' 
+			<if test="baseSemesterId != null and baseSemesterId != ''"> and BASE_SEMESTER_ID = #{baseSemesterId} </if>
+			<if test="baseClasslevelId != null and baseClasslevelId != ''"> and BASE_CLASSLEVEL_ID = #{baseClasslevelId} </if>
+			<if test="baseDisciplineId != null and baseDisciplineId != ''"> and BASE_DISCIPLINE_ID = #{baseDisciplineId} </if>
+			<if test="resourceCatalogFirstId != null and resourceCatalogFirstId != ''"> and RESOURCE_CATALOG_FIRST_ID = #{resourceCatalogFirstId} </if>
+			<if test="resourceCatalogSecondId != null and resourceCatalogSecondId != ''"> and RESOURCE_CATALOG_SECOND_ID = #{resourceCatalogSecondId} </if>
+			<if test="holdType != null and holdType != ''"> and HOLD_TYPE = #{holdType} </if>
+			<if test="holdId != null and holdId != ''"> and HOLD_ID = #{holdId} </if>
+			<if test="startTime != null and startTime != ''"> and CREATE_TIME >= #{startTime} </if>
+			<if test="endTime != null and endTime != ''"> <![CDATA[ and CREATE_TIME <= #{endTime}  ]]> </if>
+			<!-- 模糊查询 -->
+			<if test="resourceName != null and resourceName != ''">and RESOURCE_NAME like '%'||#{resourceName}||'%' </if>
+			ORDER BY CREATE_TIME DESC) R
+			WHERE <![CDATA[ ROWNUM <= #{endNum} ]]>
+		)
+		WHERE RN > #{startNum}
+	</select>
+	
+	<select id="countUploadedResourceExcludeDelete" resultType ="long" parameterType="java.util.Map">
+		SELECT COUNT(*) FROM RESOURCES
+		WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' AND RESOURCE_SOURCE = 'SPACE' AND RESOURCE_COLUMN_ID=#{resourceColumnId} AND TRANS_FLAG = 'TRANS_SUCCESS' 
+		<if test="baseSemesterId != null and baseSemesterId != ''"> and BASE_SEMESTER_ID = #{baseSemesterId} </if>
+		<if test="baseClasslevelId != null and baseClasslevelId != ''"> and BASE_CLASSLEVEL_ID = #{baseClasslevelId} </if>
+		<if test="baseDisciplineId != null and baseDisciplineId != ''"> and BASE_DISCIPLINE_ID = #{baseDisciplineId} </if>
+		<if test="resourceCatalogFirstId != null and resourceCatalogFirstId != ''"> and RESOURCE_CATALOG_FIRST_ID = #{resourceCatalogFirstId} </if>
+		<if test="resourceCatalogSecondId != null and resourceCatalogSecondId != ''"> and RESOURCE_CATALOG_SECOND_ID = #{resourceCatalogSecondId} </if>
+		<if test="holdType != null and holdType != ''"> and HOLD_TYPE = #{holdType} </if>
+		<if test="holdId != null and holdId != ''"> and HOLD_ID = #{holdId} </if>
+		<if test="startTime != null and startTime != ''"> and CREATE_TIME >= #{startTime} </if>
+		<if test="endTime != null and endTime != ''"> <![CDATA[ and CREATE_TIME <= #{endTime}  ]]> </if>
+		<!-- 模糊查询 -->
+		<if test="resourceName != null and resourceName != ''">and RESOURCE_NAME like '%'||#{resourceName}||'%' </if>
+	</select>
+	
+	<select id="findByResourceId" resultMap="result"
+		parameterType="string">
+		select *
+		from RESOURCES WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' AND RESOURCE_ID=#{resourceId}
+	</select>
+	
+	<select id="findByVideoFilename" resultMap="result"
+		parameterType="string">
+		select *
+		from RESOURCES WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' AND RESOURCE_SOURCE = 'SPACE' AND (HIGH_DEFINE=#{filename} OR NORMAL_DEFINE = #{filename})
+	</select>
+	
+	<select id="findByDocumentFilename" resultMap="result"
+		parameterType="string">
+		select *
+		from RESOURCES WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' AND RESOURCE_SOURCE = 'SPACE' AND STUDY_RESOURCE=#{filename}
+	</select>
+	
+	<select id="findVideoTransPendding" resultMap="result"
+		parameterType="int">
+		SELECT R.*, ROWNUM RN
+		FROM ( select *
+		from RESOURCES WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' 
+		AND (RESOURCE_COLUMN_TYPE = 'VIDEO' OR (RESOURCE_COLUMN_TYPE = 'MIXTURE' AND FUN_TYPE = 'FUN_TYPE_VIDEO'))
+		AND TRANS_FLAG = 'TRANS_PENDDING' 
+		ORDER BY CREATE_TIME) R
+		WHERE <![CDATA[ ROWNUM <= #{mp4transThread} ]]>
+	</select>
+	
+	<select id="findStudyResourceTransPendding" resultMap="result"
+		parameterType="int">
+		SELECT R.*, ROWNUM RN
+		FROM ( select *
+		from RESOURCES WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' 
+		AND RESOURCE_COLUMN_TYPE = 'DOCUMENT' 
+		AND TRANS_FLAG = 'TRANS_PENDDING' 
+		ORDER BY CREATE_TIME) R
+		WHERE <![CDATA[ ROWNUM <= #{transThread} ]]>
+	</select>
+	
+	<select id="findStudyResourceTransTransing" resultMap="result" >
+		select *
+		from RESOURCES WHERE DELETE_FLAG = 'DELETE_NOT_DELETE' 
+		AND RESOURCE_COLUMN_TYPE = 'DOCUMENT' 
+		AND TRANS_FLAG = 'TRANS_TRANSING' 
+		ORDER BY CREATE_TIME
+	</select>
+	
+	<!-- 修改资源的相关数量 -->
+	<update id="updateResourceCount" parameterType="map">
+		update RESOURCES set RESOURCE_ID = #{id}
+		<if test="commentCount != null and commentCount != ''"> , COMMENT_COUNT = #{commentCount} </if>
+		<if test="downloadCount != null and downloadCount != ''"> , DOWNLOAD_COUNT = #{downloadCount} </if>
+		<if test="viewCount != null and viewCount != ''"> , VIEW_COUNT = #{viewCount} </if>
+		<if test="favoriteCount != null and favoriteCount != ''"> , FAVORITE_COUNT = #{favoriteCount} </if>
+		where RESOURCE_ID = #{id} AND RESOURCE_SOURCE = 'SPACE' 
+	</update>
+	
+	<!-- 逻辑删除资源 -->
+	<update id="deleteResource" parameterType="resource">
+		update RESOURCES set DELETE_BASE_USER_ID=#{deleteBaseUserId}, DELETE_FLAG = #{deleteFlag}, DELETE_TIME = #{deleteTime}
+		where RESOURCE_ID = #{id} AND RESOURCE_SOURCE = 'SPACE' 
+	</update>
+
+	<!-- 修改资源 -->
+	<update id="updateResource" parameterType="resource">
+		update RESOURCES set BASE_VERSION_ID = #{baseVersionId, jdbcType=VARCHAR}, BASE_FASCICLE_ID = #{baseFascicleId, jdbcType=VARCHAR}, 
+		BASE_CHAPTER_ID = #{baseChapterId, jdbcType=VARCHAR}, BASE_PART_ID = #{basePartId, jdbcType=VARCHAR}, 
+		RESOURCE_CATALOG_FIRST_ID = #{resourceCatalogFirstId, jdbcType=VARCHAR}, RESOURCE_CATALOG_SECOND_ID = #{resourceCatalogSecondId, jdbcType=VARCHAR}, 
+		RESOURCE_NAME = #{resourceName}, DESCRIPTION = #{description, jdbcType=VARCHAR}, 
+		THUMB = #{thumb, jdbcType=VARCHAR}, AUTHOR=#{author, jdbcType=VARCHAR}, FUN_CONTENT=#{funContent, jdbcType=VARCHAR}
+		where RESOURCE_ID = #{id} AND RESOURCE_SOURCE = 'SPACE' 
+	</update>
+	
+	<!-- 修改资源视频或文档转换状态 -->
+	<update id="updateResourceTrans" parameterType="resource">
+		update RESOURCES set TRANS_FLAG = #{transFlag, jdbcType=VARCHAR}, TRANS_PAGE_COUNT =  #{transPageCount, jdbcType=NUMERIC}
+		where RESOURCE_ID = #{id}
+	</update>
+	
+	<!-- 修改资源评分 -->
+	<update id="updateEvaluation" parameterType="resource" >
+         UPDATE RESOURCES SET EVALUATE = #{evaluate}, EVALUATE_COUNT = #{evaluateCount}, EVALUATE_AVG = #{evaluateAvg} WHERE RESOURCE_ID = #{id}
+     </update>
+
+	<!-- 添加 -->
+	<insert id="save" parameterType="resource">
+		insert into RESOURCES(
+		RESOURCE_ID, RESOURCE_SOURCE, RESOURCE_PRICE, TRANSFER_FLAG, BASE_USER_ID, 
+		BASE_SEMESTER_ID, BASE_CLASSLEVEL_ID, BASE_DISCIPLINE_ID, BASE_VERSION_ID, BASE_FASCICLE_ID, BASE_CHAPTER_ID,
+		BASE_PART_ID, RESOURCE_CATALOG_FIRST_ID, RESOURCE_CATALOG_SECOND_ID, DELETE_BASE_USER_ID, 
+		RESOURCE_NAME, RESOURCE_COLUMN_ID, RESOURCE_COLUMN_TYPE, DESCRIPTION, THUMB, HIGH_DEFINE, NORMAL_DEFINE, DURATION,
+		STUDY_RESOURCE, STUDY_RESOURCE_TYPE, STUDY_RESOURCE_SIZE, COMMENT_CLOSED, CREATE_TIME,
+		DELETE_FLAG, DELETE_TIME, FUN_TYPE, EVALUATE, EVALUATE_AVG, EVALUATE_COUNT, REVIEW_FLAG,
+		TRANS_FLAG, TRANS_PAGE_COUNT, FUN_CONTENT, HOLD_TYPE, HOLD_ID,ORG_SOURCE, 
+		COMMENT_COUNT, DOWNLOAD_COUNT, VIEW_COUNT, FAVORITE_COUNT, AUTHOR,SCHOOL_ID,DISTRICT_ORG_ID,CITY_ORG_ID,PROVINCE_ORG_ID
+		)
+		values (
+		#{id}, #{resourceSource, jdbcType=VARCHAR}, #{resourcePrice, jdbcType=NUMERIC}, #{transferFlag, jdbcType=VARCHAR}, #{baseUserId, jdbcType=VARCHAR},  
+		#{baseSemesterId, jdbcType=VARCHAR}, #{baseClasslevelId, jdbcType=VARCHAR}, #{baseDisciplineId, jdbcType=VARCHAR}, #{baseVersionId, jdbcType=VARCHAR}, #{baseFascicleId, jdbcType=VARCHAR}, #{baseChapterId, jdbcType=VARCHAR}, 
+		#{basePartId, jdbcType=VARCHAR}, #{resourceCatalogFirstId, jdbcType=VARCHAR}, #{resourceCatalogSecondId, jdbcType=VARCHAR}, #{deleteBaseUserId, jdbcType=VARCHAR}, 
+		#{resourceName, jdbcType=VARCHAR}, #{resourceColumnId, jdbcType=VARCHAR}, #{resourceColumnType, jdbcType=VARCHAR}, #{description, jdbcType=VARCHAR}, #{thumb, jdbcType=VARCHAR}, #{highDefine, jdbcType=VARCHAR}, #{normalDefine, jdbcType=VARCHAR}, #{duration, jdbcType=VARCHAR}, 
+		#{studyResource, jdbcType=VARCHAR}, #{studyResourceType, jdbcType=VARCHAR}, #{studyResourceSize, jdbcType=NUMERIC}, #{commentClosed, jdbcType=VARCHAR}, #{createTime, jdbcType=TIMESTAMP}, 
+		#{deleteFlag, jdbcType=VARCHAR}, #{deleteTime, jdbcType=TIMESTAMP}, #{funType, jdbcType=VARCHAR}, #{evaluate, jdbcType=NUMERIC}, #{evaluateAvg, jdbcType=NUMERIC}, #{evaluateCount, jdbcType=NUMERIC}, #{reviewFlag, jdbcType=VARCHAR}, 
+		#{transFlag, jdbcType=VARCHAR}, #{transPageCount, jdbcType=NUMERIC}, #{funContent, jdbcType=VARCHAR}, #{holdType, jdbcType=VARCHAR}, #{holdId, jdbcType=VARCHAR},#{orgSource, jdbcType=VARCHAR}, 
+		#{commentCount, jdbcType=NUMERIC}, #{downloadCount, jdbcType=NUMERIC}, #{viewCount, jdbcType=NUMERIC}, #{favoriteCount, jdbcType=NUMERIC}, #{author, jdbcType=VARCHAR},#{schoolId, jdbcType=VARCHAR},#{districtOrgId, jdbcType=VARCHAR},#{cityOrgId, jdbcType=VARCHAR},#{provinceOrgId, jdbcType=VARCHAR}
+		)
+	</insert>
+
+</mapper>

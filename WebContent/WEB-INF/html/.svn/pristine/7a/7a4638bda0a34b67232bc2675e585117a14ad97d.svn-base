@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include file="common/meta.shtml"-->
+</head>
+<body>
+	<!--#include file="common/header.shtml"-->
+	<div class="container">
+		<!--#include file="common/side.shtml"-->
+		<div class="contentOut">
+			<iframe class="contentIframe" frameborder="no" src="http://www.baidu.com" ></iframe>
+		</div>
+	</div>
+	<!--#include file="common/footer.shtml"-->
+</body>
+</html>

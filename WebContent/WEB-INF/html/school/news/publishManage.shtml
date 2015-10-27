@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<div class="otContent newsWrap">
+				<h4 class="contentNav">
+					<a class="backup" href="index.shtml">&lt;&lt;返回</a>
+					发布管理
+				</h4>
+				
+				<label>发布日期：</label>
+				<input type="text" />
+				<label>至</label>
+				<input type="text" />
+				<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+				
+				<span class="classTab">
+					<a class="currTab" index="0" href="javascript:;">新闻</a>
+					<a index="1" href="javascript:;">通知公告</a>
+				</span>
+				<div class="tabTable">
+					<table class="normalTable">
+						<tr>
+							<th>序号</th>
+							<th>标题</th>
+							<th>作者</th>
+							<th>发布日期</th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td>01</td>
+							<td>诗歌《离骚》讲解</td>
+							<td>xxx</td>
+							<td>2014-7-31 14:30</td>
+							<td>
+								<a href="" class="blue">编辑</a>
+								<a href="" class="red">删除</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="tabTable hidden">
+					通知公告
+				</div>
+				<div class="submitBtn">
+					<a href="javascript:;" class="btn mr20">提交</a>
+					<a href="javascript:;" class="ml20">取消</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+<script>
+	$(".classTab a").click(function(){
+		$(this).addClass("currTab").siblings().removeClass("currTab");
+		var i = $(this).attr("index");
+		$(".tabTable").addClass("hidden");
+		$(".tabTable").eq(i).removeClass("hidden");
+	})
+</script>
+</body>
+</html>

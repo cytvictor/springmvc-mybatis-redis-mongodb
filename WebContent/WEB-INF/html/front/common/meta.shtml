@@ -1,0 +1,10 @@
+<meta charset="UTF-8" />
+<title>人人通-前台</title>
+<link media="all" type="text/css" rel="stylesheet" href="/public/css/reset.css"/>
+<link media="all" type="text/css" rel="stylesheet" href="/public/css/common.css"/>
+<link media="all" type="text/css" rel="stylesheet" href="/public/css/index.css"/>
+<script> var KD_RRT = { root: ''};</script>
+<script src="/public/js/jquery.js" type="text/javascript"></script>
+<script src="/public/js/extend.js" type="text/javascript"></script>
+<script src="/public/js/litewin.js" type="text/javascript"></script>
+<script src="/public/js/common.js" type="text/javascript"></script>

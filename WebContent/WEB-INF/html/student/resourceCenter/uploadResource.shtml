@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css" />
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="resourceCenter.shtml">&lt;&lt;返回</a>
+				上传资源
+			</h4>
+			<div class="otContent">
+				<div class="selectBoxTop">
+					<h5>标题名称：<input type="text" /><span class="gray">可输入30个汉字</span></h5>
+					<p>类型：<label><input type="radio">精品课</label>
+						  <label><input type="radio">微课</label>
+						  <label><input type="radio">元资源</label>
+					</p>
+				</div>
+				<div class="selectBox">
+					<h5>关联章节：</h5>
+					<ul>
+						<li>
+							<label>学段：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>学科：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>年级：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>分册：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+						</li>
+						<li>
+							<label>章节：</label>
+							<select name="" id="">
+								<option value="">请选择</option>
+							</select>
+							<a href="javascript:;" class="btn bgGreen">增加章节</a>
+						</li>
+						<li>
+							<label>章节：</label>
+							<span class="smallBlock chapBlock">
+								语文
+								<a href="javescript:;"></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="selectBox">
+					<h5>关联知识点：</h5>
+					<ul>
+						<li>
+							<label>学段：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>学科：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>分类：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>知识点：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+						</li>
+						<li>
+							<a href="javascript:;" class="btn bgGreen">添加知识点</a>
+						</li>
+						<li>
+							<label>知识点：</label>
+							<span class="smallBlock chapBlock">
+								语文
+								<a href="javescript:;"></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+				
+				<ul class="detailBox mt40">
+					<li>
+						<label class="cName">缩略图：</label>
+						<input type="text" class="uploadInput"/>
+						<a href="javascript:;" class="btn">上传</a>
+					</li>
+					<li>
+						<label class="cName">高清附件：</label>
+						<input type="text" class="uploadInput"/>
+						<a href="javascript:;" class="btn">上传</a>
+					</li>
+					<li>
+						<label class="cName">普清附件：</label>
+						<input type="text" class="uploadInput"/>
+						<a href="javascript:;" class="btn">上传</a>
+					</li>
+					<li>
+						<label class="cName">权限设置：</label>
+						<div class="cCont powerList">
+							<p class="mb20"><label><input type="radio" name="powerRadio"><span>公开</span>共享资源到平台，所有人都可以查卷</label></p>
+							<p class="mb20"><label><input type="radio" name="powerRadio"><span>半公开</span>共享资源到平台，未登陆状态下不显示</label></p>
+							<p class="mb20"><label><input type="radio" name="powerRadio"><span>对好友可见</span>保存至个人空间，仅我的好友可见</label></p>
+							<p class="mb20"><label><input type="radio" name="powerRadio"><span>仅自己可见</span>保存至个人空间，仅自己可见</label></p>
+						</div>
+					</li>
+				</ul>
+				
+				<div class="submitBtn">
+					<a class="btn">提交保存</a>
+					<a href="javascript:;">清空</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

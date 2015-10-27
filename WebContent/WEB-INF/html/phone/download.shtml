@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>人人通交互平台家长版</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<script src="/public/js/jquery.js" type="text/javascript"></script>
+	<style>
+		body,header,article,footer,img{margin: 0;padding: 0;}
+		html{height: 100%;}
+		body{background: url(/public/img/phone/bg.png);font-size: 100%;position:relative;min-height: 100%;}
+		header{margin-bottom: 1.2em;background-color: #fff;border-bottom: 1px solid #ccc;box-shadow: 0 1px 1px #ccc;}
+		header img{display: block;}
+		article{text-align: center;margin: 0 1em;padding-bottom:20px;height: auto !important;}
+		.download{margin: 2em 0 1em;}
+		img {max-width: 100%;}
+		@media (max-width:400px) {
+		     .download img{
+		          width: 45%;
+		     }
+		}
+		footer{position: absolute;bottom: 0;height:20px;width:100%;text-align: center;font-size: 0.8em;color: #888;}
+		.mask{position: absolute;left: 0;top: 0;width:100%;height:100%;background: rgba(0,0,0,0.5) url(/public/img/phone/arr.png) 99% 0 no-repeat;display:none;}
+	</style>
+</head>
+<body>
+	<header>
+		<img src="/public/img/phone/顶部logo.png" alt="">
+	</header>
+	<article>
+		<section>
+			<a href=""><img src="/public/img/phone/文字.png" alt=""></a>
+		</section>
+		<section class="download">
+			<a class="download-btn" href="javascript:;"><img src="/public/img/phone/安卓normal.png" alt=""></a>
+			<a href=""><img src="/public/img/phone/苹果normal.png" alt=""></a>
+		</section>
+		<section>
+			<img src="/public/img/phone/底部图.png" alt="">
+		</section>
+	</article>
+	<footer>版本：v1.0.1</footer>
+	<div class="mask"></div>
+<script>
+	// $('.download img:eq(0)').hover(function(){
+	// 	$(this).attr('src', '/public/img/phone/安卓pressed.png')
+	// },function(){
+	// 	$(this).attr('src', '/public/img/phone/安卓normal.png')
+	// });
+	// $('.download img:eq(1)').hover(function(){
+	// 	$(this).attr('src', '/public/img/phone/苹果pressed.png')
+	// },function(){
+	// 	$(this).attr('src', '/public/img/phone/苹果normal.png')
+	// });
+
+	var IS_WEIXIN = (function () {
+		var ua = navigator.userAgent.toLowerCase();
+		if (ua.match(/MicroMessenger/i) !="micromessenger" &&ua.match(/windows phone/i) !="windows phone") {return false;}
+		else {return true;}
+	})();
+	
+	if (IS_WEIXIN == true) {
+		$(".download-btn").click(function(){
+			$(".mask").show();
+		});
+		$(".mask").click(function(){
+			$(this).hide();
+		});
+	}
+</script>
+</body>
+</html>

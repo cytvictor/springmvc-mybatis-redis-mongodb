@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav onlineAnswerQsNav">
+				<a class="backup" href="onlineAnswerQs.shtml">&lt;&lt;返回</a>
+				<a class="btn testZj" href="javascript:;">视频答疑</a>
+				查看
+			</h4>
+			<div class="otContent clearfix">
+				<div style="width:625px;float:left;padding-right:10px;">
+					<div class="leaverQs">
+						<h5>证明全等三角形有什么技巧吗？</h5>
+						<p>我不知道怎么去证明全等三角形，以证明我就错了，希望大家能帮帮我给我技巧和方法</p>
+						<span>提问人：李玉</span>
+						<span>7月7日 14:30</span>
+					</div>
+					<div class="answerQs">
+						<p>回答：首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形</p>
+						<p><span class="blue">追问：</span>首先要找准你要证明的两个三角形?</p>
+						<p>回答：首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形
+						<span class="ml20"><a href="javascript:;" class="blue">附件名称</a>
+						<a href="javascript:;" class="btn">下载</a></span>
+						</p>
+					</div>
+
+					<!-- 上传附件 -->
+					<div class="uploadAcc mt20">
+						上传附件：<input type="text" /> <a href="javascript:;" class="btn bgBlue">浏览</a>
+					</div>
+
+					<div class="submitBtn">
+						<a href="javascript:;" class="btn">提交答案</a>
+					</div>
+				</div>
+				<div class="commend-list" style="overflow: hidden;">
+					下面是老师推荐的相关问题，助你巩固学习
+					<ul>
+						<li><a href="javascript:;" class="qs">有关勾股定理 </a><a href="javascript:;" class="blue">推荐</a></li>
+						<li><a href="javascript:;" class="qs">定理和公式有什么不同？</a><a href="javascript:;" class="red">取消</a></li>
+						<li><a href="javascript:;" class="qs">请教一个概念</a><a href="javascript:;" class="blue">推荐</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

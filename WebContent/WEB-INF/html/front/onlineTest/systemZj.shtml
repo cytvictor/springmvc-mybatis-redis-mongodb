@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="onlineTest.shtml">&lt;&lt;返回</a>
+				系统组卷
+			</h4>
+			<ul class="detailBox mt20">
+				<li>
+					<label class="cName lh30"><b class="red"></b>试卷名称：</label>
+					<input type="text" class="titleName testName" /> 字数限制30个汉字以内
+				</li>
+				<li>
+					<label class="cName">试卷类型：</label>
+					<select class="cCont">
+						<option>选择试卷类型</option>
+					</select>
+				</li>
+				<li>
+					<label class="cName">学段：</label>
+					<select class="cCont">
+						<option>请选择</option>
+					</select>
+				</li>
+				<li>
+					<label class="cName">学科：</label>
+					<select class="cCont">
+						<option>请选择</option>
+					</select>
+				</li>
+				<li>
+					<label class="cName">年级：</label>
+					<select class="cCont">
+						<option>请选择</option>
+					</select>
+				</li>
+				<li>
+					<label class="cName">分册：</label>
+					<select class="cCont">
+						<option>请选择</option>
+					</select>
+				</li>
+				<li>
+					<label class="cName">章节：</label>
+					<div class="cCont">
+						<a href="javascript:;" class="orange">选择章节</a>
+						章节可以选择一个或多个
+						<div class="blockCont chapBlockCont">
+							<span class="smallBlock chapBlock">章节1<a href="javescript:;"></a></span>
+							<span class="smallBlock chapBlock">章节2<a href="javescript:;"></a></span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<label class="cName">知识点：</label>
+					<div class="cCont">
+						<a href="javascript:;" class="orange">选择知识点</a>
+						知识点可以选择一个或多个
+						<div class="blockCont knowledgeBlockCont">
+							<span class="smallBlock knowledgeBlock">知识点名称1<a href="javescript:;"></a></span>
+							<span class="smallBlock knowledgeBlock">知识点名称2<a href="javescript:;"></a></span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<label class="cName">选择题型：</label>
+					<ul class="cCont">
+						<li>填写要生成的习题数量</li>
+						<li><input type="checkbox" /> 单选</li>
+						<li>易 <input type="text"> 道 难度系数1-5</li>
+						<li>易 <input type="text"> 道 难度系数1-5</li>
+						<li>易 <input type="text"> 道 难度系数1-5</li>
+						<li>共<b class="orange">N</b>道题</li>
+					</ul>
+				</li>
+				<li>
+					<label class="cName">答题时间：</label>
+					<input class="cCont" /> 分钟
+				</li>
+				<li>
+					<label class="cName">试题来源：</label>
+					<div class="cCont">
+						<input type="checkbox" /> 平台共享题库
+						<input type="checkbox" class="ml20"/> 我创建的习题
+					</div>
+				</li>
+				<li>
+					<label class="cName">注释：</label>
+					<p class="cCont">系统默认生成的每份试卷总分为100分，单道题得分按习题数量平均分配</p>
+				</li>
+			</ul>
+			<div class="submitBtn">
+				<a href="" class="btn">保存并返回</a>
+				<a href="" class="cancel">取消</a>
+			</div>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

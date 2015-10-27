@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="btn testZj" href="informationManage.shtml">信息管理</a>
+				<a class="btn testZj" href="editNews.shtml">发布信息</a>
+				新闻/公告
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">我发布的</a>
+					<a href="javascript:;" index="1">接收到的</a>
+				</span>
+			</h4>
+			<div class="otContent newsWrap">
+				<div class="newsList">
+					<h5 class="newsTitle">新闻动态</h5>
+					<ul class="newsBody">
+						<li class="clearfix">安全是学校工作得以顺利进行的前提条件，纪律是学习的保证<span class="time">2014-7-31 13:22</span></li>
+						<li class="clearfix">安全是学校工作得以顺利进行的前提条件，纪律是学习的保证<span class="time">2014-7-31 13:22</span></li>
+					</ul>
+				</div>
+
+				<div class="inform">
+					<h5 class="informTitle">通知公告</h5>
+					<ul class="informList">
+						<li class="clearfix">
+							<h6>这里是标题</h6>
+							<p>这里显示两行我校学员“李云波”“礼堂边”我校学员“李云波”“礼堂边”我校学员</p>
+							<span class="time">2014-7-31 13:45</span>
+						</li>
+						<li class="clearfix">
+							<h6>这里是标题</h6>
+							<p>我校学员“李云波”“礼堂边”我校学员“李云波”“礼堂边”我校学员“李云波”“礼堂边”</p>
+							<span class="time">2014-7-31 13:45</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/department.css" />
+</head>
+<body class="color0">
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<ul class="workList clearfix">
+				<li>
+					<a href="javascript:;">
+					<div class="workBox pubMsg">
+						<img src="/public/img/index/workBox_1.png" alt="" width="233" height="120" />
+						<span>发布信息</span>
+					</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+					<div class="workBox addDep">
+						<img src="/public/img/index/workBox_2.png" alt="" width="233" height="120" />
+						<span>添加局管</span>
+					</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+					<div class="workBox addId">
+						<img src="/public/img/index/workBox_3.png" alt="" width="233" height="120" />
+						<span>添加帐号</span>
+					</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+					<div class="workBox upSource">
+						<img src="/public/img/index/workBox_4.png" alt="" width="233" height="120" />
+						<span>上传资源</span>
+					</div>
+					</a>
+				</li>
+			</ul>
+			<div class="workWrap clearfix">
+				<div class="largeBox scoreBox">
+					这里放成绩分析统计图，你懂得~
+				</div>
+				<div class="largeBox2 teachBox">
+					<h5><a href="#" class="more">more</a>教育资讯</h5>
+					<ul>
+						<li>
+							<a href="#">献礼教师节河南新闻广播推出“讲台上的深情”…</a>
+							<span class="time">2014-09-11 16:21:29</span>
+						</li>
+					</ul>
+				</div>
+				<div class="largeBox2 newestBox">
+					<h5><a href="#" class="more">more</a>最新资源</h5>
+					<ul>
+						<li>
+							<img src="/public/img/index/styleicon/txt.png" alt="" width="40">
+							<dl>
+								<dt>高三英语期末考试培训资料</dt>
+								<dd>发布时间：2012-11-08</dd>
+								<dd>评分：</dd>
+							</dl>
+							<span class="checkStatus pass green">
+								审核已通过
+							</span>
+						</li>
+						<li>
+							<img src="/public/img/index/styleicon/doc.png" alt="" width="40">
+							<dl>
+								<dt>高三英语期末考试培训资料</dt>
+								<dd>发布时间：2012-11-08</dd>
+								<dd>评分：</dd>
+							</dl>
+							<span class="checkStatus unpass red">
+								审核未通过
+							</span>
+						</li>
+						<li>
+							<img src="/public/img/index/styleicon/ppt.png" alt="" width="40">
+							<dl>
+								<dt>高三英语期末考试培训资料</dt>
+								<dd>发布时间：2012-11-08</dd>
+								<dd>评分：</dd>
+							</dl>
+							<span class="checkStatus already blue">
+								审核未通过
+							</span>
+						</li>
+					</ul>
+				</div>
+				<div class="largeBox2 onwatchBox">
+					<h5><a href="#" class="changeList">换一批</a>在线观摩</h5>
+
+					<ul class="videoList">
+						<li>
+							<a href="#"><img src="" alt="" width="200" height="100" /></a>
+						</li>
+						<li><a href="#"><img src="" alt="" width="200" height="100" /></a></li>
+						<li><a href="#"><img src="" alt="" width="200" height="100" /></a></li>
+					</ul>
+		
+					<ul class="wordList">
+						<li>
+							<a href="#">算术与代数预备课程</a>
+						</li>
+						<li>
+							<a href="#">算术与代数预备课程</a>
+						</li>
+						<li>
+							<a href="#">算术与代数预备课程</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

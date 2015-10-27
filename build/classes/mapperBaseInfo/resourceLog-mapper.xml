@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.codyy.rrt.baseinfo.mapper.ResourceLogMapper" >
+  <resultMap id="BaseResultMap" type="com.codyy.rrt.resource.model.ResourceLog" >
+    <id column="RESOURCE_LOG_ID" property="resourceLogId" jdbcType="VARCHAR" />
+    <result column="RESOURCE_DESCRIBE" property="resourceDescribe" jdbcType="VARCHAR" />
+    <result column="RESOURCE_ID" property="resourceId" jdbcType="VARCHAR" />
+    <result column="VISIT_TIME" property="visitTime" jdbcType="DATE" />
+    <result column="USERNAME" property="userName" jdbcType="VARCHAR" />
+    <result column="RESOURCE_NAME" property="resourceName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    RESOURCE_LOG_ID, RESOURCE_DESCRIBE, RESOURCE_ID, VISIT_TIME,USERNAME,RESOURCE_NAME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from RESOURCE_LOG
+    where RESOURCE_LOG_ID = #{resourceLogId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from RESOURCE_LOG
+    where RESOURCE_LOG_ID = #{resourceLogId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.codyy.rrt.resource.model.ResourceLog" >
+    insert into RESOURCE_LOG (RESOURCE_LOG_ID, RESOURCE_DESCRIBE, 
+      RESOURCE_ID, VISIT_TIME,USERNAME,RESOURCE_NAME)
+    values (#{resourceLogId,jdbcType=VARCHAR}, #{resourceDescribe,jdbcType=VARCHAR}, 
+      #{resourceId,jdbcType=VARCHAR}, sysdate,#{userName,jdbcType=VARCHAR},
+      #{resourceName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.codyy.rrt.resource.model.ResourceLog" >
+    insert into RESOURCE_LOG
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="resourceLogId != null" >
+        RESOURCE_LOG_ID,
+      </if>
+      <if test="resourceDescribe != null" >
+        RESOURCE_DESCRIBE,
+      </if>
+      <if test="resourceId != null" >
+        RESOURCE_ID,
+      </if>
+      <if test="visitTime != null" >
+        VISIT_TIME,
+      </if>
+      <if test="userName != null" >
+        USERNAME,
+      </if>
+       <if test="resourceName != null" >
+       	RESOURCE_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="resourceLogId != null" >
+        #{resourceLogId,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceDescribe != null" >
+        #{resourceDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceId != null" >
+        #{resourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="visitTime != null" >
+        #{visitTime,jdbcType=DATE},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceName != null" >
+       #{resourceName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.codyy.rrt.resource.model.ResourceLog" >
+    update RESOURCE_LOG
+    <set >
+      <if test="resourceDescribe != null" >
+        RESOURCE_DESCRIBE = #{resourceDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceId != null" >
+        RESOURCE_ID = #{resourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="visitTime != null" >
+        VISIT_TIME = #{visitTime,jdbcType=DATE},
+      </if>
+    </set>
+    where RESOURCE_LOG_ID = #{resourceLogId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.codyy.rrt.resource.model.ResourceLog" >
+    update RESOURCE_LOG
+    set RESOURCE_DESCRIBE = #{resourceDescribe,jdbcType=VARCHAR},
+      RESOURCE_ID = #{resourceId,jdbcType=VARCHAR},
+      VISIT_TIME = #{visitTime,jdbcType=DATE}
+    where RESOURCE_LOG_ID = #{resourceLogId,jdbcType=VARCHAR}
+  </update>
+  
+	<select id="getResourceLogByCondition" resultType="com.codyy.rrt.resource.model.ResourceLog" parameterType="java.util.Map">
+		select * from(
+			select t.*,rownum as r
+			from(
+				select
+					rl.resource_log_id as resourceLogId,rl.visit_time as visitTime,
+					rl.resource_name as resourceName,bu.real_name as realName,
+					rl.resource_describe as resourceDescribe
+				from
+					resource_log rl
+					join base_user bu on bu.username = rl.username
+				where
+					1 = 1
+					<if test="resourceName != null and resourceName != ''">
+						and rl.resource_name like '%' || #{resourceName} || '%' escape '/'
+					</if>
+					<if test="realName != null and realName != ''">
+						and bu.real_name like '%' || #{realName} || '%' escape '/'
+					</if>
+					order by rl.visit_time desc
+				) t
+			) tt
+		where
+			tt.r &gt; #{start}
+			and tt.r &lt;= #{end}
+	</select>
+	
+	<select id="getResourcelogCountByCondition" resultType="java.lang.Integer" parameterType="java.util.Map">
+		select
+			count(1)
+		from
+			resource_log rl
+			join base_user bu on bu.username = rl.username
+		where
+			1 = 1
+			<if test="resourceName != null and resourceName != ''">
+				and rl.resource_name like '%' || #{resourceName} || '%' escape '/'
+			</if>
+			<if test="realName != null and realName != ''">
+				and bu.real_name like '%' || #{realName} || '%' escape '/'
+			</if>
+	</select>
+	
+	<!-- 获取用户下载了哪些资源 -->
+	<select id="getDownLoadResourceLog" resultType="java.lang.String" parameterType="java.lang.String">
+		select resource_id,username from resource_log where resource_describe='下载' and username=#{username}
+	</select>
+	<!-- 判断用户是否下载过某个资源 -->
+	<select id="getDownLoadResourceLogByIdAndUsername" resultType="com.codyy.rrt.resource.model.ResourceLog" parameterType="java.util.Map">
+		select resource_id,username from resource_log where resource_describe='下载' and username=#{username}
+		and resource_id=#{resourceId}
+	</select>
+</mapper>

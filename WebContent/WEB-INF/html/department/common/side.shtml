@@ -1,0 +1,35 @@
+<div class="side">
+	<div class="userMsg">
+		<div class="userPhoto">
+			<dt><img src="/public/img/index/testImg/tcPhoto.png" alt="" width="90" height="90"></dt>
+			<dd class="userName">张亚杰</dd>
+		</div>
+		<dl>
+			<dt>河南省郑州市</dt>
+			<dd>
+				<span class="school" style="padding-right:0;margin-left:0;">河南省电教馆</span>
+			</dd>
+		</dl>
+		<div class="collectAndMsg">
+			<span>
+				<b>32</b>
+				<a href="javascript:;">收藏</a>
+			</span>
+			<span>
+				<b>5</b>
+				<a href="javascript:;">消息</a>
+			</span>
+		</div>
+	</div>
+
+	<ul class="sideNav">
+		<li class="workPlace"><a href="/html/department/workPlace/workPlace.shtml">我的工作台</a></li>
+		<li class="onlineTest"><a href="/html/department/messageManage/news.shtml">信息管理</a></li>
+		<li class="netHomework"><a href="/html/department/departmentManage/departmentManage.shtml">机构管理</a></li>
+		<li class="onlineTutor"><a href="/html/department/idManage/idList.shtml">帐号管理</a></li>
+		<li class="onlineCourse"><a href="/html/department/onlineCourse/onlineCourse.shtml">资源中心</a></li>
+		<li class="onlineAnswerQs"><a href="/html/department/dataManage/dataManage.shtml">统计分析</a></li>
+		<li class="resourceCenter"><a href="/html/department/resourceCenter/resourceCenter.shtml">在线观摩</a></li>
+		<li class="systemSetup"><a href="/html/department/systemSetup/systemSetup.shtml">系统设置</a></li>
+	</ul>
+</div>

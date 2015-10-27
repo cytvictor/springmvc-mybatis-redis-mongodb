@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/community.css">
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav homeNav schoolActiveNav">
+				我的互动
+				<span class="navTab">
+					<a href="home.shtml" index="0">最新动态</a>
+					<a href="friends.shtml" index="1">我的关注</a>
+					<a href="messages.shtml" class="currTab" index="2">私信</a>
+				</span>
+			</h4>
+			
+			<ul class="msgList">
+				<li class="picItem" msgid="10">
+					<a class="superPic" href="javascript:;">
+						<img width="70" height="70" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">
+					</a>
+					<div class="itemContent">
+						<p class="bTit"><a href="javascript:;" class="name">zhaoyijun</a></p>
+						<p class="news">
+							我们什么时候去啊！
+						</p>
+					</div>
+					<a class="btn delMsgBtn" msgid="10" href="javascript:;">删除</a>
+				</li>
+				
+				<li class="picItem" msgid="10">
+					<a class="superPic" href="javascript:;">
+						<img width="70" height="70" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">
+					</a>
+					<div class="itemContent">
+						<p class="bTit"><a href="javascript:;" class="name">zhaoyijun</a></p>
+						<p class="news">
+							我们什么时候去啊！
+						</p>
+					</div>
+					<a class="btn delMsgBtn" msgid="10" href="javascript:;">删除</a>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+<script>
+	$(".picItem").hover(function(){
+		$(this).addClass("hover");
+	},function(){
+		$(this).removeClass("hover");
+	});
+	
+	/* 打开聊天记录 */
+	$(".msgList .picItem").click(function(){
+		var msgid = this.getAttribute("msgid");
+		Win.alert("打开"+msgid+"的聊天记录");
+		location.href="msg_detail.shtml"
+	});
+	
+	/* 取消关注 */
+	$(".delMsgBtn").click(function(){
+		var msgid = this.getAttribute("msgid");
+		Win.alert("删除聊天记录"+msgid+"成功！");
+		return false;
+	});
+</script>
+<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

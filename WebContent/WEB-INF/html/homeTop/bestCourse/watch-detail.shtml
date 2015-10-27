@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>精品课程</title>
+<!--#include virtual="/html/front/common/meta.shtml"-->
+<link rel="stylesheet" href="/public/css/index/index.css">
+<script type="text/javascript" src="/public/js/photoScroll.js"></script>
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container" style="margin:0 auto;padding:0;">
+		<div class="content clearfix" style="background-color: #fcfcfc;">
+			<div class="secNav">
+			<h5>
+				<span>
+				精品课
+				</span>&gt;
+				<span>8月4号上传视频测试8</span>
+			</h5>
+			</div>
+		<div class="classBook clearfix">
+		    <div class="information-top clearfix">
+		 		
+				<div class="photo" id="videoBox" style="width:800px;height:475px;background-color:#333;margin-right:5px;">
+					<div class="videoMask"></div>
+				</div>
+				<div class="class-information">
+					<h4>8月4号上传视频测试8</h4>
+					<ul>
+						<li>
+							<label for="" class="mr20">评分：</label>
+							<label for=""><span class="orange">9.7分</span></label>
+						</li>
+						<li>
+							<label for="" class="mr20">学段：<span>小学</span></label>
+							<label for="">知识点：<span>数学1</span></label>
+						</li>
+						<li>
+							<label for="" class="mr20">年级：<span></span></label>
+							<label for="">发布时间：<span>2014-08-04</span></label>
+						</li>
+						<li>
+							<label for="" class="mr20">学科：<span></span></label>
+							<label for="">发布人：<span>王其刚1</span></label>
+						</li>
+						<li>
+							<label for="" class="mr20">分册：<span></span></label>
+							
+							
+							<label for="">时长：<span>6分58秒</span></label>
+							
+						</li>
+						<li>
+							<label for="">章节：<span></span></label>
+						</li>
+						
+						<li>
+							&nbsp;
+						</li>
+						<li>
+							<p><span>简介：</span>8月4号上传视频测试8</p>
+						</li>
+						<li>
+							&nbsp;
+						</li>
+						<li>
+							<label for="" class="mr20">播放次数：<span class="orange">160</span></label>
+							<label for="">收藏次数：<span class="orange">0</span></label>
+						</li>
+						<li>
+							
+								
+								
+									<label for="" class="mr20">下载次数：<span class="orange">8</span></label>
+								
+							
+							<label for="">查看次数：<span class="orange">160</span></label>
+						</li>
+					</ul>
+					<p class="btnP">
+						<span class="videoFormat">
+									<a href="javascript:;" class="videoBtn " onclick="myPlayer.playFile('/stxx2/front/highDefine/649.html')">高清</a>
+									<a href="javascript:;" class="videoBtn mr20" onclick="myPlayer.playFile('/stxx2/front/middleDefine/649.html')">普清</a>
+						</span>
+						<a href="javascript:choseDownload(649)" class="btn">下载</a>
+						<a href="javascript:;" onclick="favoriteResource()" class="orange">+收藏</a>
+					</p>
+					
+				</div>
+			<!-- </div> -->
+			</div>
+
+			<div class="clsPrimary">
+
+				<div class="clsBox yhpl">
+					<h4 class="container2-nav">
+						<b>相关课程</b>
+						<span></span>
+					</h4>
+					<!-- 图片滚动开始 -->
+					<div id="photo-scroll">
+						<a href="javascript:;" class="rollMenu" id="rollLeft"><img src="/public/img/index/homeTop/scroll-left.png" alt=""></a>
+						<a href="javascript:;" class="rollMenu" id="rollRight"><img src="/public/img/index/homeTop/scroll-right.png" alt=""></a>
+						<div id="rollBox">
+							<ul id="rollList">
+								<li onclick="showDetail(0)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图1.jpg" alt="" width="200" height="110"></a></li>
+								<li onclick="showDetail(1)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图2.jpg" alt="" width="200" height="110"></a></li>
+								<li onclick="showDetail(2)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图3.jpg" alt="" width="200" height="110"></a></li>
+								<li onclick="showDetail(3)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图4.jpg" alt="" width="200" height="110"></a></li>
+								<li onclick="showDetail(4)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图5.jpg" alt="" width="200" height="110"></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- 图片滚动结束 -->
+				</div>
+
+				<div class="clsBox yhpl">
+					<h4 class="container2-nav">
+						<b>用户评论</b>
+						<span></span>
+					</h4>
+					
+					<div id="commentNew">
+					</div>
+
+					<div class="leaveMsg" id="commentContainer">
+					</div>
+				</div>
+			</div>
+			<div class="clsSecondary">
+
+				<div class="clsBox xgkctj">
+					<h4 class="container2-nav">
+						<b>相关资源</b>
+						<span></span>
+					</h4>
+				
+					<div class="detailBox clearfix">
+						
+						
+						
+						
+						<a href="/stxx2/front/micro/view/524.html"><img src="../../image.html?id=524"></a>
+						<div class="detailMsg">
+							<ul>
+								<li>
+									<h5><a href="/stxx2/front/micro/view/524.html">要你命3016</a></h5>
+									<span>10.0分</span>
+								</li>
+								<li>
+									<label>查看次数：</label>
+									<span>15</span>
+									<span>2014-07-29</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="detailBox clearfix">
+					
+					
+					
+					
+						<a href="/stxx2/front/top/view/645.html"><img src="../../image.html?id=645"></a>
+						<div class="detailMsg">
+							<ul>
+								<li>
+									<h5><a href="/stxx2/front/top/view/645.html">8月4号上传视频测试4</a></h5>
+									<span>10.0分</span>
+								</li>
+								<li>
+									<label>查看次数：</label>
+									<span>286</span>
+									<span>2014-08-04</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="detailBox clearfix">
+						<a href="/stxx2/front/micro/view/458.html"><img src="../../image.html?id=458"></a>
+						<div class="detailMsg">
+							<ul>
+								<li>
+									<h5><a href="/stxx2/front/micro/view/458.html">要你命2</a></h5>
+									<span>9.0分</span>
+								</li>
+								<li>
+									<label>查看次数：</label>
+									<span>37</span>
+									<span>2014-07-29</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="detailBox clearfix">
+						<a href="/stxx2/front/top/view/648.html"><img src="../../image.html?id=648"></a>
+						<div class="detailMsg">
+							<ul>
+								<li>
+									<h5><a href="/stxx2/front/top/view/648.html">8月4号上传视频测试7</a></h5>
+									<span>8.2分</span>
+								</li>
+								<li>
+									<label>查看次数：</label>
+									<span>130</span>
+									<span>2014-08-04</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

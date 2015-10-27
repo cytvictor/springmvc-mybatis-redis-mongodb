@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css" />
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav netWorkNav">
+				作业中心
+			</h4>
+			<div class="otContent">
+				<ul class="commonSelect">
+					<li>
+						<input type="text">
+						<select name="" id="">
+							<option value="">全部</option>
+						</select>
+						<a href="javascript" class="btn bgGreen ml20">搜索</a>
+					</li>
+				</ul>
+
+				<table class="normalTable" id="otTable">
+					<tr>
+						<th>作业名称</th>
+						<th>发布时间</th>
+						<th>状态</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td>诗歌《离骚》讲解</td>
+						<td>2014-7-29</td>
+						<td>已批改</td>
+						<td>
+							<a href="checkHomework.shtml" class="blue">开始作业</a>
+						</td>
+					</tr>
+					<tr>
+						<td>诗歌《离骚》讲解</td>
+						<td>2014-7-29</td>
+						<td>待批改</td>
+						<td>
+							<a href="submitHomework.shtml" class="blue">查看作业</a>
+						</td>
+					</tr>
+					<tr>
+						<td>诗歌《离骚》讲解</td>
+						<td>2014-7-29</td>
+						<td>待布置</td>
+						<td>
+							<a href="javascript:;" class="blue">查看作业</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

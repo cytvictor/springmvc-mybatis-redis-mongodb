@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/myClass.css" />
+	<link rel="stylesheet" href="/public/css/department.css" />
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="departmentManage.shtml">&lt;&lt;返回</a>
+				帐号管理
+				<span class="navTab">
+					<a class="currTab" index="0" href="inform.shtml">帐号列表</a>
+					<a index="1" href="idManage.shtml">添加帐号</a>
+				</span>
+			</h4>
+			<div class="otContent classWrap">
+				<div class="classSide">
+					<div class="mainTeacher">
+						<h2 class="teaHead">省电教馆馆长</h2>
+						<div class="teaBox">
+							<dl>
+								<dt><a href="#"><img src="/stxx/public/img/common/avatar.jpg"></a></dt>
+								<dd>
+									<a title="老师方" href="#">老师方</a>
+									<p>化学</p>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="classMain">
+					<h2 class="stuHead">工作人员</h2>
+					<span class="stu_total">共<b class="orange">3</b>人</span>
+					<div class="stuCont">
+						<ul class="stuList clearfix">
+							<li><a href="#"><img src="/stxx/public/img/common/avatar.jpg">yaodaqing</a></li>
+							<li><a href="#"><img src="/stxx/public/img/common/avatar.jpg">学生4</a></li>
+							<li><a href="#"><img src="/stxx/public/img/common/avatar.jpg">学生3</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

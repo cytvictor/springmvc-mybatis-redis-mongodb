@@ -1,0 +1,45 @@
+<div class="mainInfo">
+	<h5>我的资料</h5>
+	<dl class="userIcon">
+		<dt>
+			<img width="80" height="80" src="/stxx/public/img/common/avatar.jpg">
+		</dt>
+		<dd><a onclick="switchTO(1)" href="javascript:;">修改头像</a></dd>
+	</dl>
+
+	<ul class="userInfo">
+		<li><label class="lbl">用户名:</label>100001<a href="javascript:;" class="blue ml20">修改</a></li>
+		<li><label class="lbl">真实姓名:</label>学生1</li>
+		<li><label class="lbl">学校:</label>苏州一中</li>
+		<li><label class="lbl">性别:</label>男</li>
+		<li><label class="lbl">年级:</label>高一</li>
+		<li><label class="lbl">班级:</label>1班</li>
+	</ul>
+</div>
+<div class="childInfo">
+	<h5>已绑定帐号</h5>
+	<dl class="childIcon">
+		<dt>
+			<img width="80" height="80" src="/stxx/public/img/common/avatar.jpg">
+		</dt>
+	</dl>
+	<div class="childrenMsg">
+		<span>张三</span>
+		<span>园区实验中学</span>
+		<span>高三(1)班</span>
+	</div>
+</div>
+<div class="bangding">
+	<h5>绑定新帐号</h5>
+	<ul>
+		<li>
+			<label class="lb1">帐号</label>
+			<input type="text">
+		</li>
+		<li>
+			<label class="lb1">密码</label>
+			<input type="text">
+		</li>
+	</ul>
+	<a href="javascript:;" class="btn">绑定</a>
+</div>

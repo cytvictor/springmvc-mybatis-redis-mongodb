@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/community.css">
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav homeNav">
+				我的互动
+				<span class="navTab">
+					<a href="home.html">最新动态</a>
+					<a href="friends.html">我的关注</a>
+					<a href="messages.html" class="currTab">私信</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="msgDetailContent messagesFeed ">
+					<h3 class="title"><a onclick="msgPage(1);" class="back" href="javascript:">&lt;&lt;返回</a>与 <span toid="4" id="spanToUid">杨教研员杨教研员</span> 的对话</h3>
+					<div class="sendMsgBox">
+						<textarea maxlength="350" cols="60" rows="3" id="txtContent"> </textarea>
+						<div class="addBox">
+							<a class="btn" id="msgSendBtn" href="javascript:;">发送</a>
+							<a class="addFace" id="faceBtn" href="javascript:;">表情</a>
+							<a class="addPic" href="javascript:;">
+								<span id="uploadImg">图片</span>
+							</a>
+							</div>
+					</div>
+					<ul id="showMoreMsg">
+						<li class="picItem" umid="441">
+							<div class="superPic">
+								<a target="_blank" href="/stxx/access/index.do?u=29" class="name">
+								<img src="/stxx/public/img/common/avatar.jpg" title="老师1"></a>
+							</div>
+							<div class="itemContent">
+								<i class="arrow"></i>
+								<p>规划局规划
+								<span class="lightbox">
+						   		</span>
+						   		</p>
+							</div>
+						</li>
+						<li class="picItem self" umid="238">
+							<div class="superPic">
+								<a target="_blank" href="#" class="name"><img src="/stxx/public/img/common/avatar.jpg" title="杨教研员杨教研员"></a>
+							</div>
+							<div class="itemContent">
+								<i class="arrow"></i>
+								<p>哈哈哈
+									<span class="lightbox"> </span>
+					       		</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+	//表情
+$("#faceBtn").click(function(event){
+	/* 第三个参数cdRoot放绝对路径；第四个参数cb可以放回调函数 */
+	smile.show(event,$id("txtContent"),'../../../'); 
+});
+
+
+
+//上传图片实例化
+var params = {
+	fileType : "*.jpg;*.gif;*.png;*.jpeg;*.bmp;",
+	typeDesc : "图片",
+	sizeLimit : 1024*1024,
+	server: ""
+};
+var callback = {
+	noticeTypeError : function(d){
+		console.log("文件类型错误：只支持以下文件类型：" + d[0]);
+	},
+	noticeSizeError : function(d){
+		console.log("上传文件过大：限制大小：" + (d[0]/1024/1024)+"MB");
+	},
+	onOpen : function(name){
+		console.log(name);
+	},
+	onCancel : function(v){
+		console.log("取消选择框",v);
+	},
+	onProgress : function(d){
+		console.log(d[0],d[1]);
+		console.log("完成百分比：" + (d[0]/d[1]*100 >>0)+"%");
+	},
+	onComplete : function(d){
+		console.log(d);
+	}
+};
+var uploadSwf = new UploadFile($id("uploadImg"), "uploadSwf", "../../../public/flash/uploadFile.swf",params,callback);
+</script>
+<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

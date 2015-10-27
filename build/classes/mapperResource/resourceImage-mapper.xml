@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.codyy.rrt.resource.mapper.ResourceImageMapper">
+		
+	<resultMap id="result" type="resourceImage">
+		<result property="id" column="RESOURCE_IMAGE_ID" />
+		<result property="resourceId" column="RESOURCE_ID" />
+		<result property="imageName" column="IMAGE_NAME" />
+	</resultMap>
+	
+	<!-- 根据资源Id查询资源图片 -->
+	<select id="findByResourceId" resultMap="result" parameterType="string">
+		SELECT * FROM RESOURCE_IMAGE WHERE RESOURCE_ID = #{resourceId}
+	</select>
+	
+	<!-- 添加资源图片 -->
+	<insert id="saveResourceImage" parameterType="resourceImage">
+		insert into RESOURCE_IMAGE(
+		RESOURCE_IMAGE_ID, RESOURCE_ID, IMAGE_NAME
+		)
+		values (
+		#{id}, #{resourceId, jdbcType=VARCHAR}, #{imageName, jdbcType=VARCHAR}
+		)
+	</insert>
+
+</mapper>

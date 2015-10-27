@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="common/meta.shtml"-->
+	<style>
+		.content h3{height: 1000px;width: 100px;border: 1px solid #ccc;margin-bottom: 20px;}
+	</style>
+</head>
+<body>
+	<!--#include virtual="common/header.shtml"-->
+	<div class="container" style="position:relative;">
+		<!--#include virtual="common/side.shtml"-->
+		<div class="content">
+			<h3 id="danxuan">1</h3>
+			<h3 id="duoxuan">2</h3>
+			<h3 id="hide" style="display:none;">hide</h3>
+			<h3 id="tiankong">3</h3>
+		</div>
+	</div>
+	<div id="fixed-target">
+		<a id="backToTop" href="#">
+			回到顶部
+		</a>
+		<ul class="target-list">
+			<li><a href="#danxuan" title="danxuan">单选题</a></li>
+			<li><a href="#duoxuan" title="duoxuan">多选题</a></li>
+			<li style="display:none;"><a href="#hide" title="hide">多选题</a></li>
+			<li><a href="#tiankong" title="tiankong">填空题</a></li>
+		</ul>
+		<a id="backToBottom" href="#footer">
+			回到底部
+		</a>
+	</div>
+	<!--#include virtual="common/footer.shtml"-->
+	<script>
+	//回到顶部、底部、作业锚点
+	(function(){
+		var leftPos = $(".container").offset().left + 1205;
+		$("#fixed-target").css({bottom: 179, left: leftPos});
+		function judgeHide() {
+			if ($(window).scrollTop() <= 0) {
+				$("#backToTop").hide();
+			} else {
+				$("#backToTop").show();
+			}
+			if ($("#footer")[0].getBoundingClientRect().top <= $(window).height() - $("footer").height()){
+				$("#backToBottom").hide();
+			} else {
+				$("#backToBottom").show();
+			}
+		}
+		judgeHide();
+	    $(window).scroll(function(){
+	    	judgeHide()
+	    	$(".content h3:visible").each(function(){
+			  	var rect = this.getBoundingClientRect() || '';
+			  	var top = rect.top;
+		  		var id = $(this).attr("id");
+			  	if (top <= 0) {
+			  		$(".target-list a").removeClass("active");
+			  		$(".target-list a[title='"+id+"']").addClass("active");
+			  	}
+		    });
+		    if ($(".content h3")[0].getBoundingClientRect().top > 0){
+		    	$(".target-list a").removeClass("active");
+		    }
+		});
+	})()
+	</script>
+</body>
+</html>

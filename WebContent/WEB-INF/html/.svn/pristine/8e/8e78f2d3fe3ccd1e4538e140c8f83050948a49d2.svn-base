@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<style>
+		.commonSelect select{margin-right: 40px;}
+	</style>
+</head>
+<body style="background-color: #fff !important;padding: 10px 20px">
+<ul class="detailBox noUnderline">
+	<ul class="commonSelect">
+		<li>
+			<label>学段：</label>
+			<select>
+				<option>请选择</option>
+				<option>高一</option>
+			</select>
+
+			<label>年级：</label>
+			<select>
+				<option>请选择</option>
+			</select>
+
+			<label>学科：</label>
+			<select>
+				<option>请选择</option>
+			</select>
+
+			<label>版本：</label>
+			<select>
+				<option>请选择</option>
+			</select>
+		</li>
+		<li>
+			<label>分册：</label>
+			<select>
+				<option>请选择</option>
+			</select>
+
+			<label>章节：</label>
+			<select>
+				<option>请选择</option>
+			</select>
+			
+			<label>习题类型：</label>
+			<select>
+				<option>请选择</option>
+			</select>
+			<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+		</li>
+	</ul>
+	<div class="singleChoice mt10 timu">
+		<ul>
+			<li class="title">1、离骚的作者是谁</li>
+			<li><label class="len60">选项A：</label>陶渊明</li>
+			<li><label class="len60">选项B：</label>李白</li>
+			<li><label class="len60">选项C：</label>屈原</li>
+			<li><label class="len60">选项D：</label>杜甫</li>
+		</ul>
+		<ul>
+			<li class="answer"><label>正确答案：</label><b>C</b> <label class="ml20">难度系数：</label><b class="orange">3</b></li>
+		</ul>
+		<div class="edit-bar">
+			<a href="javascript:;" class="btn bgBlue">加入作业</a>
+		</div>
+	</div>
+	<div class="singleChoice mt10 timu">
+		<ul>
+			<li class="title">1、离骚的作者是谁</li>
+			<li><label class="len60">选项A：</label>陶渊明</li>
+			<li><label class="len60">选项B：</label>李白</li>
+			<li><label class="len60">选项C：</label>屈原</li>
+			<li><label class="len60">选项D：</label>杜甫</li>
+		</ul>
+		<ul>
+			<li class="answer"><label>正确答案：</label><b>C</b> <label class="ml20">难度系数：</label><b class="orange">3</b></li>
+		</ul>
+		<div class="edit-bar">
+			<a href="javascript:;" class="btn bgBlue">加入作业</a>
+		</div>
+	</div>
+</ul>
+</body>
+</html>

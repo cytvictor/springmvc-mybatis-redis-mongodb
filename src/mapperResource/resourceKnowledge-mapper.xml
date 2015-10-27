@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.codyy.rrt.resource.mapper.ResourceKnowledgeMapper">
+		
+	<resultMap id="result" type="resourceKnowledge">
+		<result property="id" column="RESOURCE_KNOWLEDGE_ID" />
+		<result property="resourceId" column="RESOURCE_ID" />
+		<result property="baseSemesterId" column="BASE_SEMESTER_ID" />
+		<result property="baseDisciplineId" column="BASE_DISCIPLINE_ID" />
+		<result property="baseKnowledgeId" column="BASE_KNOWLEDGE_ID" />
+		<result property="firstBaseKnowledgeId" column="FIRST_BASE_KNOWLEDGE_ID" />
+		<result property="secondBaseKnowledgeId" column="SECOND_BASE_KNOWLEDGE_ID" />
+		<result property="thirdBaseKnowledgeId" column="THIRD_BASE_KNOWLEDGE_ID" />
+		<result property="fourthBaseKnowledgeId" column="FOURTH_BASE_KNOWLEDGE_ID" />
+		<result property="fifthBaseKnowledgeId" column="FIFTH_BASE_KNOWLEDGE_ID" />
+		<result property="sixthBaseKnowledgeId" column="SIXTH_BASE_KNOWLEDGE_ID" />
+	</resultMap>
+	
+	<!-- 保存资源的知识点 -->
+	<insert id="saveResourceKnowledge" parameterType="resourceKnowledge">
+		insert into RESOURCE_KNOWLEDGE(
+		RESOURCE_KNOWLEDGE_ID, RESOURCE_ID, BASE_SEMESTER_ID, BASE_DISCIPLINE_ID, BASE_KNOWLEDGE_ID, 
+		FIRST_BASE_KNOWLEDGE_ID, SECOND_BASE_KNOWLEDGE_ID, THIRD_BASE_KNOWLEDGE_ID,
+		FOURTH_BASE_KNOWLEDGE_ID, FIFTH_BASE_KNOWLEDGE_ID, SIXTH_BASE_KNOWLEDGE_ID
+		)
+		values (
+		#{id}, #{resourceId, jdbcType=VARCHAR}, #{baseSemesterId, jdbcType=VARCHAR},#{baseDisciplineId, jdbcType=VARCHAR},#{baseKnowledgeId, jdbcType=VARCHAR},
+		#{firstBaseKnowledgeId, jdbcType=VARCHAR},#{secondBaseKnowledgeId, jdbcType=VARCHAR},#{thirdBaseKnowledgeId, jdbcType=VARCHAR},
+		#{fourthBaseKnowledgeId, jdbcType=VARCHAR},#{fifthBaseKnowledgeId, jdbcType=VARCHAR},#{sixthBaseKnowledgeId, jdbcType=VARCHAR} 
+		)
+	</insert>
+	
+	<!-- 根据资源Id查询资源相关的知识点 -->
+	<select id="findByResourceId" parameterType="string" resultMap="result">
+		SELECT * FROM RESOURCE_KNOWLEDGE WHERE RESOURCE_ID = #{resourceId}
+	</select>
+	
+	<!-- 根据资源Id删除相关的知识点 -->
+	<delete id="deleteByResourceId" parameterType="string">
+		DELETE FROM RESOURCE_KNOWLEDGE WHERE RESOURCE_ID = #{resourceId}
+	</delete>
+</mapper>

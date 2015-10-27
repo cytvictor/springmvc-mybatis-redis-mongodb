@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				用户管理
+				<span class="navTab">
+					<a href="userManage.shtml" index="0">花名册</a>
+					<a href="classroomManage.shtml" index="1">班级管理</a>
+					<a href="teacherManage.shtml" class="currTab" index="2">教师管理</a>
+					<a href="studentManage.shtml" index="3">学生管理</a>
+					<a href="parentManage.shtml"  index="4">家长管理</a>
+				</span>
+			</h4>
+			<ul class="commonSelect">
+				<li>
+					<label>学段：</label>
+					<select>
+						<option>请选择</option>
+					</select>
+					<label class="ml40">入学年份：</label>
+					<select>
+						<option>请选择</option>
+					</select>
+					<label class="ml40">班级：</label>
+					<select>
+						<option>请选择</option>
+					</select>
+					<label class="ml40">学生姓名：</label>
+					<input type="text">
+					<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+				</li>
+				<li>
+					<span class="handleBar mb10">
+						<a href="addTeacher.shtml" class="btn">添加教师</a>
+						<a href="javascript:;" class="btn">批量添加</a>
+					</span>
+				</li>
+			</ul>
+			<table class="normalTable">
+				<tr>
+					<th>序号</th>
+					<th>手机号</th>
+					<th>学生姓名</th>
+					<th>学段</th>
+					<th>入学</th>
+					<th>班级</th>
+					<th>操作</th>
+				</tr>
+				<tr>
+					<td>01</td>
+					<td>15295617088</td>
+					<td>张力</td>
+					<td>高中</td>
+					<td>2013级</td>
+					<td>2班</td>
+					<td>
+						<a href="" class="blue mr10">编辑</a>
+						<a href="" class="red">锁定</a>
+					</td>
+				</tr>
+			</table>
+				
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

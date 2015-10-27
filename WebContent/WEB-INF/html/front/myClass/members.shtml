@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav myClassNav">
+				我的班级
+				<span class="navTab">
+					<a index="0" href="myClass.shtml">班级动态</a>
+					<a index="1" class="currTab" href="members.shtml">班级成员</a>
+				</span>
+			</h4>
+			<div class="otContent classWrap">
+				<div class="classSide">
+					<div class="mainTeacher">
+						<h2 class="teaHead">班主任</h2>
+						<div class="teaBox">
+							<dl>
+								<dt><a href="#"><img src="/stxx/public/img/common/avatar.jpg"></a></dt>
+								<dd>
+									<a href="#" title="老师方">老师方</a>
+									<p>化学</p>
+									<a href="">私信</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="otherTeacher">
+						<h2 class="teaHead">代课老师</h2>
+						<div class="teaBox">
+							<dl>
+								<dt><a href="#"><img src="/stxx/public/img/common/avatar.jpg"></a></dt>
+								<dd>
+									<a href="#" title="老师方">老师方</a>
+									<p>化学</p>
+									<a href="">私信</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href="#"><img src="/stxx/public/img/common/avatar.jpg"></a></dt>
+								<dd>
+									<a href="#" title="老师方">老师方</a>
+									<p>化学</p>
+									<a href="">私信</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href="#"><img src="/stxx/public/img/common/avatar.jpg"></a></dt>
+								<dd>
+									<a href="#" title="老师方">老师方</a>
+									<p>化学</p>
+									<a href="">私信</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!--div class="classMain">
+					<h2 class="stuHead">班级同学</h2>
+					<span class="stu_total">共<b class="orange">3</b>人</span>
+					<div class="stuCont">
+						<ul class="stuList clearfix">
+							<li>
+								<a href="#"><img src="/public/img/index/testImg/studentPhoto.png">李璐</a>
+							</li>
+							<li>
+								<a href="#"><img src="/stxx/public/img/common/avatar.jpg">学生4</a>
+							</li>
+							<li>
+								<a href="#"><img src="/stxx/public/img/common/avatar.jpg">学生3</a>
+							</li>
+						</ul>
+					</div>
+				</div-->
+				<div class="classMain">
+						<h2 class="stuHead">班级同学</h2>
+						<span class="stu_total">共<b class="orange">33</b>人</span>
+						<div class="stuCont clearfix">
+							<div class="stuLeftList">
+								<h2 class="stuHead stuLeftListHead"><input type="checkbox"> 全选 <span class="stuLeftGroup">修改分组：<select></select></span></h2>
+								<ul>
+									<li>
+										<input type="checkbox"> 
+										<a  href="/rrt_henan/front/visitor/visitorIndex.html?id=ff80808147fd49510147fd4b33760000">
+											<img src="/rrt_henan/ImageServlet/1099e566-bb12-408c-8a6d-71589b0656a6.jpg"  >
+										</a>
+										<span class="stuLeftUName">段誉</span> 分组：<select><option>请选择<option></select> <span class="stuLeftSMS coloBlue">发私信</span>
+									</li>
+									<li>
+										<input type="checkbox"> 
+										<a  href="/rrt_henan/front/visitor/visitorIndex.html?id=ff80808147fd49510147fd4b33760000" >
+											<img src="/rrt_henan/ImageServlet/1099e566-bb12-408c-8a6d-71589b0656a6.jpg"  >
+										</a>
+										<span class="stuLeftUName">段誉</span> 分组：<select><option>请选择<option></select> <span class="stuLeftSMS coloBlue">发私信</span>
+									</li>
+								</ul>
+							</div>
+							<div class="stuRightList">
+								<h2 class="stuHead stuLeftListHead">全部（<span class="coloBlue">48</span>人）</h2>
+								<ul>
+									<li class="sel">优秀（<span class="coloBlue">48</span>人）<div class="stuLeftDel"></div><div class="stuLeftModify"></div></li>
+									<li>良好（<span class="coloBlue">48</span>人）<div class="stuLeftDel"></div><div class="stuLeftModify"></div></li>
+									<li>较差（<span class="coloBlue">48</span>人）<div class="stuLeftDel"></div><div class="stuLeftModify"></div></li>
+									<li>未分组（<span class="coloBlue">48</span>人）<div class="stuLeftDel"></div><div class="stuLeftModify"></div></li>
+								</ul>
+								<ul>
+									<li>添加分组<span class="coloBlue stuLeftAdd">添加</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+<!--#include virtual="../common/footer.shtml"-->
+<div class="parentTip">
+	<h6>家长</h6>
+	<div class="parentMsg">
+		<a href="#"><img src="/public/img/index/testImg/tcPhoto.png" /></a>
+		<a href="">李璐父亲</a>
+	</div>
+	<div class="parentMsg">
+		<a href="#"><img src="/public/img/index/testImg/tcPhoto.png" /></a>
+		<a href="#">李璐母亲</a></dt>
+	</div>
+</div>
+<script>
+	var show = function(p) {
+		$(".parentTip").css({"left": (p.left+60), "top": (p.top+60), "display":"block"});
+	}
+
+	var hide = function() {
+		$(".parentTip").css("display","none");
+	}
+
+	var _m,_t;
+	$(".stuList li img").hover(function(){
+		var p = $(this).offset();
+		_t = setTimeout(function(){show(p)}, 800);
+		clearTimeout(_m);
+	}, function(){
+		clearTimeout(_t);
+		_m = setTimeout(function(){hide()}, 500);
+	});
+
+	$(".parentTip").bind("mouseover",function(){
+		clearTimeout(_m);
+		$(this).css("display", "block");
+	});
+	$(".parentTip").bind("mouseout",function(){
+		$(this).css("display", "none");
+	});
+
+	var parentTip = (function () {
+		var $elm = 
+		return {
+    		init: function () {
+
+    		}
+		}
+	})();
+</script>
+</body>
+</html>

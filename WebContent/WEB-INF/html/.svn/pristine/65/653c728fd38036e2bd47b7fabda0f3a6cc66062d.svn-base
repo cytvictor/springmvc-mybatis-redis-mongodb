@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav otherschoolNav">
+				<a class="backup" href="javascript:;" onclick="history.back();">&lt;&lt;返回</a>
+				分校管理
+			</h4>
+			<div class="otContent">
+				<table class="normalTable">
+					<tr>
+						<th>学校名称</th>
+						<th>学段</th>
+						<th>联系人</th>
+						<th>联系电话</th>
+						<th>创建时间</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td>新密市嵩山路小学</td>
+						<td>小学</td>
+						<td>郭青青</td>
+						<td>0371-66668888</td>
+						<td>2014-08-21 18:37</td>
+						<td>
+							<a href="check.shtml" class="blue">查看</a>&nbsp;&nbsp;
+							<a href="javascript:;" class="blue">编辑</a>&nbsp;&nbsp;
+							<a href="javascript:;" class="red">锁定</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

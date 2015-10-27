@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side-visitor.shtml"-->
+		<div class="content">
+			<h4 class="contentNav resourceContentNav">
+				<a class="btn testZj" href="uploadResource.shtml">上传资源</a>
+				资源管理
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">上传的资源</a>
+					<a href="javascript:;" index="1">收藏的资源</a>
+				</span>
+			</h4>
+
+			<div class="otContent">
+				<div class="tabBox shareExam currBox">
+					<ul class="commonSelect">
+						<li>
+							<label>创建时间：</label>
+							<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="timeInput"/>
+							至：
+							<input type="text" class="timeInput"/>
+							<label>学段：</label>
+							<select>
+								<option>请选择</option>
+								<option>高一</option>
+							</select>
+							<label>学科：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>年级：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>分册：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+						</li>
+						<li>
+							<label>知识点：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>名称：</label>
+							<input type="text" placeholder="请输入您要搜索的资源名称" class="searchInput" />
+							<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+						</li>
+					</ul>
+					
+					<span class="contentInNav">
+						<a href="javascript:;" class="selected" index="0">精品课</a>
+						<a href="javascript:;" index="1">微课</a>
+						<a href="javascript:;" index="2">元资源</a>
+					</span>
+					<div class="sourceList clearfix">
+						<a href="playMovie.shtml" class="sourcePhoto">
+							<img src="/public/img/index/testImg/test.png" width="150" height="90";>
+						</a>
+						<div class="sourceDetail xelIcon">
+							<div class="sourceEdit">
+								<a href="javascript:;" class="">删除资源</a>
+								<a href="javascript:;" class="">修改分类</a>
+								<a href="javascript:;" class="">推荐给学校</a>
+								<a href="javascript:;" class="">分发给学生</a>
+							</div>
+							<ul>
+								<li class="name">
+									<label>资源名称：</label>
+									<span>高三数学模拟考试</span>
+								</li>
+								<li>
+									<label>学科：</label>
+									<span>数学</span>
+								</li>
+								<li>
+									<label>评分：</label>
+									<span class="star-rating">
+										<span class="current-rating star1">
+										</span>
+									</span>
+									<b class="red">1</b>分
+								</li>
+								<li>
+									<label>下载次数：</label>
+									<span>111次</span>
+									<label>上传时间：</label>
+									<span>2013年5月20日 9:23:22</span>
+								</li>
+							</ul>
+						</div>
+						<div class="sourceState">
+							<span class="red waitCheck">待审核</span>
+							<span><a href="" class="red deleteSource">删除</a></span>
+						</div>
+					</div>
+
+					<div class="sourceList clearfix hidden">
+						微课
+					</div>
+
+					<div class="sourceList clearfix hidden">
+						元资源
+					</div>
+
+				</div>
+
+				<div class="tabBox">收藏的资源</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+<script>
+	$(".contentInNav").delegate("a", "click", function(){
+		var i = $(this).attr("index");
+		$(".contentInNav .selected").removeClass("selected");
+		$(this).addClass("selected");
+		$(".sourceList").addClass("hidden").eq(i).removeClass("hidden");
+	})
+</script>
+</body>
+</html>

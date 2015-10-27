@@ -1,0 +1,28 @@
+@charset "utf-8";
+.header{background: #59d76e;}
+.side .userMsg{background: #59d76e;}
+.side .userPhoto .userName{background: #28ac3e;}
+.sideNav li a:hover,
+.sideNav li a.selected{background-color: #28ac3e;border-right-color: #28f4fb;}
+
+.countDown{position:absolute;right:0;top:5px;background-color: #ef9b0f;border: 1px dashed #f00;padding: 2px 5px;line-height:21px;}
+.countDown span{color: #fff;}
+.onlineTestDetail li{font-size: 14px;height: 40px;line-height: 40px;}
+.testPart{padding-left: 0;}
+.testPart h4{font-size: 16px;height: 30px;}
+.testDifficulty {margin-left: 100px;}
+.subjectiveItem img{position: static;padding-left: 20px;}
+
+.iAsk{float: right;}
+
+.answerAgain h5{border-bottom: 1px solid #ccc;padding: 20px;}
+
+.contentInNav a.selected{background: #28ac3e;color: #fff;}
+
+/*答疑教室*/
+.qsClassroom{margin: 0 auto;width: 810px;}
+.qsBox{width: 240px;height: 120px;padding: 10px;background: #59d76e;position: relative;float: left;margin-right: 10px;margin-bottom: 10px;}
+.qsBox dl{width: 110px;height:110px;float: left;text-align: center;color: #fff;padding: 27px 10px 5px 0;word-break: break-all;overflow: hidden;font-size: 16px;}
+.qsBox dl dt{height: 25px;overflow: hidden;margin-bottom: 10px;}
+.qsBox dl dd{height: 50px;overflow: hidden;}
+.qsBox img{vertical-align: middle;}

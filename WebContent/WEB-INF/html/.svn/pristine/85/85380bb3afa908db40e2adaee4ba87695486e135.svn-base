@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>精品课程</title>
+<!--#include virtual="/html/front/common/meta.shtml"-->
+<link rel="stylesheet" href="/public/css/index/index.css">
+<script type="text/javascript" src="/public/js/photoScroll.js"></script>
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container" style="margin:0 auto;padding:0;">
+		<div class="content clearfix" style="background-color: #fcfcfc;">
+			<div class="top clearfix mb10">
+				<div class="primary">
+					<h4>小学</h4>
+					<ul>
+						<li class="first-list"><a href="javascript:;">一年级</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+						<li class="first-list"><a href="javascript:;">二年级</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+						<li class="first-list"><a href="javascript:;">三年级</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+						<li class="first-list"><a href="javascript:;">四年级</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+						<li class="first-list"><a href="javascript:;">五年级</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+						<li class="first-list border-none"><a href="javascript:;">六年级</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+					</ul>
+					<h4>初中</h4>
+					<ul>
+						<li class="first-list"><a href="javascript:;">七年级</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+						<li class="first-list"><a href="javascript:;">八年级</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+						<li class="border-none first-list"><a href="">九年级</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+					</ul>
+					<h4>高中</h4>
+					<ul>
+						<li class="first-list"><a href="javascript:;">高一</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+						<li class="first-list"><a href="javascript:;">高二</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+						<li class="border-none first-list"><a href="">高三</a>
+							<ul class="second-list">
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+								<li><b class="red">语 文</b><a href="#">上册 </a>|<a href=""> 下册</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="secondary">
+					<div class="information-top clearfix">
+						<div class="photo" id="view0">
+							<a href="http://zbzy.hner.cn/SPM/Pc/themes/default/prog_edu.aspx?id=26" target="_blank">
+								<img src="/public/img/index/homeTop/精品课程_轮播图1.jpg" alt="" />
+							</a>
+						</div>
+						<div class="photo" id="view1">
+							<a href="http://zbzy.hner.cn/SPM/Pc/themes/default/prog_edu.aspx?id=36" target="_blank">
+								<img src="/public/img/index/homeTop/精品课程_轮播图2.jpg" alt="" />
+							</a>
+						</div>
+						<div class="photo" id="view2">
+							<a href="http://zbzy.hner.cn/SPM/Pc/themes/default/prog_edu.aspx?id=35" target="_blank">
+								<img src="/public/img/index/homeTop/精品课程_轮播图3.jpg" alt="" />
+							</a>
+						</div>
+						<div class="photo" id="view3">
+							<a href="http://zbzy.hner.cn/SPM/Pc/themes/default/prog_edu.aspx?id=25" target="_blank">
+								<img src="/public/img/index/homeTop/精品课程_轮播图4.jpg" alt="" />
+							</a>
+						</div>
+						<div class="photo" id="view4">
+							<a href="http://zbzy.hner.cn/SPM/Pc/themes/default/prog_edu.aspx?id=47" target="_blank">
+								<img src="/public/img/index/homeTop/精品课程_轮播图5.jpg" alt="" />
+							</a>
+						</div>
+						<div class="class-information">
+							<h4>课程信息</h4>
+							<ul>
+								<li>
+									<label for="" class="left">评分：<span>star</span></label>
+									<label for=""><span class="orange">9.6分</span></label>
+								</li>
+								<li>
+									<label for="" class="left">学段：<span>初中</span></label>
+									<label for="">知识点：<span>汉语言文学</span></label>
+								</li>
+								<li>
+									<label for="" class="left">学科：<span>语文</span></label>
+									<label for="">发布人：<span>SPRING</span></label>
+								</li>
+								<li>
+									<label for="" class="left">年级：<span>初一</span></label>
+									<label for="">发布时间：<span>6月8日 16:00</span></label>
+								</li>
+								<li>
+									<label for="" class="left">分册：<span>上册</span></label>
+									<label for="">时长：<span>120分钟</span></label>
+								</li>
+								<li>
+									<label for="">章节：<span>离骚</span></label>
+								</li>
+								<li>
+									<p><span>简介：</span>该资源该资源该资源该资源该资源该资源该资源该资源该资源该资源该资源</p>
+								</li>
+							</ul>
+							<p class="submitBtn"><a href="watch-detail.shtml" class="btn" target="_blank">马上观看</a></p>
+						</div>
+					</div>
+					<!-- 图片滚动开始 -->
+					<div id="photo-scroll">
+						<a href="javascript:;" class="rollMenu" id="rollLeft"><img src="/public/img/index/homeTop/scroll-left.png" alt=""></a>
+						<a href="javascript:;" class="rollMenu" id="rollRight"><img src="/public/img/index/homeTop/scroll-right.png" alt=""></a>
+						<div id="rollBox">
+							<ul id="rollList">
+								<li onclick="showDetail(0)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图1.jpg" alt="" width="200" height="110"></a></li>
+								<li onclick="showDetail(1)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图2.jpg" alt="" width="200" height="110"></a></li>
+								<li onclick="showDetail(2)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图3.jpg" alt="" width="200" height="110"></a></li>
+								<li onclick="showDetail(3)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图4.jpg" alt="" width="200" height="110"></a></li>
+								<li onclick="showDetail(4)"><a href="javascript:;" ><img src="/public/img/index/homeTop/精品课程_轮播图5.jpg" alt="" width="200" height="110"></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- 图片滚动结束 -->
+				</div>
+			</div>
+			<!-- 小学 -->
+			<div class="container2 clearfix">
+				<div class="container2-primary">
+					<h4 class="container2-nav">
+						<b>小学</b>
+						<span>
+							<a href="">一年级</a>
+							<a href="">二年级</a>
+							<a href="">三年级</a>
+							<a href="">四年级</a>
+							<a href="">五年级</a>
+							<a href="">六年级</a>
+							<a href="more.shtml" class="more" style="float:right;">更多</a>
+						</span>
+					</h4>
+					<div class="pic">
+						<div class="col1">
+							<a href="#" class="picBox bigBox"><img src="/public/img/index/homeTop/test/j1.jpg" alt="" /><span>小学英语读写1+1</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j4.jpg" alt="" /><span>小升初：考前12堂必修课</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j5.jpg" alt="" /><span>小学二年级：数学口算题卡</span></a>
+						</div>
+						<div class="col2">
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j2.jpg" alt="" /><span>小学英语知识大全</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j6.jpg" alt="" /><span>小学三年级：优秀作文辅导</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j8.jpg" alt="" /><span>小学三年级：英语单词快速...</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j3.jpg" alt="" /><span>英语大串讲</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j7.jpg" alt="" /><span>小学英语：新概念英语（上）</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j9.jpg" alt="" /><span>小学六年级：英语作文 </span></a>
+						</div>
+					</div>
+				</div>
+				<div class="container2-secondary">
+					<h4>下载排行榜</h4>
+					<ul>
+						<li><span class="num">4050</span><span class="top3">1</span><a href="">小学定式与变式的写作技巧</a></li>
+						<li><span class="num">4001</span><span class="top3">2</span><a href="">初中化学论文：三类气体和金...</a></li>
+						<li><span class="num">3600</span><span class="top3">3</span><a href="">高中英语单词拓展及记忆方法</a></li>
+						<li><span class="num">3478</span><span class="next">4</span><a href="">小六小学思维训练</a></li>
+						<li><span class="num">2897</span><span class="next">5</span><a href="">小学拼音单词拓展</a></li>
+						<li><span class="num">1566</span><span class="next">6</span><a href="">小学易错词辨析</a></li>
+						<li><span class="num">1234</span><span class="next">7</span><a href="">拼音单词拓展</a></li>
+						<li><span class="num">1009</span><span class="next">8</span><a href="">一年级数学知识点讲解</a></li>
+						<li><span class="num">566</span><span class="next">9</span><a href="">易错词辨析</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 初中 -->
+			<div class="container2 clearfix">
+				<div class="container2-primary">
+					<h4 class="container2-nav">
+						<b>初中</b>
+						<span>
+							<a href="">七年级</a>
+							<a href="">八年级</a>
+							<a href="">九年级</a>
+						</span>
+					</h4>
+					<div class="pic">
+						<div class="col1">
+							<a href="#" class="picBox bigBox"><img src="/public/img/index/homeTop/test/j27.jpg" alt="" /><span>初一地理 精讲</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j10.jpg" alt="" /><span>初一数学（一）</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j11.jpg" alt="" /><span>初二数学：菱形和正方形（下）</span></a>
+						</div>
+						<div class="col2">
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j12.jpg" alt="" /><span>初一历史 精讲</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j14.jpg" alt="" /><span>初一地理 精讲</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j16.jpg" alt="" /><span>初三英语：介词考点真题训练</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j13.jpg" alt="" /><span>初一生物 精讲</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j15.jpg" alt="" /><span>化学 二氧化碳</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j17.jpg" alt="" /><span>初二数学 精讲</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="container2-secondary">
+					<h4>下载排行榜</h4>
+					<ul>
+						<li><span class="num">14000</span><span class="top3">1</span><a href="">2014年初一年级语文</a></li>
+						<li><span class="num">13567</span><span class="top3">2</span><a href="">初中七年级语文下册</a></li>
+						<li><span class="num">12432</span><span class="top3">3</span><a href="">2014年初二年级数学</a></li>
+						<li><span class="num">9800</span><span class="next">4</span><a href="">思维品德2014年七年级下册</a></li>
+						<li><span class="num">8800</span><span class="next">5</span><a href="">初一英语下册</a></li>
+						<li><span class="num">7689</span><span class="next">6</span><a href="">七年级政治上册第二单元</a></li>
+						<li><span class="num">6789</span><span class="next">7</span><a href="">七年级政治上册第一单元</a></li>
+						<li><span class="num">5643</span><span class="next">8</span><a href="">七年级政治上册第三单元</a></li>
+						<li><span class="num">1400</span><span class="next">9</span><a href="">14年初中语文同步知识点</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 高中 -->
+			<div class="container2">
+				<div class="container2-primary">
+					<h4 class="container2-nav">
+						<b>高中</b>
+						<span>
+							<a href="">高一</a>
+							<a href="">高二</a>
+							<a href="">高三</a>
+						</span>
+					</h4>
+					<div class="pic">
+						<div class="col1">
+							<a href="#" class="picBox bigBox"><img src="/public/img/index/homeTop/test/j18.jpg" alt="" /><span>高一化学计算（二）</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j19.jpg" alt="" /><span>高中写作经典精讲</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j20.jpg" alt="" /><span>高三语文：用积木来写议论文</span></a>
+						</div>
+						<div class="col2">
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j21.jpg" alt="" /><span>高一物理：万有引力定律（上）</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j23.jpg" alt="" /><span>高三地理（下）</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j25.jpg" alt="" /><span>高三英语（上）</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j22.jpg" alt="" /><span>高二历史：中国传统文化主...</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j24.jpg" alt="" /><span>高三生物 精讲</span></a>
+							<a href="#" class="picBox smallBox"><img src="/public/img/index/homeTop/test/j26.jpg" alt="" /><span>高考英语讲座</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="container2-secondary">
+					<h4>下载排行榜</h4>
+					<ul>
+						<li><span class="num">12325</span><span class="top3">1</span><a href="">高中语文第2课《雨巷》</a></li>
+						<li><span class="num">20566</span><span class="top3">2</span><a href="">高中语文第2课《再别康桥》</a></li>
+						<li><span class="num">1522</span><span class="top3">3</span><a href="">高中语文第2课《大堰河》</a></li>
+						<li><span class="num">852</span><span class="next">4</span><a href="">高中历史《第四单元复习》</a></li>
+						<li><span class="num">145</span><span class="next">5</span><a href="">高中历史第四单元《鸦片战争》</a></li>
+						<li><span class="num">88</span><span class="next">6</span><a href="">高中化学专题1第二单元《离子键》</a></li>
+						<li><span class="num">45</span><span class="next">7</span><a href="">高中化学专题2第三单元《化学电源》</a></li>
+						<li><span class="num">30</span><span class="next">8</span><a href="">高中英语《Friendship》</a></li>
+						<li><span class="num">20 </span><span class="next">9</span><a href="">高中英语《Travel journal》</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+
+<script>
+	$(document).ready(function(){
+		$(".first-list").hover(
+			function(){
+				$(this).css("background-color","#fff").children(".second-list").show();
+			},
+			function(){
+				$(this).css("background-color","#f2f2f2").children(".second-list").hide();
+			}
+		)
+	})
+</script>
+<script>
+	function showDetail(id){
+		$(".information-top .photo").hide();
+		$("#view" + id).show();
+
+		var watchUrl = $('#view' + id + ' a').attr('href');
+		$('.class-information' + ' .btnP a').attr('href', watchUrl);
+	}
+	showDetail(0);
+	$(document).ready(function(){
+		events.addEvent(window,"load",function(){
+			scrollHori.init();
+			autoPlay.init();
+		});
+		$("#rollList li:first").addClass("selected");
+		$("#rollList li").click(function(){
+			$(this).addClass("selected").siblings("li").removeClass("selected");
+		});
+		
+		
+		//登陆、记录弹出框
+		$("#login").click(function(event){
+			event.stopPropagation();
+			$(".loginTip").toggle();
+			$("#login").toggleClass("selected");
+		});
+		$("#record").click(function(event){
+			event.stopPropagation();
+			$(".recordTip").toggle();
+			$("#record").toggleClass("selected");
+		});
+		$("body").click(function(){
+			if($(".loginTip")){
+				$(".loginTip").css("display","none");
+				$(".recordTip").css("display","none");
+				$("#login").removeClass("selected");
+				$("#record").removeClass("selected");
+			} else {
+				$("#login").addClass("selected");
+				$("#record").addClass("selected");
+			}
+		})
+	});
+</script>
+</body>
+</html>

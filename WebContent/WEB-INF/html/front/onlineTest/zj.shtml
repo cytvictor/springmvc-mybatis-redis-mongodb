@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content" id="select-wrap">
+			<h4 class="contentNav">
+				<a class="backup" href="javascript:;" onclick="history.back();">&lt;&lt;返回</a>
+				组卷
+			</h4>
+
+			<ul class="detailBox mt20">
+				<li>
+					<label class="cName lh30"><b class="red"></b>试卷名称：</label>
+					<input type="text" class="titleName testName" style="margin-right: 0;" /> <span class="blue fs12">（字数限制30个汉字以内）</span>
+				</li>
+				<li>
+					<label class="cName"><span class="must-star">*</span>学段：</label>
+					<select>
+						<option>请选择</option>
+					</select>
+
+					<label><span class="must-star">*</span>学科：</label>
+					<select>
+						<option>请选择</option>
+					</select>
+				</li>
+				<li>
+					<label class="cName">试卷名称：</label>
+					<select style="width: 135px;">
+						<option>选择试卷类型</option>
+					</select>
+
+					<label>答题时间：</label>
+					<input type="text" style="margin-right: 0;"> 分钟
+					
+					<label style="margin-left:15px;">试卷总分：</label>
+					<input type="text" style="margin-right:0;"> 分
+				</li>
+				<li>
+					<label class="cName" style="color: #444;"><b>选择习题：</b></label>
+					<p class="cCont">（请选择需要生成试卷的习题）</p>
+				</li>
+				
+				<li>
+					<label class="cName">选题方式：</label>
+					<div class="cCont select-exercise-style">
+						<a href="javascript:;" class="selected" index="0">知识点选题</a>
+						<a href="javascript:;" index="1">同步章节选题</a>
+						<a href="javascript:;" index="2">智能选题</a>
+						<a href="javascript:;" index="3">我的习题库选题</a>
+						<a href="javascript:;" index="4">错题本选题</a>
+					</div>
+				</li>
+			</ul>
+
+			<!--#include virtual="zj-box/zj-box-1.shtml"-->
+			<!--#include virtual="zj-box/zj-box-2.shtml"-->
+			<!--#include virtual="zj-box/zj-box-3.shtml"-->
+			<!--#include virtual="zj-box/zj-box-4.shtml"-->
+			<!--#include virtual="zj-box/zj-box-5.shtml"-->
+			
+			<div class="submitBtn">
+				<a href="javascript:;" class="btn setup-btn" style="padding-top: 5px;padding-bottom:5px;font-size:16px;">下一步设置单题分值</a>
+			</div>
+		</div>
+
+		<div id="setup-wrap" class="content hidden">
+			<h4 class="contentNav">
+				<a class="backup select-btn" href="javascript:;">&lt;&lt;返回</a>
+				设置分值
+			</h4>
+			<div class="testPart">
+				<ul class="testMsg">
+					<li class="mb20">
+						<span>试卷标题：汉语言文学</span>
+						<span>学段：初中</span>
+						<span>学科：语文</span>
+					</li>
+					<li class="mb10">
+						<span>试卷类型：期中考试</span>
+						<span>答题时间：120分钟</span>
+					</li>
+					<li class="mb10">
+						<span style="margin-right:20px;">批量设置媒体分值：单选题(3题) <input type="text" style="width:40px;" /> 分</span>
+						<span style="margin-right:20px;">多选题(1题)：<input type="text" style="width:40px;" /> 分</span>
+						<span style="margin-right:20px;">填空题(1题)：<input type="text" style="width:40px;" /> 分</span>
+						<span style="margin-right:10px;">解答题(1题)：<input type="text" style="width:40px;" /> 分</span>
+						<a href="javascript:;" class="btn">设定</a>
+					</li>
+					<li class="mb10">
+						<span>试卷总分：</b><b class="orange">100</b>分</span>
+						<span>已设置：</b><b class="orange">36</b>分</span>
+						<span>未设置：</b><b class="orange">64</b>分</span>
+					</li>
+				</ul>
+
+				<h5>一、单选题</h5>
+				<div class="text-box">
+					<div class="info">
+						<span>组卷次数： <span class="red">48</span></span>
+						<span class="mr">知识点：5.9有理数的混合运算</span>
+						<span class="mr">难易度：<span class="red">9</span></span>
+						<div><span class="mr">更新日期：2014-06-05</span></div>
+					</div>
+					<div class="text">
+						<div class="title">
+							已知世运会、亚运会、奥运会分别于公元2009年、2010年、2012年举办，若这三项运动会均每四年举办一次，则这三项运动会均不在下列哪一年举办？（）
+						</div>
+						<ul class="select">
+							<li>A . 公元2070年</li>
+							<li>B . 公元2071年</li>
+							<li>C . 公元2072年</li>
+							<li>D . 公元2073年</li>
+						</ul>
+					</div>
+					<p class="answer"><b>【答案】 B</b></p>
+					解析：
+					<div class="answer-analyze">
+						
+					</div>
+					<div class="edit-bar">
+						设分值：<input type="text" style="width:40px;">
+						<a href="javascript:;" class="move move-up">上移</a>
+						<a href="javascript:;" class="move move-down">下移</a>
+						<a href="javascript:;" class="remove btn bgRed ml20">移出试卷</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+<script>
+	//左侧导航
+	$('.left-nav .title').click(function(){
+		$(this).next('.cont').toggle();
+		if($(this).prev().hasClass('arr-1')){
+			$(this).prev().removeClass('arr-1').addClass('arr-2');
+		} else {
+			$(this).prev().removeClass('arr-2').addClass('arr-1');
+		}
+		return false;
+	});
+	$('.left-nav .arr').click(function(){
+		$(this).siblings('.cont').toggle();
+		if($(this).hasClass('arr-1')){
+			$(this).removeClass('arr-1').addClass('arr-2');
+		} else {
+			$(this).removeClass('arr-2').addClass('arr-1');
+		}
+		return false;
+	});
+
+	$('.select-exercise-style a').click(function(){
+		var index = $(this).attr('index');
+		$('.select-exercise-style a').removeClass('selected');
+		$(this).addClass('selected');
+		$('.select-exercise-box').hide().eq(index).show();
+	});
+
+	//设置分值页面切换
+	$(".setup-btn").click(function(){
+		$("#select-wrap").addClass("hidden");
+		$("#setup-wrap").removeClass("hidden");
+	});
+	$(".select-btn").click(function(){
+		$("#select-wrap").removeClass("hidden");
+		$("#setup-wrap").addClass("hidden");
+	});
+
+	// 已选题目悬浮框
+	$(window).scroll(function(){
+		var h = $("html").scrollTop();
+		var info = $(".left-nav .info");
+		var left = $(".left-nav").offset().left;
+		alert(left);
+		var top = $(".left-nav").offset().top;
+		if (h >= 764) {
+			info.css({
+				position: "fixed",
+				top: 0,
+				left: left
+			});
+		} else {
+			info.css({
+				position: "absolute",
+				left: 0,
+				top: 320
+			});
+		}
+	});
+</script>
+</body>
+</html>

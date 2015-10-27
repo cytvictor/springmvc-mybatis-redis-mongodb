@@ -1,0 +1,16 @@
+<div id="avatar" class="setbox set_avatar">
+	<div class="ori_avatar">
+		<p>当前头像：</p>
+		<img width="120" height="120" src="s" id="myAvatar">
+	</div>
+	<div class="edit_avatar">
+		<p>编辑头像：</p>
+		<embed width="450" height="358" wmode="transparent" src="../../../public/flash/upavatar.swf?server=/stxx/home/uploadAvatar.do">
+	</div>
+</div>
+<script>
+function setAvatarURL(url){
+	//upavatar.swf 成功后调用；
+	$id("myAvatar").src = url +"?="+window.random();
+}
+</script>

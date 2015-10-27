@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				用户管理
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">花名册</a>
+					<a href="classroomManage.shtml" index="1">班级管理</a>
+					<a href="teacherManage.shtml" index="2">教室管理</a>
+					<a href="studentManage.shtml" index="3">学生管理</a>
+					<a href="parentManage.shtml" index="4">家长管理</a>
+				</span>
+			</h4>
+			<div class="otContent newsWrap">
+				<div class="classBox">
+					<h5>班级</h5>
+					<a href="javascript:;" class="selected">高一(1)班</a>
+					<a href="javascript:;">高一(1)班</a>
+					<a href="javascript:;">高一(1)班</a>
+					<a href="javascript:;">高一(1)班</a>
+					<a href="javascript:;">高一(1)班</a>
+					<a href="javascript:;">高一(1)班</a>
+					<a href="javascript:;">高一(1)班</a>
+					<a href="javascript:;">高一(1)班</a>
+					<a href="javascript:;">高一(1)班</a>
+				</div>
+				<div class="classSide">
+					<div class="mainTeacher">
+						<h2 class="teaHead">班主任</h2>
+						<div class="teaBox">
+							<dl>
+								<dt><a href="#"><img src="/stxx/public/img/common/avatar.jpg"></a></dt>
+								<dd>
+									<a title="老师方" href="#">老师方</a>
+									<p>化学</p>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="otherTeacher">
+						<h2 class="teaHead">代课老师</h2>
+						<div class="teaBox">
+							<dl>
+								<dt><a href="#"><img src="/stxx/public/img/common/avatar.jpg"></a></dt>
+								<dd>
+									<a title="老师方" href="#">老师方</a>
+									<p>化学</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href="#"><img src="/stxx/public/img/common/avatar.jpg"></a></dt>
+								<dd>
+									<a title="老师方" href="#">老师方</a>
+									<p>化学</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt><a href="#"><img src="/stxx/public/img/common/avatar.jpg"></a></dt>
+								<dd>
+									<a title="老师方" href="#">老师方</a>
+									<p>化学</p>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="classMain">
+					<h2 class="stuHead">班级同学</h2>
+					<span class="stu_total">共<b class="orange">3</b>人</span>
+					<div class="stuCont">
+						<ul class="stuList clearfix">
+							<li><a href="#"><img src="/stxx/public/img/common/avatar.jpg">yaodaqing</a></li>
+							<li><a href="#"><img src="/stxx/public/img/common/avatar.jpg">学生4</a></li>
+							<li><a href="#"><img src="/stxx/public/img/common/avatar.jpg">学生3</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

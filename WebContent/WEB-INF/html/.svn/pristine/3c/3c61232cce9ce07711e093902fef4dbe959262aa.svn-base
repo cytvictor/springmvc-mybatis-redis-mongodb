@@ -1,0 +1,27 @@
+<script>
+	$(document).ready(function(){
+		// top导航
+		$(".mainNav a").click(function(){
+			$(".mainNav .selected").removeClass("selected");
+			$(this).addClass("selected");
+		});
+		// side导航
+		$(".sideList").children("span").removeClass("hidden");
+		$(".sideList").children("b").addClass("openList");
+		$(".sideList").delegate("b", "click", function(){
+			$(this).toggleClass("openList").next().toggleClass("hidden");
+		});
+		$(".sideList").delegate("a", "click", function(){
+			$(".sideList a").removeClass("selected");
+			$(this).addClass("selected");
+		});
+		//设置side高度
+		function setHeight() {
+			var _headH = $class("header")[0].offsetHeight,
+				_bodyH = document.documentElement.clientHeight;
+			$class("container")[0].style.height = (_bodyH - _headH) + "px";
+		}
+		setHeight();
+		events.addEvent(window, "resize", setHeight);
+	});
+</script>

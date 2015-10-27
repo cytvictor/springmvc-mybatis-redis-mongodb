@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="btn testZj" href="addDepartment.shtml">添加机构</a>
+				教育厅/电教馆
+			</h4>
+			<div class="otContent">
+				<ul class="commonSelect">
+					<li>
+						<label>机构类型：</label>
+						<select name="" id="">
+							<option value="">请选择</option>	
+						</select>
+						<label>市：</label>
+						<select name="" id="">
+							<option value="">请选择</option>	
+						</select>
+						<label>县(区)：</label>
+						<select name="" id="">
+							<option value="">请选择</option>	
+						</select>
+						<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+					</li>
+				</ul>
+
+				<span class="blue">共200条数据</span>
+				<table class="normalTable" style="margin:0;margin-top:20px;">
+					<tr>
+						<th>名称</th>
+						<th>辖区</th>
+						<th>等级</th>
+						<th>创建人</th>
+						<th>创建时间</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td>河南省教育厅</td>
+						<td>河南省</td>
+						<td>省级</td>
+						<td>admin</td>
+						<td>2014-7-31 18:40</td>
+						<td>
+							<a href="checkDepartmentManage.shtml" class="blue">查看</a>
+							<a href="javascript:;" class="red">删除</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

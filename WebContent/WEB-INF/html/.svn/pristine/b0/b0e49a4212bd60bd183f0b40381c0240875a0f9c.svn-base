@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>精品课程</title>
+<!--#include virtual="/html/front/common/meta.shtml"-->
+<link rel="stylesheet" href="/public/css/index/index.css">
+<script type="text/javascript" src="/public/js/photoScroll.js"></script>
+<style>
+	.left{width: 242px;float: left;border: 1px solid #ccc;}
+	.left .select-list{padding-top: 20px;padding-bottom: 20px;}
+	.left .select-list li{padding-bottom: 10px;}
+	.left .select-list select{width: 110px;}
+	.talentBox{width: 968px;float: right;margin-right: -42px;}
+	.left-tab-nav{border-bottom: 2px solid #219ee0;}
+	.contentInNav{margin-top: 0;margin-bottom: 20px;}
+	.contentInNav a{padding: 2px 20px;}
+	.detail-order{margin-bottom: 20px;background-color: #eee;padding: 5px;}
+	.detail-order a{margin-right: 40px;padding-right: 20px;background: url(/public/img/common/triangleIcon-2.png) no-repeat 100% 50%;}
+</style>
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container" style="margin:0 auto;padding:0;">
+		<div class="content clearfix" style="background-color: #fcfcfc;">
+			<div class="left">
+				<ul class="select-list">
+					<li>
+						<label class="cName">来源：</label>
+						<select>
+							<option value=""></option>
+						</select>
+					</li>
+					<li>
+						<label class="cName">年级：</label>
+						<select>
+							<option value=""></option>
+						</select>
+					</li>
+					<li>
+						<label class="cName">学科：</label>
+						<select>
+							<option value=""></option>
+						</select>
+					</li>
+					<li>
+						<label class="cName">教材版本：</label>
+						<select>
+							<option value=""></option>
+						</select>
+					</li>
+				</ul>
+				<div class="left-tab-nav navTab">
+					<a class="currTab" href="javascript:;">章节目录</a>
+					<a href="javascript:;">知识点</a>
+				</div>
+			</div>
+			<div class="talentBox clearfix">
+				<div class="contentInNav">
+					分类：
+					<a class="selected" href="">学案</a>
+					<a href="">教学课件</a>
+					<a href="">电子案例</a>
+					<a href="">媒体素材</a>
+				</div>
+				<div class="detail-order">
+					<a href="">发布时间</a>
+					<a href="">评分</a>
+					<a href="">播放次数</a>
+					<a href="">下载量</a>
+				</div>
+				<div class="movieBox">
+					<a href="http://www.iqiyi.com/w_19rr9kf1wd.html" target="_blank" /><img src="/public/img/index/homeTop/轻松一刻_视频截图1.jpg" alt=""></a>
+					<p class="fstMsg clearfix">
+						<a href="javascript:;" class="name">学员芭蕾舞表演-艾斯米拉达</a>
+						
+					</p>
+					<p class="secMsg clearfix">
+						&nbsp;播放：124
+						<span class="time">发布时间：两天前</span>
+					</p>
+				</div>
+
+				<div class="movieBox">
+					<a href="http://www.iqiyi.com/w_19rr9kf1wd.html" target="_blank"><img src="/public/img/index/homeTop/轻松一刻_视频截图2.jpg" alt="" /></a>
+					<p class="fstMsg clearfix">
+						<a href="javascript:;" class="name">儿童芭蕾舞表演</a>
+						
+					</p>
+					<p class="secMsg clearfix">
+						&nbsp;播放：77
+						<span class="time">发布时间：两天前</span>
+					</p>
+				</div>
+
+				<div class="movieBox">
+					<a href="http://www.iqiyi.com/w_19rr9kf1wd.html" target="_blank"><img src="/public/img/index/homeTop/test/c1.jpg" alt=""></a>
+					<p class="fstMsg clearfix">
+						<a href="javascript:;" class="name">少儿艺术节演出</a>
+						
+					</p>
+					<p class="secMsg clearfix">
+						&nbsp;播放：89
+						<span class="time">发布时间：两天前</span>
+					</p>
+				</div>
+				<div class="movieBox">
+					<a href="http://www.iqiyi.com/w_19rr9kf1wd.html" target="_blank"><img src="/public/img/index/homeTop/test/c2.jpg" alt=""></a>
+					<p class="fstMsg clearfix">
+						<a href="javascript:;" class="name">艺术节舞蹈表演</a>
+						
+					</p>
+					<p class="secMsg clearfix">
+						&nbsp;播放：143
+						<span class="time">发布时间：两天前</span>
+					</p>
+				</div>
+				<div class="movieBox">
+					<a href="http://www.iqiyi.com/w_19rr9kf1wd.html" target="_blank"><img src="/public/img/index/homeTop/test/c3.jpg" alt=""></a>
+					<p class="fstMsg clearfix">
+						<a href="javascript:;" class="name">舞蹈小天才表演</a>
+						
+					</p>
+					<p class="secMsg clearfix">
+						&nbsp;播放：90
+						<span class="time">发布时间：两天前</span>
+					</p>
+				</div>
+				<div class="movieBox">
+					<a href="http://www.iqiyi.com/w_19rr9kf1wd.html" target="_blank"><img src="/public/img/index/homeTop/test/c4.jpg" alt=""></a>
+					<p class="fstMsg clearfix">
+						<a href="javascript:;" class="name">彩云之南舞蹈</a>
+						
+					</p>
+					<p class="secMsg clearfix">
+						&nbsp;播放：15
+						<span class="time">发布时间：两天前</span>
+					</p>
+				</div>
+				<div class="movieBox">
+					<a href="http://www.iqiyi.com/w_19rr9kf1wd.html" target="_blank"><img src="/public/img/index/homeTop/test/c5.jpg" alt=""></a>
+					<p class="fstMsg clearfix">
+						<a href="javascript:;" class="name">新疆舞少儿表演</a>
+						
+					</p>
+					<p class="secMsg clearfix">
+						&nbsp;播放：66
+						<span class="time">发布时间：两天前</span>
+					</p>
+				</div>
+				<div class="movieBox">
+					<a href="http://www.iqiyi.com/w_19rr9kf1wd.html" target="_blank"><img src="/public/img/index/homeTop/test/c6.jpg" alt=""></a>
+					<p class="fstMsg clearfix">
+						<a href="javascript:;" class="name">青少年芭蕾舞剧</a>
+						
+					</p>
+					<p class="secMsg clearfix">
+						&nbsp;播放：78
+						<span class="time">发布时间：两天前</span>
+					</p>
+				</div>
+			</div>
+				
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

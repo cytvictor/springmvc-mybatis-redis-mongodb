@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css" />
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav onlineAnswerQsNav">
+				<a class="backup" href="onlineAnswerQs.shtml">&lt;&lt;返回</a>
+				<a class="btn testZj" href="javascript:;">视频答疑</a>
+				查看问题
+			</h4>
+			<div class="otContent">
+				<div class="leaverQs">
+					<h5>证明全等三角形有什么技巧吗？</h5>
+					<p>我不知道怎么去证明全等三角形，以证明我就错了，希望大家能帮帮我给我技巧和方法</p>
+					<span>提问人：李玉</span>
+					<span>7月7日 14:30</span>
+				</div>
+				<div class="answerQs">
+					<p>回答：首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形</p>
+					<p><span class="blue">追问：</span>首先要找准你要证明的两个三角形?</p>
+					<p>回答：首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形首先要找准你要证明的两个三角形
+					<span class="ml20"><a href="javascript:;" class="blue">附件名称</a>
+					<a href="javascript:;" class="btn">下载</a></span>
+					</p>
+				</div>
+				<div class="answerAgain">
+					<h5>你还可以追加提问</h5>
+					<div>文本编辑器</div>
+				</div>
+				<!-- 上传附件 -->
+				<div class="uploadAcc mt40 ml20">
+					上传附件：<input type="text" /> <a href="javascript:;" class="btn bgGreen">浏览</a>
+				</div>
+
+				<div class="submitBtn mt40">
+					<a href="javascript:;" class="btn bgGreen">追加提问</a>
+					<a href="javascript:;" class="btn ml40">我懂了</a>
+					<a href="javascript:;" class="btn ml40">取消</a>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

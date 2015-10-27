@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>互动社区</title>
+	<link rel="stylesheet" href="../../../public/style/reset.css" />
+	<link rel="stylesheet" href="../../../public/style/common.css" />
+	<script src="../../../public/js/jquery-1.11.1.min.js"></script>
+	<script src="../../../public/js/extend.js"></script>
+	<script src="../../../public/js/litewin.js"></script>
+	<script src="../../../public/js/common.js"></script>
+	<style>
+	.sendMsgPop{padding:10px;color:#8793A1;}
+	.sendMsgPop li{overflow:hidden;zoom:1;padding-bottom:10px;}
+	.sendMsgPop li label{float:left;width:55px;text-align:right;}
+	.sendMsgPop li .cont{overflow:hidden;zoom:1;}
+	.sendMsgPop li input{padding:5px;border:1px solid #DEDEDE;}
+	.sendMsgPop li textarea{font-size:13px;border:1px solid #DEDEDE;width:320px;}
+	.sendMsgPop .numLi{text-align:right;padding-right:10px;}
+	.sendMsgPop .numLi #spanNum{color:#EE9B11;}
+	.sendMsgPop .btn{float:right;}
+	</style>
+</head>
+<body>
+	<ul class="sendMsgPop">
+		<li>
+			<label>发 给：</label>
+			<div class="cont">
+				<input readonly="" value="方教研员" id="txtToname">
+			</div>
+		</li>
+		<li><label><br />内 容：</label>
+			<div class="cont">
+				<p align="right">还可输入<span id="spanNum">300</span>字</p>
+				<textarea cols="70" rows="5" id="txtContent"></textarea>
+			</div>
+		</li>
+		<li style="margin-top:20px;">
+			<label>&nbsp;</label>
+			<div class="cont">
+				<a id="btnSend" href="javascript:;" class="btn">发送</a>
+				<a id="faceBtn" href="javascript:;" class="addFace">表情</a>
+			</div>
+		</li>
+	</ul>
+<script>
+//表情
+$("#faceBtn").click(function(event){
+	/* 第三个参数cdRoot放绝对路径；第四个参数cb可以放回调函数 */
+	smile.show(event,$id("pubContent"),'../../../'); 
+});
+$(".face").click(function(event){
+	smile.show(event,$(this).parent().parent().find("textarea")[0],'../../../'); 
+});
+
+$(".publishPic").delegate(".close","click",function(){
+	$(this).parent().remove();
+});
+</script>
+</body>
+</html>

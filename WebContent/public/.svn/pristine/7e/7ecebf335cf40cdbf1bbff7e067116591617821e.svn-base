@@ -1,0 +1,245 @@
+@charset "utf-8";
+
+.picItem{zoom:1;overflow:hidden;padding:10px;position:relative;}
+.picItem .superPic{float:left;display:inline;}
+.picItem .superPic img{display:block;width:80px;height:80px;}
+.picItem .itemContent{position:relative;overflow:hidden;zoom:1;padding-left:10px;line-height:1.8;font-size:13px;word-wrap:break-word;}
+.picItem .bTit{color:#a5afbc;}
+.picItem .bTit .name{color:#3e5367;font-size:16px;}
+.picItem .news{color:#6a7988;word-wrap: break-word;width:760px;}
+.picItem .news label{color:#a5afbc;}
+
+.lightbox{overflow:hidden;zoom:1;}
+.lightbox .lightPic{float:left;width:140px;height:110px;margin:2px 5px;}
+
+
+/*-- 最新动态 --*/
+.myHomeWrap{padding:0px 0px 20px 10px;color:#666;}
+.myHomeWrap a{color:#666;}
+.feedWrap{width:600px;float:left;display:inline;padding-right:20px;padding-top:10px;}
+.myRight{width: 277px;float:left;}
+
+/* 发布状态 */
+.publishBox{background:#e1e1e1;border-radius:5px;padding:10px;margin-bottom:10px;} 
+.pubContent{width:99%;min-width:99%;max-width:99%;border: 1px solid #DEDEDE;color: #A7A7A7;font-family: Tahoma;font-size: 14px; height: 100px;word-wrap: break-word; overflow-y: auto; overflow-x: hidden; outline: medium none;}
+.pubBtn{color:#fff !important;float:right;}
+.publishBox .ctrlBar{margin:10px 0;}
+#pubRestCountText{float:right;padding:4px 8px;}
+.addFace,.addPic,.face{position:relative;display:inline-block;vertical-align:middle;padding-left:25px;height:22px;line-height:22px;overflow:hidden;margin-right:10px;}
+.addFace,.face{background:url("../img/common/face.gif") 1px 0 no-repeat;}
+.addPic{width:60px;background:url("../img/common/pic.gif") 0 0 no-repeat;}
+#uploadImg, #msgUploadImg {height: 22px; overflow: hidden;vertical-align: middle; display: inline-block; width: 60px;float: left;color: #666;}
+#uploadImg .webuploader-pick, #msgUploadImg .webuploader-pick {
+	background: url("../img/common/pic.gif") no-repeat scroll 0 0;
+	padding-left: 30px;
+}
+.publishPic{overflow:hidden;zoom:1;}
+.publishPic li{position:relative;float:left;display:inline;margin-right:2px;width:60px;height:60px;background:#FFFFFF;text-align:center;line-height:60px;}
+.publishPic img{display:block;width:60px;height:60px;}
+.publishPic .close{position:absolute;width:16px;height:16px;top:2px;right:2px;background:rgb(0,0,0) url("../img/common/win_close.gif") 50% 50% no-repeat;filter:alpha(opacity=50); opacity: 0.5; }
+
+#platsetList{background: #E1E1E1;border-radius: 5px 5px 0 0;/*color: #909090;*/font-size: 15px;height: 30px; line-height: 30px;text-align: center;cursor:pointer;}
+
+.newsWrap{font-size:14px; margin-bottom: 20px;word-wrap: break-word;}
+.newsWrap h5{font-weight:normal;padding-bottom:5px;}
+.newsWrap .sName{display:inline-block;color:#3296c8;font-size:15px;font-style:normal;}
+.newsWrap .nCont{color:#6c7989;word-wrap: break-word;}
+
+.newsState{padding:10px 0;}
+.newsState a{display:inline-block;margin-right:15px;color:#9b9b9b;text-decoration:none;padding-left:20px;}
+.newsState a.comm{background:url(../img/myclass/comment.png) no-repeat 0 0;}
+.newsState a.trans{background:url(../img/myclass/intransit.png) no-repeat 0 0;}
+.newsState a.fav{background:url(../img/myclass/top.png) no-repeat 0 0;}
+
+.comment{position:relative;}
+.comment .arrow{position:absolute;color:#E1E1E1;top:-15px;left:30px;font-size:30px;line-height:1;overflow:hidden;}
+.forwardOne .arrow{left:110px;}
+.comment textarea{width:99%;min-width:99%;max-width: 99%;border: 1px solid #DEDEDE;color: #A7A7A7;font-family: Tahoma;height: 22px;margin-top: 10px;}
+.comment .sendComment{height:44px;}
+
+.commentList .picItem{padding:0;margin-top: 10px;}
+.commentList .superPic img{width:40px;height:40px;}
+.commentList .cName{color:#ee9c0c;}
+.commentList .itemContent{line-height:1.5;}
+.commentList .reply,.commentList .del{display:inline-block;margin-left:15px;}
+.replyBox{padding:5px 0;}
+
+.commentOne,.forwardOne{display:none;background:#E1E1E1;padding:10px;}
+.commentSendBox,.commentReplyBox,.commentForwardBox{width:99%;padding-top:5px;}
+.replyBox{display:none;}
+
+.evenMore{ cursor: pointer;color: #EF9B0F;font-size: 16px; padding: 20px 0; text-align: center;}
+.moreComm {text-align: center;}
+.moreComm a {color: #ee9b11;}
+.feedItem {margin-top: 10px;}
+/* 班级成员 */
+.classWrap{overflow:hidden;zoom:1;border:1px solid #CFCFCF;font-size:14px;background:#fff;margin-bottom:20px;padding:0px;}
+.classWrap img{width:60px;height:60px;vertical-align:middle;}
+.classSide{float:left;width:180px;border-right:1px solid #CFCFCF;margin-right:-1px;_margin-right:-4px;}
+.teaHead,.stuHead{height:40px;line-height:40px;text-indent:15px;font-size:16px;color:#566b86;background:#E7E7E7;}
+.stu_total{position:absolute;right:30px;top:10px;color:#A0A0A0;}
+.classMain{position:relative;border-left:1px solid #CFCFCF;overflow:hidden;zoom:1;}
+.teaBox{padding:20px 20px 0;}
+.teaBox dl{margin-bottom:20px;overflow:hidden;zoom:1;color:#9b9b9b;}
+.teaBox dt{float:left;display:inline;margin-right:10px;}
+.teaBox dd{overflow:hidden;zoom:1;}
+.teaBox dd a{display:block;height:20px;line-height:20px;overflow:hidden;color:#6A7988;}
+.teaBox dd p{height:20px;line-height:20px;overflow:hidden;}
+.stuCont{padding:20px;}
+.stuList li{float:left;display:inline;margin:0 5px 10px;text-align:center;width:60px;height:80px;word-wrap:break-word;overflow: hidden;}
+.stuList li img{display:block;}
+.stuList li a{color:#9b9b9b;}
+.parentTip{position: absolute;border: 1px solid #ccc;display: none;z-index: 10000;background: #fff;font-size: 14px;}
+.parentTip .parentMsg{padding: 10px 40px 10px 20px;border-bottom: 1px solid #ccc;}
+.parentTip h6{font-size: 14px;text-align: center;height: 30px;line-height: 30px;background: #219ee0;color: #fff;}
+.parentTip img{width: 60px;height: 60px;display: inline-block;vertical-align: top;margin-right: 10px;vertical-align: middle;}
+.parentTip dl{display: inline-block;}
+.parentTip dl dt,
+.parentTip dl dd{padding: 3px 0;}
+
+
+.myRight {padding-top: 10px;}
+.myRightMenu a {display: block;float: left;height: 20px;line-height: 20px;width: 70px;}
+.myRightMenu a.sel {color: #219EE0;}
+.myRightMenuRight {text-align: right;border-left: 1px solid #ccc; }
+.myRightStuList {margin-top: 10px;}
+.myRightStuList li {margin:0 4px 8px;} 
+.myRightStuList img {height: 60px;vertical-align: middle;width: 60px;display: block;}
+.myRightPager a, .myRightPager span {display: inline-block;		}
+.myRightPager span {text-align: center;width: 50px;}
+.myRightPager a {color: white;background-color: #9BBCCF;padding: 4px 8px;} 
+.myRightPagerWaper {margin-left: 50%;}
+.myRightPagerPre {margin-left: -90px;}
+.myRightInfo {color: #74839a;}
+.myRightInfo span{color: #d06366;margin-left: 10px;}
+
+
+.stuCont {
+	padding: 10px;
+}
+.stuLeftList,.stuRightList {
+	float: left;
+	text-indent: 15px;
+}
+.stuRightList {
+	text-indent: 10px;
+	width: 200px;		
+}
+.stuLeftList {
+	width: 520px;			
+}
+.stuRightList {
+	margin-left: 10px;
+}
+.stuLeftListHead {
+	font-size: 14px;
+}
+.stuRightList .stuLeftListHead {
+	text-align: center;
+}
+.stuLeftListHead  .stuLeftGroup{
+	float: right;
+	margin-right: 10px;
+}
+.stuLeftList select {
+	width: 100px;
+}
+.stuLeftSave {
+	display: none;
+    float: right;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.stuLeftList li, .stuRightList li{
+	border: 1px solid #cfcfcf;
+	border-top: none;
+}
+.stuLeftList li {
+	padding: 10px 5px 10px 0;
+}
+.stuRightList li {
+	padding: 5px;
+}
+.stuRightList li.sel{
+	background-color: #D0F4FF;
+}
+.stuRightList li.sel .stuLeftModify, .stuRightList li.sel .stuLeftDel{
+	display: block;
+}
+.stuRightList li.sel2 .stuLeftSave{
+	display: block;
+}
+.stuRightList li.sel2{
+	background-color: #D0F4FF;
+}
+.stuRightList li.sel2 .stuLeftModify, .stuRightList li.sel2 .stuLeftDel{
+	display: none;
+}
+
+.stuLeftUName {
+	display: inline-block;
+	width: 150px;
+	overflow: hidden;
+	line-height: 1;
+	height:21px;
+	vertical-align:middle;
+}
+.stuLeftSMS {
+	float: right;
+	height: 60px;
+	line-height: 60px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.coloBlue {
+	color: #3DD4FF;
+}
+.stuLeftAdd {
+	margin-right: 5px;
+	float: right;
+	cursor: pointer;
+}
+.stuLeftModify, .stuLeftDel {
+	display: none;
+	float: right;
+	width: 20px;
+	height: 20px;
+	background: url("../img/ordericon.png") no-repeat 2px 4px;
+	cursor: pointer;
+}
+.stuLeftDel { 
+	background: url("../img/ordericon.png") no-repeat 3px -27px;
+}
+.stuLeftText {
+		display: block;
+		margin-right: 50px;
+}
+.stuLeftText {
+	margin-right: 40px;
+}
+
+.stuLeftNumber {
+	text-indent: 0px;
+	float:left
+}
+
+.stuLeftTitle {
+	height: 20px; 
+	overflow: hidden; 
+	float: left; 
+	max-width: 80px; 
+	word-wrap: break-word;
+}
+.editOrgUserList li {
+	height:100px;
+}
+.editOrgUserList li a {
+	color: #9b9b9b;
+    display: block;
+    height: 80px;
+    overflow: hidden;
+}
+.delOrgUser {
+	color: red;
+	cursor: pointer;
+}

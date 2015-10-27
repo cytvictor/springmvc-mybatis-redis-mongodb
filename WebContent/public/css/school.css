@@ -1,0 +1,28 @@
+@charset "utf-8";
+/*新闻/公告*/
+.newsList{width: 625px;float: left;margin-right: 10px;_display: inline;}
+.newsWrap .newsTitle{height: 40px;line-height: 40px;color:#566b86;background: #e7e7e7;border: 1px solid #ccc;font-size: 16px;padding-left: 10px;padding-bottom: 0;}
+.newsBody .time{float: right;}
+.newsBody li{padding: 30px 10px 20px 10px;border-bottom: 1px solid #ccc;}
+.inform{overflow: hidden;border: 1px solid #ccc;background: #e7e7e7;}
+.newsWrap .informTitle{color: #fff;font-size: 16px;height: 40px;line-height: 40px;padding-left: 10px;padding-bottom: 0;background: #219ee0;}
+.informList li{padding: 10px 5px 5px 5px;border-bottom: 1px solid #ccc;}
+.informList li p{padding-bottom: 20px;}
+.informList .time{float: right;}
+.titleName{width: 600px;}
+/*用户管理*/
+.classBox h5{height: 40px;line-height: 40px;padding-left: 20px;background: #eee;color:#566b86;border: 1px solid #ccc;margin-bottom: 10px;font-size: 16px;padding-bottom: 0;}
+.classBox a{padding: 2px 10px;margin-right: 40px;margin-bottom: 10px;display: inline-block;}
+.classBox a.selected{background: #3fd4ff;color: #fff;}
+
+.handleBar{float: right;}
+.handleBar a{margin-right: 10px;}
+
+.classTable{width: 30%;float: left;margin-left: 20px;margin-bottom:20px;}
+
+/*添加管理员*/
+
+.addClassroom{text-align: right;margin-bottom: 10px;padding-right: 35px;}
+.classPop{padding: 20px 40px 0px 40px;}
+.classPop li{margin-bottom: 20px;margin-top: 10px;}
+.classPop li select{width: 100px;word-break: break-all;overflow: hidden;}

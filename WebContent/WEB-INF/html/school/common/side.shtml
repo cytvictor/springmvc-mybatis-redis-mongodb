@@ -1,0 +1,35 @@
+<div class="side">
+	<div class="userMsg">
+		<div class="userPhoto">
+			<dt><img src="/public/img/index/testImg/tcPhoto.png" alt="" width="90" height="90"></dt>
+		</div>
+		<dl>
+			<dt>江苏苏州工业园区</dt>
+			<dd>
+				<span class="school">景城中学</span>
+				<span class="schoolManager">学校管理</span>
+			</dd>
+		</dl>
+		<div class="collectAndMsg">
+			<span>
+				<b>32</b>
+				<a href="javascript:;">收藏</a>
+			</span>
+			<span>
+				<b>5</b>
+				<a href="javascript:;">消息</a>
+			</span>
+		</div>
+	</div>
+
+	<ul class="sideNav">
+		<li class="newsMenu"><a href="/html/school/news/index.shtml">新闻/公告</a></li>
+		<li class="schoolActiveMenu"><a href="">校园动态</a></li>
+		<li class="resourceCenter"><a href="#">资源中心</a></li>
+		<li class="onlineWatch"><a href="#">在线观摩</a></li>
+		<li class="datastatsMenu"><a href="#">数据统计</a></li>
+		<li class="userMenu"><a href="/html/school/userManage/userManage.shtml">用户管理</a></li>
+		<li class="otherschoolMenu"><a href="/html/school/otherschool/otherschool.shtml">分校管理</a></li>
+		<li class="adminMenu"><a href="/html/school/adminManage/adminManage.shtml">管理员管理</a></li>
+	</ul>
+</div>

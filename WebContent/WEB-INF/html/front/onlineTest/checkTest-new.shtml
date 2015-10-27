@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav"><a class="backup" href="onlineTest.shtml">&lt;&lt;返回</a>查看试卷</h4>
+			
+			<!-- <div class="subName">
+				<label>提交人：</label>
+				<span id="name">李一伟</span>
+			</div> -->
+			<div class="testPart">
+				<ul class="testMsg">
+					<li class="mb20">
+						<span>学段：初中</span>
+						<span>学科：语文</span>
+						<span>年级：初一</span>
+						<span>分册：上册</span>
+					</li>
+					<li class="mb10">
+						<span>标题：汉语言文学</span>
+						<span>答题时间：120分钟</span>
+					</li>
+				</ul>
+
+				<h5>一、单选题</h5>
+				<div class="text-box">
+					<div class="info">
+						<span>组卷次数： <span class="red">48</span></span>
+						<span class="ml">知识点：5.9有理数的混合运算</span>
+						<span class="ml">难易度：<span class="red">9</span></span>
+						<span class="ml">更新日期：2014-06-05</span>
+					</div>
+					<div class="text">
+						<div class="title">已知世运会、亚运会、奥运会分别于公元2009年、2010年、2012年举办，若这三项运动会均每四年举办一次，则这三项运动会均不在下列哪一年举办？（）</div>
+						<ul class="select">
+							<li>A . 公元2070年</p>
+							<li>B . 公元2071年</p>
+							<li>C . 公元2072年</p>
+							<li>D . 公元2073年</p>
+						</ul>
+					</div>
+					<p class="answer"><b>【答案】 B</b></p>
+					解析：
+					<div class="answer-analyze">
+						
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!-- 只能选题 --> 
+<div class="select-exercise-box">
+	<div class="left-nav">
+		<div class="info" style="position:relative;border-top: none;">
+			<span style="width:120px;display:inline-block;">已选题目(12)</span>
+			<a href="javascript:;" class="red">全部清空</a>
+			<table class="normalTable">
+				<tr>
+					<td>选择题</td>
+					<td>3</td>
+					<td>20%</td>
+					<td><a href="javascript:;"><img src="/public/img/index/delete1.gif" alt=""></a></td>
+				</tr>
+				<tr>
+					<td>填空题</td>
+					<td>4</td>
+					<td>30%</td>
+					<td><a href="javascript:;"><img src="/public/img/index/delete1.gif" alt=""></a></td>
+				</tr>
+				<tr>
+					<td>解答题</td>
+					<td>5</td>
+					<td>40%</td>
+					<td><a href="javascript:;"><img src="/public/img/index/delete1.gif" alt=""></a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="right-cont right-cont-1">
+		<div class="tag" style="margin-bottom:20px;">
+			选择题型数量
+		</div>
+		<div class="select-exercise-num">
+			<p>
+				单选题：&nbsp;&nbsp;&nbsp;
+				容易 <select name="" id=""><option value=""></option></select>
+				较易 <select name="" id=""><option value=""></option></select>
+				一般 <select name="" id=""><option value=""></option></select>
+				较难 <select name="" id=""><option value=""></option></select>
+				困难 <select name="" id=""><option value=""></option></select>
+			</p>
+			<p>
+				多选题：&nbsp;&nbsp;&nbsp;
+				容易 <select name="" id=""><option value=""></option></select>
+				较易 <select name="" id=""><option value=""></option></select>
+				一般 <select name="" id=""><option value=""></option></select>
+				较难 <select name="" id=""><option value=""></option></select>
+				困难 <select name="" id=""><option value=""></option></select>
+			</p>
+			<p>
+				填空题：&nbsp;&nbsp;&nbsp;
+				容易 <select name="" id=""><option value=""></option></select>
+				较易 <select name="" id=""><option value=""></option></select>
+				一般 <select name="" id=""><option value=""></option></select>
+				较难 <select name="" id=""><option value=""></option></select>
+				困难 <select name="" id=""><option value=""></option></select>
+			</p>
+			<p>
+				解答题：&nbsp;&nbsp;&nbsp;
+				容易 <select name="" id=""><option value=""></option></select>
+				较易 <select name="" id=""><option value=""></option></select>
+				一般 <select name="" id=""><option value=""></option></select>
+				较难 <select name="" id=""><option value=""></option></select>
+				困难 <select name="" id=""><option value=""></option></select>
+			</p>
+		</div>
+		
+		<div class="tag mt20">
+			选择选题范围&nbsp;&nbsp;&nbsp;
+			<select name="" id="" style="width:120px;"><option value="">选择版本</option></select>
+		</div>
+		<div class="select-exercise-grade">
+			<h5><label><input type="checkbox"> 六年级下</label></h5>
+			<div class="cont">
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+			</div>
+		</div>
+		<div class="select-exercise-grade">
+			<h5><label><input type="checkbox"> 七年级下</label></h5>
+			<div class="cont">
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+				<label><input type="checkbox"> 第一章 有理数</label>
+			</div>
+		</div>
+		
+
+		<div class="submitBtn"><a href="javascript:;" class="btn zn-select-btn-1">确定</a></div>
+	</div>
+
+	<div class="right-cont right-cont-2 hidden">
+		<div class="text-box">
+			<div class="info">
+				<span>组卷次数： <span class="red">48</span></span>
+				<span class="ml">知识点：5.9有理数的混合运算</span>
+				<span class="ml">难易度：<span class="red">9</span></span>
+				<span class="ml">更新日期：2014-06-05</span>
+			</div>
+			<div class="text">
+				<div class="title">已知世运会、亚运会、奥运会分别于公元2009年、2010年、2012年举办，若这三项运动会均每四年举办一次，则这三项运动会均不在下列哪一年举办？（）</div>
+				<ul class="select">
+					<li>A . 公元2070年</p>
+					<li>B . 公元2071年</p>
+					<li>C . 公元2072年</p>
+					<li>D . 公元2073年</p>
+				</ul>
+			</div>
+			
+			<span class="edit">
+				<a class="btn bgBlue" href="javascript:;">加入试卷</a>
+			</span>
+		</div>
+		<div class="submitBtn"><a href="javascript:;" class="btn zn-select-btn-2">取消</a></div>
+	</div>
+
+</div>
+<script>
+	$('.zn-select-btn-1').click(function(){
+		$(this).parents('.right-cont-1').hide();
+		$('.right-cont-2').removeClass("hidden");
+	});
+	$('.zn-select-btn-2').click(function(){
+		$(this).parents('.right-cont-2').addClass("hidden");
+		$('.right-cont-1').show();
+	});
+</script>

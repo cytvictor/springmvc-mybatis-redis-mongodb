@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/parent.css" />
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav trackNav">
+				学业分析
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">作业情况</a>
+					<a href="recentlyTest.shtml" index="1">考试情况</a>
+					<a href="scoreAnalysis.shtml" index="2">成绩分析</a>
+					<a href="tcEvaluate.shtml" index="3">老师评价</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="tabBox currBox">
+					<ul class="commonSelect">
+						<li>
+							<label>购买时间：</label>
+							<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="timeInput"/>
+							至：
+							<input type="text" class="timeInput"/>
+							<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+						</li>
+					</ul>
+					<table class="normalTable">
+						<tr>
+							<th>学科</th>
+							<th>布置时间</th>
+							<th>作业名称</th>
+							<th>描述</th>
+							<th>状态</th>
+						</tr>
+						<tr>
+							<td>数学</td>
+							<td>2014-07-30 20:52</td>
+							<td>第三单元课后作业</td>
+							<td>巩固本章定理，完成课后习题</td>
+							<td>
+								<a href="javascript:;" class="blue">已完成</a>
+							</td>
+						</tr>
+						<tr>
+							<td>数学</td>
+							<td>2014-07-30 20:52</td>
+							<td>第三单元课后作业</td>
+							<td>巩固本章定理，完成课后习题</td>
+							<td>
+								<a href="javascript:;" class="red">未完成</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css" />
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			
+			<h4 class="contentNav onlineTutorNav">
+				<a class="backup" href="#">&lt;&lt;返回</a>
+				在线辅导
+			</h4>
+			<div class="otContent">
+				<ul class="commonSelect">
+					<li>
+						<label>创建时间：</label>
+						<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="timeInput"/>
+						至：
+						<input type="text" class="timeInput"/>
+						<label>学段：</label>
+						<select>
+							<option>请选择</option>
+							<option>高一</option>
+						</select>
+						<label>学科：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>年级：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>分册：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+					</li>
+					<li>
+						<label>章节：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>知识点：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>试卷类型：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<a href="javascript:;" class="btn bgGreen ml20">搜索</a>
+					</li>
+				</ul>
+
+				<table id="tbTable" class="normalTable">
+					<tr>
+						<th></th>
+						<th>课堂名称</th>
+						<th>科目</th>
+						<th>开课时间</th>
+						<th>课堂详情</th>
+						<th>状态</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" />
+						</td>
+						<td>诗歌《离骚》讲解</td>
+						<td>语文</td>
+						<td>2013-12-13 13:30</td>
+						<td><a href="javascript:;" class="classDetail">课堂详情</a></td>
+						<td class="red">未开始</td>
+						<td>
+							<a href="javascript:;" class="enterClass gray">进入课堂</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" />
+						</td>
+						<td>诗歌《离骚》讲解</td>
+						<td>语文</td>
+						<td>2013-12-13 13:30</td>
+						<td><a href="javascript:;" class="classDetail">课堂详情</a></td>
+						<td class="green">进行中</td>
+						<td>
+							<a href="javascript:;" class="enterClass green">进入课堂</a>
+							<a href="javascript:;" class="endClass red">结束课堂</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" />
+						</td>
+						<td>诗歌《离骚》讲解</td>
+						<td>语文</td>
+						<td>2013-12-13 13:30</td>
+						<td><a href="javascript:;" class="classDetail">课堂详情</a></td>
+						<td class="gray">已结束</td>
+						<td>
+							<a href="javascript:;" class="deleteClass red">删除</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

@@ -1,0 +1,299 @@
+package com.codyy.rrt.commons;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.redis.core.BoundHashOperations;
+import org.springframework.data.redis.core.StringRedisTemplate;
+
+import com.codyy.rrt.commons.entity.DeploySysConfig;
+import com.codyy.rrt.commons.entity.DomainConfig;
+import com.codyy.rrt.commons.entity.LoginUser;
+import com.codyy.rrt.commons.entity.SsoConfig;
+
+public class UserLoginCheckFilter implements Filter {
+	
+	private Logger logger = Logger.getLogger(UserLoginCheckFilter.class);
+
+	@Override
+	public void destroy() {
+	}
+
+	@Override
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
+		SsoConfig config = SpringContext.getBean(SsoConfig.class);
+		HttpServletRequest request = (HttpServletRequest) req;
+		request.getParameterMap();
+		HttpServletResponse response = (HttpServletResponse) resp;
+		String requestUrl = request.getRequestURI();
+		if (requestUrl.indexOf("thirdInterface") > -1) {// 如果是第三方接口路径，不需要处理session
+			DomainConfig domain = (DomainConfig) request.getSession().getAttribute(CommonsConstant.SESSION_DOMAIN_CONFIG);
+			if (domain == null) {
+				domain = SpringContext.getBean(DomainConfig.class);
+				request.getSession().setAttribute(CommonsConstant.SESSION_DOMAIN_CONFIG, domain);
+			}
+			UserLoginCheckFilter.addDeploySysInitToSession(request);
+			chain.doFilter(req, resp);
+		} else {
+			String tag = checkCookie(request);
+			if (tag == null) {
+				// 全局session过期，重定向到登录页面
+				/*
+				 * String url = request.getRequestURL().toString(); String param
+				 * = request.getQueryString(); if (param != null){ url = url +
+				 * "?" + param; } request.getSession().invalidate();//
+				 * 重置本地session response.sendRedirect(config.getAppRedirect() +
+				 * "?url=" + URLEncoder.encode(url, "utf-8"));
+				 */
+				request.getSession().invalidate();// 重置本地session
+				// response.sendRedirect(config.getAppRedirect());
+				request.getSession().setAttribute(CommonsConstant.APPREDIRECT, config.getAppRedirect());
+				response.addHeader("Cache-Control", "max-age=0");
+				response.getWriter().print("<script>top.location='" + config.getAppRedirect() + "';</script>");
+			} else {
+				StringRedisTemplate template = SpringContext.getBean(StringRedisTemplate.class);
+				BoundHashOperations<String, String, String> operations = template.boundHashOps(tag);
+				Map<String, String> map = operations.entries();
+				LoginUser user = (LoginUser) request.getSession().getAttribute(CommonsConstant.SESSION_LOGIN_USER);
+				if (user != null){
+					logger.info("user.getCookieTag()==="+user.getCookieTag());
+				}
+				logger.info("tag==="+tag);
+				// 如果在本地的session中失效，则自动构建本地session
+				if (user == null
+				// 或者用户重新登录后全局session有效，但与本地session不匹配
+						|| (!user.getCookieTag().equals(tag))
+						// 检查redis中的refreshTag与session中的refreshTag是否匹配，如果不匹配则重新构建本地session
+						|| (!SessionInfoBuilder.getInstance().getLoginUserRefreshTag(map).equals(user.getRefreshTag()))) {
+					request.getSession().invalidate();// 清空子系统中自定义的session内容
+					user = SessionInfoBuilder.getInstance().parseLoginUser(map);
+					user.setCookieTag(tag);
+					request.getSession().setAttribute(CommonsConstant.APPREDIRECT, config.getAppRedirect());
+					request.getSession().setAttribute(CommonsConstant.SESSION_LOGIN_USER, user);
+					logger.info("config.getAppRedirect()==="+config.getAppRedirect());
+				}
+				LoginUserThreadLocal.getInstance().setLoginUser(user);
+
+				// 本地session中构建domainConfig
+				// 本地session中构建domainConfig
+				DomainConfig domain = (DomainConfig) request.getSession().getAttribute(CommonsConstant.SESSION_DOMAIN_CONFIG);
+				if (domain == null) {
+					domain = SpringContext.getBean(DomainConfig.class);
+					request.getSession().setAttribute(CommonsConstant.SESSION_DOMAIN_CONFIG, domain);
+				}
+				logger.debug("UserLoginCheckFilter.checkUserDepartmentLocked");
+				if (checkUserDepartmentLocked(user)) {// 判定所属机构是否被锁定
+					logger.debug("UserLoginCheckFilter.checkUserDepartmentLocked:true");
+					removeCookieTagFromRedis(user.getUserId());
+					logger.debug("UserLoginCheckFilter.removed tag from redis");
+					request.getSession().invalidate();// 重置本地session
+					// response.sendRedirect(config.getAppRedirect());
+					request.getSession().setAttribute(CommonsConstant.APPREDIRECT, config.getAppRedirect());
+					response.addHeader("Cache-Control", "max-age=0");
+					response.getWriter().print("<script>top.location='" + config.getAppRedirect() + "';</script>");
+					logger.debug("UserLoginCheckFilter.reset session");
+				} else {
+					logger.debug("UserLoginCheckFilter.checkUserDepartmentLocked:false");
+					UserLoginCheckFilter.addDeploySysInitToSession(request);
+					chain.doFilter(req, resp);
+				}
+			}
+		}
+	}
+
+	/**
+	 * 检查cookie的状态 <br/>
+	 * 1.客户端不存在rrt_sso_cookie_tag, 则认为是新用户，返回null 2.客户端存在rrt_sso_cookie_tag,
+	 * 但redis中不存在，认为是超时，返回null 3.客户端存在rrt_sso_cookie_tag,
+	 * redis中存在，但有效时间已过20分钟，仍然认为是超时，返回null 4.客户端存在rrt_sso_cookie_tag,
+	 * redis中存在并且在20分钟有效期呢，返回rrt_sso_cookie_tag
+	 * 
+	 * @param request
+	 * @return
+	 */
+	private String checkCookie(HttpServletRequest request) {
+		Cookie[] cookies = request.getCookies();
+		logger.debug("cookies:" + cookies);
+		if (cookies != null && cookies.length > 0) {
+			logger.debug("cookies is not null");
+			for (Cookie cookie : cookies) {
+				logger.debug("cookies:" + cookie.getName());
+				if (cookie.getName().equals(CommonsConstant.COOKIE_TAG)) {
+					String tag = cookie.getValue();
+					logger.debug("cookies value:" + tag);
+					StringRedisTemplate template = SpringContext.getBean(StringRedisTemplate.class);
+					SsoConfig config = SpringContext.getBean(SsoConfig.class);
+					boolean r = template.hasKey(tag);
+					logger.debug("redis has cookies value:" + r);
+					if (r) {
+						BoundHashOperations<String, String, String> operations = template.boundHashOps(tag);
+						long expire = operations.getExpire();
+						if (expire < 60) {
+							// redis中tag的有效期是21分钟，当有效期小于60秒时，认为session失效
+							template.delete(tag);
+							logger.debug("tag expired, delete");
+							return null;
+						} else {
+							// 如果有效，则更新tag的生存周期
+							operations.expire(config.getAppSessionTimeout(), TimeUnit.SECONDS);
+							logger.debug("tag not expired, update timeout");
+							return tag;
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static void refreshRefreshTag(String cookieTag) {
+		StringRedisTemplate template = SpringContext.getBean(StringRedisTemplate.class);
+		if (template.hasKey(cookieTag)) {
+			BoundHashOperations<String, String, String> operations = template.boundHashOps(cookieTag);
+			operations.put("refreshTag", UUID.randomUUID().toString());
+		}
+	}
+
+	public static String getCookieTag(HttpServletRequest request) {
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null && cookies.length > 0) {
+			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals(CommonsConstant.COOKIE_TAG)) {
+					String tag = cookie.getValue();
+					return tag;
+				}
+			}
+		}
+		return null;
+	}
+
+	public static void removeCookieTagFromRedis(String userId) {
+		StringRedisTemplate template = SpringContext.getBean(StringRedisTemplate.class);
+		BoundHashOperations<String, String, String> operations = template.boundHashOps(CommonsConstant.USERID_COOKIETAG);
+		Map<String, String> map = operations.entries();
+		String cookieTag = map.get(userId);
+		if (StringUtils.isNotBlank(cookieTag)) {
+			template.delete(cookieTag);
+			operations.delete(userId);
+		}
+		String uuid = map.get("MOBILE" + userId);
+		if (StringUtils.isNotBlank(uuid)) {
+			template.delete(uuid);
+			operations.delete("MOBILE" + userId);
+		}
+	}
+
+	/**
+	 * 锁机构或学校(锁机构或学校下的所有用户)
+	 * 
+	 * @param id
+	 */
+	public static void lockDepartment(String id) {
+		StringRedisTemplate template = SpringContext.getBean(StringRedisTemplate.class);
+		BoundHashOperations<String, String, String> operations = template.boundHashOps(CommonsConstant.LOCKED_DEPARTMENTS);
+		if (StringUtils.isNotBlank(id)) {
+			operations.put(id, "LOCKED");
+		}
+	}
+
+	/**
+	 * 解锁机构或学校(锁所有用户后的解锁时调用)
+	 * 
+	 * @param id
+	 */
+	public static void unLockedDepartment(String id) {
+		StringRedisTemplate template = SpringContext.getBean(StringRedisTemplate.class);
+		BoundHashOperations<String, String, String> operations = template.boundHashOps(CommonsConstant.LOCKED_DEPARTMENTS);
+		if (StringUtils.isNotBlank(id)) {
+			operations.delete(id);
+			;
+		}
+	}
+
+	/**
+	 * 检查用户所属机构是否被锁定（所有上级）
+	 * 
+	 * @param user
+	 * @return
+	 */
+	private boolean checkUserDepartmentLocked(LoginUser user) {
+		if (user == null) {
+			return false;
+		} else {
+			StringRedisTemplate template = SpringContext.getBean(StringRedisTemplate.class);
+			BoundHashOperations<String, String, String> operations = template.boundHashOps(CommonsConstant.LOCKED_DEPARTMENTS);
+			Map<String, String> map = operations.entries();
+			String schoolId = user.getSchoolId();
+			if (StringUtils.isNotBlank(schoolId)) {
+				if (StringUtils.isNotBlank(map.get(schoolId))) {
+					logger.debug("UserLoginCheckFilter.checkUserDepartmentLocked:schoolid is not null:" + schoolId + "=" + map.get(schoolId));
+					return true;
+				}
+			}
+			String countyOrgId = user.getXianOrgIdDJG();
+			if (StringUtils.isNotBlank(countyOrgId)) {
+				if (StringUtils.isNotBlank(map.get(countyOrgId))) {
+					logger.debug("UserLoginCheckFilter.checkUserDepartmentLocked:countyOrgId is not null:" + countyOrgId + "=" + map.get(countyOrgId));
+					return true;
+				}
+			}
+			String cityOrgId = user.getShiOrgIdDJG();
+			if (StringUtils.isNotBlank(cityOrgId)) {
+				if (StringUtils.isNotBlank(map.get(cityOrgId))) {
+					logger.debug("UserLoginCheckFilter.checkUserDepartmentLocked:cityOrgId is not null:" + cityOrgId + "=" + map.get(cityOrgId));
+					return true;
+				}
+			}
+			String proviceOrgId = user.getShengOrgIdDJG();
+			if (StringUtils.isNotBlank(proviceOrgId)) {
+				if (StringUtils.isNotBlank(map.get(proviceOrgId))) {
+					logger.debug("UserLoginCheckFilter.checkUserDepartmentLocked:proviceOrgId is not null:" + proviceOrgId + "=" + map.get(proviceOrgId));
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public static void addDeploySysInitToSession (HttpServletRequest request){
+		HttpSession session = request.getSession();
+		DeploySysConfig config = (DeploySysConfig) session.getAttribute("deploySysConfig");
+		if (config == null) {
+			StringRedisTemplate redisTemplate = SpringContext.getBean(StringRedisTemplate.class);
+			BoundHashOperations<String, String, String> opera = redisTemplate.boundHashOps(DeploySysConfig.DEPLOY_SYS_CONFIG);
+			Map<String,String> map = opera.entries();
+			config = DeploySysConfig.transMapToDeploySysConfig(map);
+			if (config == null) {
+				MongoTemplate mongoTemplate = SpringContext.getBean(MongoTemplate.class);
+				config = mongoTemplate.findById(DeploySysConfig.DEPLOY_SYS_CONFIG, DeploySysConfig.class);
+				map = DeploySysConfig.tansDeploySysConfigToRedisMap(config);
+				opera.putAll(map);
+				config = DeploySysConfig.transMapToDeploySysConfig(map);
+				session.setAttribute("deploySysConfig", config);
+			} else {
+				session.setAttribute("deploySysConfig", config);
+			}
+		}
+	}
+
+	@Override
+	public void init(FilterConfig config) throws ServletException {
+	}
+
+}

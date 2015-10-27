@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				用户管理
+				<span class="navTab">
+					<a href="userManage.shtml" index="0">花名册</a>
+					<a href="classroomManage.shtml" index="1">班级管理</a>
+					<a href="teacherManage.shtml" index="2">教师管理</a>
+					<a href="studentManage.shtml" index="3">学生管理</a>
+					<a href="parentManage.shtml" class="currTab" index="4">家长管理</a>
+				</span>
+			</h4>
+			<div class="basicMsg addMsg">
+				<h5>基本信息</h5>
+				<ul class="detailBox">
+					<li>
+						<label class="cName">手机号码：</label>
+						<input type="text"><span class="red ml20">此家长帐号不存在</span>
+					</li>
+					<li>
+						<label class="cName">姓名：</label>
+						<input type="text">
+					</li>
+					<li>
+						<label class="cName">绑定学生ID：</label>
+						<input type="text">
+					</li>
+					<li>
+						<label class="cName">学生姓名：</label>
+						<input type="text">
+					</li>
+					<li>
+						<label class="cName">&nbsp;</label>
+						<a href="javascript:;" class="blue">+继续绑定学生</a>
+					</li>
+					<li>
+						<label class="cName">绑定学生ID：</label>
+						<input type="text"><a href="javascript:;" class="red ml20">删除绑定</a>
+					</li>
+					<li>
+						<label class="cName">学生姓名：</label>
+						<input type="text">
+					</li>
+				</ul>
+			</div>
+			<div class="submitBtn">
+				<a href="addModif.shtml" class="btn mr20">确定</a>
+				<a href="javascript:;" class="btn ml20">取消</a>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

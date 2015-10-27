@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css" />
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav onlineAnswerQsNav">
+				答疑中心
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">在线提问</a>
+					<a href="javascript:;" index="1">答疑教室</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="tabBox currBox">
+					<ul class="commonSelect mb20">
+						<li>
+							<label>标题：</label>
+							<input type="text">
+							<label class="ml40">学科：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label class="ml40">状态：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<a href="javascript:;" class="btn bgGreen ml20">搜索</a>
+						</li>
+					</ul>
+
+					<p class="clearfix">
+						<a href="iAsk.shtml" class="iAsk btn mr20">我要提问</a>
+						共<span class="orange">58</span>条数据
+					</p>
+
+					<table class="normalTable" style="margin:0;">
+						<tr>
+							<th><input type="checkbox" /></th>
+							<th>考题</th>
+							<th>科目</th>
+							<th>提问时间</th>
+							<th>状态</th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" /></td>
+							<td>镁元素是谁发现的</td>
+							<td>语文</td>
+							<td>2014-07-20 11:45</td>
+							<td class="green">已解答</td>
+							<td>
+								<a href="checkAnswerQs.shtml" class="blue mr10">查看</a>
+								<a href="checkAnswerQs.shtml" class="blue">删除</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" /></td>
+							<td>镁元素是谁发现的</td>
+							<td>语文</td>
+							<td>2014-07-20 11:45</td>
+							<td>未解答</td>
+							<td>
+								<a href="checkAnswerQs.shtml" class="blue mr10">查看</a>
+								<a href="checkAnswerQs.shtml" class="blue">删除</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="tabBox">
+					<div class="qsClassroom">
+						<a href="javascript:;" class="qsBox">
+							<dl>
+								<dt>周金金</dt>
+								<dd>语文</dd>
+							</dl>
+							<img src="/public/img/index/testImg/test2.png" alt="" width="120" height="120"/>
+						</a>
+						<a href="javascript:;" class="qsBox">
+							<dl>
+								<dt>周金金</dt>
+								<dd>语文</dd>
+							</dl>
+							<img src="/public/img/index/testImg/test2.png" alt="" width="120" height="120"/>
+						</a>
+						<a href="javascript:;" class="qsBox">
+							<dl>
+								<dt>周金金</dt>
+								<dd>语文</dd>
+							</dl>
+							<img src="/public/img/index/testImg/test2.png" alt="" width="120" height="120"/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

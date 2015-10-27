@@ -1,0 +1,17 @@
+homework=http://homework.rrt.com:8080/rrt_homework
+#teleconference=http://teleconference.rrt.com/rrt_teleconference
+teleconference=http://teleconference.rrt.com:8080/Teleconference
+basedata=http://basedata.rrt.com:8080/rrt_basedata
+information=http://information.rrt.com:8080/rrt_information
+dynamic=http://dynamic.rrt.com:8080/rrt_dynamic
+resource=http://resource.rrt.com:8080/rrt_resource
+onlinetest=http://onlinetest.rrt.com:8080/rrt_onlinetest
+resourcesearch=http://resourcesearch.rrt.com:8080/rrt_resourcesearch
+platform=http://platform.rrt.com:8080/rrt_platform
+onlineanswer=http://onlineanswer.rrt.com:8080/rrt_onlineanswer
+dataStatistics=http://datastatistics.rrt.com:8080/rrt_dataStatistics
+sso=http://sso.rrt.com:8080/rrt_sso
+pay=http://pay.rrt.com/
+
+#upload file address
+publicServer=http://sso.rrt.com/

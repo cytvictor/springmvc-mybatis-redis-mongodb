@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/parent.css" />
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				学业分析
+				<span class="navTab">
+					<a href="todayWork.shtml" index="0">作业情况</a>
+					<a href="javascript:;" class="currTab" index="1">考试情况</a>
+					<a href="scoreAnalysis.shtml" index="2">成绩分析</a>
+					<a href="tcEvaluate.shtml" index="3">老师评价</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="tabBox currBox">
+					<ul class="commonSelect">
+						<li>
+							<label>选择时间：</label>
+							<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="timeInput"/>
+							至：
+							<input type="text" class="timeInput"/>
+							<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+						</li>
+					</ul>
+					<table class="normalTable">
+						<tr>
+							<th>学科</th>
+							<th>布置时间</th>
+							<th>考试名称</th>
+							<th>类型</th>
+							<th>状态</th>
+							<th>得分</th>
+						</tr>
+						<tr>
+							<td>数学</td>
+							<td>2014-07-30 20:52</td>
+							<td>单元测试</td>
+							<td>巩固本章定理，完成课后习题</td>
+							<td>未完成</td>
+							<td>——</td>
+						</tr>
+						<tr>
+							<td>数学</td>
+							<td>2014-07-30 20:52</td>
+							<td>单元测试</td>
+							<td>巩固本章定理，完成课后习题</td>
+							<td>未批阅</td>
+							<td>——</td>
+						</tr>
+						<tr>
+							<td>数学</td>
+							<td>2014-07-30 20:52</td>
+							<td>单元测试</td>
+							<td>巩固本章定理，完成课后习题</td>
+							<td class="blue">已完成</td>
+							<td class="blue">92</td>
+						</tr>
+						<tr>
+							<td>数学</td>
+							<td>2014-07-30 20:52</td>
+							<td>单元测试</td>
+							<td>巩固本章定理，完成课后习题</td>
+							<td class="blue">已完成</td>
+							<td class="red">51</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

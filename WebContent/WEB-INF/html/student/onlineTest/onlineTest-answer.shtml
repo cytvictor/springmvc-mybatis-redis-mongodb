@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css">
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a href="onlineTest.shtml" class="backup">&lt;&lt;返回</a>
+				测试中心
+			</h4>
+			<div class="otContent">
+				<ul class="onlineTestDetail">
+					<li>
+						<label for="">学段:</label>初中
+						<label for="" class="ml60">学科:</label>语文
+						<label for="" class="ml60">年级:</label>初一
+						<label for="" class="ml60">分册:</label>上册
+						<label for="" class="ml60">章节:</label>离骚
+						<label for="" class="ml60 countDown">倒计时: <span>01:59:59</span></label>
+					</li>
+					<li>
+						<label for="">知识点：</label>汉语言文学
+						<label for="" class="ml40">答题时间：</label>120分钟
+					</li>
+				</ul>
+
+				<div class="testPart">
+					<div class="singleChoice">
+						<h5>一、单选题</h5>
+						<ul class="mb20 timu">
+							<li class="mb10 mt10">
+								1、离骚的作者是谁
+								<span class="testDifficulty">
+									难度系数：
+									<b class="orange">3</b>
+								</span>
+							</li>
+							<li>
+								<input type="radio" name="choice1" />
+								<label class="len60">选项A：</label>陶渊明
+							<li>
+							<li>
+								<input type="radio" name="choice1" />
+								<label class="len60">选项B：</label>李白
+							</li>
+							<li>
+								<input type="radio" name="choice1" />
+								<label class="len60">选项C：</label>屈原
+							</li>
+							<li>
+								<input type="radio" name="choice1" />
+								<label class="len60">选项D：</label>杜甫
+							</li>
+							<img src="/public/img/index/testImg/test.png" alt="" width="120" height="90"/>
+						</ul>
+					</div>
+
+					<div class="multiChoice">
+						<h5>二、多选题</h5>
+						<ul class="mb20 timu">
+							<li class="mb10 mt10">1、离骚的作者是谁
+								<span class="testDifficulty">难度系数：<b class="orange">3</b></span>
+							</li>
+							<li>
+								<input type="checkbox" />
+								<label class="len60">选项A：</label>陶渊明
+							<li>
+							<li>
+								<input type="checkbox" />
+								<label class="len60">选项B：</label>李白
+							</li>
+							<li>
+								<input type="checkbox" />
+								<label class="len60">选项C：</label>屈原
+							</li>
+							<li>
+								<input type="checkbox" />
+								<label class="len60">选项D：</label>杜甫
+							</li>
+							<img src="/public/img/index/testImg/test.png" alt="" width="120" height="90"/>
+						</ul>
+					</div>
+
+					<div class="subjectiveItem">
+						<h5>三、主观题</h5>
+						<ul class="mb20 timu">
+							<li class="mb10 mt10">1、离骚的作者是谁
+								<span class="testDifficulty">难度系数：<b class="orange">3</b></span>
+							</li>
+							<img src="/public/img/index/testImg/test.png" alt="" width="120" height="90"/>
+						</ul>
+						<div>这里又是个文本编辑器</div>
+					</div>
+
+					<div class="submitBtn">
+						<a href="javascript:;" class="btn uploadAnswer">提交答案</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

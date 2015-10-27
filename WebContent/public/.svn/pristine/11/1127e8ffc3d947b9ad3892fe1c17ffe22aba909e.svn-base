@@ -1,0 +1,49 @@
+@charset "utf-8";
+.side .childrenMsg{border-top: 1px solid #ccc;margin-top: 20px;padding-top: 20px;}
+.side .childrenMsg img{border-radius: 50%;vertical-align: middle;display: inline-block;border: 1px solid #fff;}
+.side .childrenMsg .name{display: inline-block;width: 90px;height:22px;overflow: hidden;vertical-align: middle;}
+.side .changeChild{background: #90d964;color: #fff;padding: 0 10px;border-radius: 3px;vertical-align: middle;}
+.side .childrenSchoolMsg,
+.side .childrenSchoolMsg a{color: #bcdbf3;}
+/*-------资源中心---------*/
+.deleteAll{padding: 2px 5px;background: #d64d55;color: #fff;margin-left: 5px;border-radius: 3px;}
+.payBtn{float: right;}
+.money{text-align:right;padding-right:20px;}
+.money b{font-size: 20px;}
+/*-------学业分析---------*/
+/*老师评价*/
+.tcEvaluateList{padding: 0 30px;}
+.tcEvaluateList li{position: relative;padding-bottom: 30px;border-bottom: 1px solid #ccc;margin-bottom: 10px;}
+.tcEvaluateList dl{float: left;}
+.tcEvaluateList dl dt img{border-radius: 50%;}
+.tcEvaluateList .tcSays{overflow: hidden;padding-left: 20px;padding-top: 5px;}
+.tcEvaluateList .time{position: absolute;right: 0;bottom: 0;}
+
+/*班级通告*/
+/*班级动态*/
+.classRec h5{padding-left: 40px;height: 40px;line-height: 40px;background: #219ee0;font-size: 16px;color: #fff;}
+.classRec{overflow: hidden;}
+.classBox img{float: left;margin-right: 10px;}
+.classBox dl{overflow: hidden;}
+.classBox dl dt,
+.classBox dl dd{padding: 3px 0;}
+.classBox dl dt{color: #666;}
+.classBox{padding: 10px;border: 1px solid #ccc;}
+.myHomeWrap .btn{color: #fff;}
+.teachSource .classBox{border: none;}
+/*信息互动*/
+.msgList{position: relative;border-bottom: 1px solid #ccc;}
+.msgList p{word-break: break-all;overflow: hidden;}
+.msgList dl{width: 70px;text-align: center;float: left;margin-right: 10px;}
+.msgList .msgDetail{overflow: hidden;}
+.msgList img{border-radius: 50%;}
+.msgList dd{text-align: center;}
+.msgDetail .msgContent{height: 20px;width: auto;margin-bottom: 20px;overflow-y: hidden;}
+.msgDetail div.orc{height: auto;}
+.msgDetail .time{position: absolute;right: 0;bottom: 0;}
+.allInfo{position: absolute;right: 0;bottom: 20px;color: #219ee0;}
+.myHomeWrap .allInfo{color: #219ee0;}
+
+/* 购物车 */
+.shop-name-wrap img{float:left;vertical-align:top;margin-right:5px;}
+.shop-name-wrap .shop-name-msg{overflow:hidden;max-height:68px;word-break:break-all;}

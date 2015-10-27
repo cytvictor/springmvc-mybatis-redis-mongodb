@@ -1,0 +1,22 @@
+<div class="side">
+	<div class="userMsg">
+		<div class="userPhoto">
+			<dt><img src="/public/img/index/testImg/tcPhoto.png" alt="" width="90" height="90"></dt>
+			<dd class="userName">张亚杰</dd>
+		</div>
+		<dl>
+			<dt>江苏苏州工业园区</dt>
+			<dd>
+				<span class="school">景城中学</span>
+				<span class="schoolManager">学校管理</span>
+			</dd>
+		</dl>
+		<a class="focus" href="javascript:;">+关注</a>
+	</div>
+
+	<ul class="sideNav">
+		<li class="onlineAnswerQs"><a href="/html/front/teacher-visitor/active.shtml">最新动态</a></li>
+		<li class="resourceCenter"><a href="/html/front/teacher-visitor/sourceCenter.shtml">资源中心</a></li>
+		</span>
+	</ul>
+</div>

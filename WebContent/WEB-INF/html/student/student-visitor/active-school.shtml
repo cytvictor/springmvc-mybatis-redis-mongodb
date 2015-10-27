@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side-visitor.shtml"-->
+		<div class="content">
+			<h4 class="contentNav newsNav">
+				校园动态	
+			</h4>
+			<div class="otContent">
+						
+			</div>
+		</div>
+	</div>
+<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

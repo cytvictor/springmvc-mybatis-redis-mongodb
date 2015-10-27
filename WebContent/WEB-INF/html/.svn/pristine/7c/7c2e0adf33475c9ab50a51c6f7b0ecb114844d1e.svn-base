@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css" />
+</head>
+<body>
+	<!--#include virtual="../front/common/header.shtml"-->
+	<div class="container">
+		<a href="javascript:;" class="pop">pop</a>		
+	</div>
+	<!--#include virtual="../front/common/footer.shtml"-->
+<script>
+	$(".pop").click(function(){
+		Win.open({
+			title: 服务器分发
+			width: 490,
+			height: 375
+		});
+	})
+</script>
+</body>
+</html>

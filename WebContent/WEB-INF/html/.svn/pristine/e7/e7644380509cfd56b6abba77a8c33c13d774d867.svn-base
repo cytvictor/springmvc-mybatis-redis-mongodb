@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/parent.css" />
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				学业分析
+				<span class="navTab">
+					<a href="todayWork.shtml" index="0">作业情况</a>
+					<a href="recentlyTest.shtml" index="1">考试情况</a>
+					<a href="scoreAnalysis.shtml" index="2">成绩分析</a>
+					<a href="javascript:;" class="currTab" index="3">老师评价</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="tabBox currBox">
+					<ul class="tcEvaluateList">
+						<li>
+							<dl>
+								<dt>
+									<a href="javascript:;" class="tcPic">
+									<img src="/public/img/index/testImg/tcPhoto.png" alt="" width="45" height="45" />
+									</a>
+								</dt>
+								<dd>张老师</dd>
+							</dl>
+							<div class="tcSays">
+								<h5>2013上学期</h5>
+								<p>该生思维严密，机制冥界，天资聪颖，有强烈的求知欲该生思维严密，机制冥界，天资聪颖，有强烈的求知欲该生思维严密，机制冥界，天资聪颖，有强烈的求知欲...<a href="javascript:;" class="blue">(全文)</a></p>
+								<span class="time">2014-7-31 14:30</span>
+							</div>
+						</li>
+						<li>
+							<dl>
+								<dt>
+									<a href="javascript:;" class="tcPic">
+									<img src="/public/img/index/testImg/tcPhoto.png" alt="" width="45" height="45" />
+									</a>
+								</dt>
+								<dd>张老师</dd>
+							</dl>
+							<div class="tcSays">
+								<h5>2013上学期</h5>
+								<p>该生思维严密，机制冥界，天资聪颖，有强烈的求知欲该生思维严密，机制冥界，天资聪颖，有强烈的求知欲该生思维严密，机制冥界，天资聪颖，有强烈的求知欲...<a href="javascript:;" class="blue">(全文)</a></p>
+								<span class="time">2014-7-31 14:30</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

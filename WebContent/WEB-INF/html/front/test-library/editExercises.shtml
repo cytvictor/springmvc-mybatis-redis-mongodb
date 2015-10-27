@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="javascript;;" onclick="window.history.back();">&lt;&lt;返回</a>
+				编辑习题
+			</h4>
+			<div class="otContent">
+				<ul class="commonSelect">
+					<li>
+						<label>学段：</label>
+						<select name="" id=""><option value="">请选择</option></select>
+						<label>学科：</label>
+						<select name="" id=""><option value="">请选择</option></select>
+						<label>年级：</label>
+						<select name="" id=""><option value="">请选择</option></select>
+					</li>
+				</ul>
+				<div class="selectBox">
+					<h5>关联章节：</h5>
+					<ul>
+						<li>
+							<label>版本：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>章节：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>分册：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+						</li>
+						<li>
+							<a href="javascript" class="btn bgBlue">增加章节</a>
+						</li>
+						<li>
+							<label>章节：</label>
+							<span class="smallBlock chapBlock">
+								语文
+								<a href="javescript:;"></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="selectBox">
+					<h5>关联知识点：</h5>
+					<ul>
+						<li>
+							<label>分类：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>知识点：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+						</li>
+						<li>
+							<a href="javascript" class="btn bgBlue">增加知识点</a>
+						</li>
+						<li>
+							<label>知识点：</label>
+							<span class="smallBlock chapBlock">
+								语文
+								<a href="javescript:;"></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+				
+				<ul class="selectList">
+					<li>
+						难度系数：
+						<select name="" id="">
+							<option value="">请选择</option>
+						</select>
+					</li>
+					<li>
+						习题类型：
+						<label><input type="radio" name="timu" />客观题</label>
+						<label><input type="radio" name="timu" />主观题</label>
+						<label><input type="radio" name="timu" />解答题</label>
+					</li>
+					<li class="clearfix">
+						<label style="float: left;">习题题干：</label>
+						<div class="cCont">这里放富文本编辑器</div>
+					</li>
+					<li class="xitiList clearfix">
+						<label class="cName">习题：</label>
+						<ul class="cCont">
+							<li>
+								<label>习题名称：</label>
+								<input type="text">
+								插入图片
+							</li>
+							<li>
+								<label>选项A：</label>
+								<input type="text">
+							</li>
+							<li>
+								<label>选项B：</label>
+								<input type="text">
+								+添加资源
+							</li>
+							<li>
+								<label>正确答案：</label>
+								<input type="checkbox" /> 选项A
+								<input type="checkbox" class="ml20"/> 选项B
+							</li>
+							<img src="/public/img/index/testImg/test.png" alt="">
+						</ul>
+					</li>
+					<li class="clearfix">
+						<label style="float: left;">习题解析：</label>
+						<div>这里放富文本编辑器</div>
+					</li>
+				</ul>
+				
+				<div style="margin:10px 0 10px 70px;">
+					<a href="javascript:;" class="btn bgBlue">上传习题解析</a>
+					
+					<p style="margin: 10px 0;">
+						视频解析视频文件名称.flv
+						<a href="javascript:;" class="red" style="margin: 0 20px;">删除</a>
+						<a href="javascript:;" class="blue">点击播放</a>
+					</p>
+				</div>
+
+				<div class="submitBtn">
+					<a class="btn mr20">提交保存</a>
+					<a href="javascript:; ml20">清空</a>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

@@ -1,0 +1,108 @@
+<div class="header">
+	<div class="headerInner">
+
+		<a href="javascript:;" class="logo">
+			<img src="/public/img/index/logo.png" alt="人人通" />
+			<span class="manageName">河南省电教馆</span>
+		</a>
+
+		<div class="header-right">
+			<span class="searchBar clearfix">
+				<input type="text" class="search" placeholder="Search" />
+				<a href="javascript:;" class="searchBtn"></a>
+			</span>
+
+			<ul class="loginBar">
+				<!-- <li><a href="javascript:;">记录</a></li>
+				<li class="news"><a href="javascript:;"><i>2</i></a></li> -->
+				<li class="userName"><a href="javascript:;">Paradise V</a></li>
+				<li class="userPhoto">
+					<a href="/html/front/profile/info.shtml">
+						<img src="/public/img/index/testImg/tcPhoto.png" alt="" width="45" height="45">
+					</a>
+					<div class="tipBox">
+						<span class="trangle">◆</span>
+						<div class="clearfix">
+							<a href="javascript:;" class="tipList myHome">我的空间</a>
+							<a href="/html/front/community/messages.shtml" class="tipList personalData">个人资料</a>
+							<a href="javascript:;" class="tipList msg">消息(<b class="red">6</b>)</a>
+							<a href="javascript:;" class="tipList privateLetter">私信(<b class="red">4</b>)</a>
+							<a href="javascript:;" class="tipList viewRecord">观看记录</a>
+							<a href="javascript:;" class="tipList myCollect">我的收藏</a>
+						</div>
+						<a href="javascript:;" class="btn mt10 quit">退出</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="nav">
+	<ul class="navInner">
+		<li class="index selected"><a href="javascript:;" class="selected">首页</a></li>
+		<li class="bestCourse"><a href="/html/homeTop/bestCourse/index.shtml">精品课程</a></li>
+		<li class="microCourse"><a href="javascript:;">微课程</a></li>
+		<li class="tutorCourse"><a href="javascript:;">教学资源</a></li>
+		<li class="talentShow"><a href="javascript:;">轻松一刻</a></li>
+		<!-- <li class="colorBar">
+			<span class="color0"></span>
+			<span class="color1"></span>
+			<span class="color2"></span>
+			<span class="color3"></span>
+			<span class="color4"></span>
+			<span class="color5"></span>
+			<span class="color6"></span>
+		</li> -->
+		
+		<!-- 电教馆下的四种颜色 -->
+		<li class="colorBar">
+			<span class="color1"></span>
+			<span class="color2"></span>
+			<span class="color3"></span>
+			<span class="color4"></span>
+			<span class="color-btn"></span>
+		</li>
+	</ul>
+	
+</div>
+
+<script>
+$(function(){
+	var colorChange =  function (elm) {
+		$('.colorBar .selected').removeClass('selected');
+		$(elm).addClass('selected');
+		var colorName = elm.className.match(/color\d+/)[0];
+		var bodyColorName = document.body.className;
+		document.body.className = bodyColorName.replace(/color\d+/g, '') + " " + colorName;
+		var date = new Date();
+		var expiresDays = 10;
+		date.setTime(date.getTime() + expiresDays*24*3600*1000);
+		document.cookie = "bgColor=" + colorName + ";expires=" + date.toGMTString() + ";path=/";
+	}
+	$('.colorBar').on('click', 'span', function () {
+		colorChange(this);
+	});
+
+	var bgColor;
+	var arrCookie = document.cookie.split("; ");
+	for (var i = 0; i < arrCookie.length; i++) {
+		var arr = arrCookie[i].split('=');
+		if ('bgColor' == arr[0]) {
+			bgColor = arr[1];
+			break;
+		}
+	}
+	bgColor = bgColor || "color0";
+	colorChange($('.colorBar .' + bgColor)[0]);
+});
+
+$(function(){
+	$('.color-btn').siblings().hide();
+	$('.colorBar').on('mouseover', function(){
+		$('.color-btn').siblings().show();
+	}).on('mouseout', function(){
+		$('.color-btn').siblings().hide();
+	});
+});
+</script>

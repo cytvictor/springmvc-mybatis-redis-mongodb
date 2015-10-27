@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="common/side.shtml"-->
+		<div class="content">
+			<div class="building">
+				<img src="/public/img/building.jpg" alt="">
+			</div>
+		</div>
+	</div> <!--#include virtual="common/footer.shtml"-->
+</body>
+</html>

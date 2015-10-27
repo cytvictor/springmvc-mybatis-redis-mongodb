@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav netWorkNav">
+				<a class="btn testZj systemZj" href="addHomework.shtml">布置作业</a>
+				查看作业
+			</h4>
+			<div class="otContent">
+				<ul class="detailBox checkDetail">
+					<li>
+						<label class="cName">作业名称：</label>
+						<h5 class="cCont">诗歌《离骚》讲解</h5>
+					</li>
+					<li>
+						<label class="cName">作业内容：</label>
+						<p class="cCont">诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解</p>
+					</li>
+					<li>
+						<label class="cName">附件：</label>
+						<p>
+							<span class="cCont downLoad blue">诗歌《离骚》讲解.doc </span>大小12m
+							<a href="" class="downLink">下载</a>
+						</p>
+
+					</li>
+					<li class="border-bottom">
+						<label class="cName">完成时间：</label>
+						<span class="cCont">2014-5-26</span>
+					</li>
+					<li>
+						<label class="cName">当前提交人数：</label>
+						<span class="cCont nums"><b class="orange">3/56</b>人</span>
+					</li>
+				</ul>
+
+				<table class="normalTable" id="otTable">
+					<tr>
+						<th>姓名</th>
+						<th>班级</th>
+						<th>提交时间</th>
+						<th>作业名称</th>
+						<th>操作</th>
+						<th>得分</th>
+					</tr>
+					<tr>
+						<td>陈晓晓</td>
+						<td>高三(1)班</td>
+						<td>2014-07-29 13:30</td>
+						<td>写对诗歌《离骚》的读后感</td>
+						<td class="checkCor">
+							<a href="javascript:;" class="blue">查看</a>
+						</td>
+						<td>90</td>
+					</tr>
+					<tr>
+						<td>陈晓晓</td>
+						<td>高三(1)班</td>
+						<td>2014-07-29 13:30</td>
+						<td>写对诗歌《离骚》的读后感</td>
+						<td class="corr">
+							<a href="javascript:;" class="blue">批改</a>
+						</td>
+						<td>90</td>
+					</tr>
+					
+				</table>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+	<script>
+	$(document).ready(function() {
+		function checkCor() {
+			Win.open({
+				url:'checkWork_pop_litewin.shtml?',
+				width:500,
+				height:400,
+				title:'查看批改'
+			});
+		}
+		function correct() {
+			Win.open({
+				url:'checkWork_pop2_litewin.shtml?',
+				width:500,
+				height:400,
+				title:'批改作业'
+			});
+		}
+
+		events.addEvent($class("checkCor"),'click',checkCor);
+		events.addEvent($class("corr"),'click',correct);
+	});
+	</script>
+</body>
+</html>

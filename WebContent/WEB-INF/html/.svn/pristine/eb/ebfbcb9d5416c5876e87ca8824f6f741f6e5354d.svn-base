@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>XX的空间</title>
+	<link rel="stylesheet" href="../../../public/style/reset.css" />
+	<link rel="stylesheet" href="../../../public/style/common.css" />
+	<link rel="stylesheet" href="../../../public/style/style.css" />
+	<link rel="stylesheet" href="../../../public/style/community.css" />
+	<script src="../../../public/js/jquery-1.11.1.min.js"></script>
+	<script src="../../../public/js/extend.js"></script>
+	<script src="../../../public/js/litewin.js"></script>
+	<script src="../../../public/js/common.js"></script>
+</head>
+<body class="space">
+	<div class="header">
+		 
+	</div>
+
+	<div class="nav">
+		 
+	</div>
+
+	<div class="container">
+		<div class="aside">
+			<div class="tcMsg">
+				<img src="../../../public/image/testImg/tcPhoto.png" alt="" width="189px;" height="189px;" />
+				<h4>张亚杰</h4>
+				<span class="area">江苏</span>
+				<span class="school">景程中学</span>
+			</div>
+			<div class="visittagContBox">
+				<h4>最近访客</h4>
+				<div class="recentVisit">			 	
+					<a href="#" title="方学生"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg" alt="方学生">方学生</a>
+					<a href="#" title="方学生"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg" alt="方学生">方学生</a>
+					<a href="#" title="方学生"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg" alt="方学生">方学生</a>
+					<a href="#" title="方学生"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg" alt="方学生">方学生</a>
+					<a href="#" title="方学生"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg" alt="方学生">方学生</a>
+					<a href="#" title="方学生"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg" alt="方学生">方学生</a>
+					<a href="#" title="方学生"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg" alt="方学生">方学生</a>
+					<a href="#" title="方学生"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg" alt="方学生">方学生</a>
+					<a href="#" title="方学生"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg" alt="方学生">方学生</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<h4 class="contentNav">
+				<span class="navTab">
+					<a href="hisHome.html">动态</a>
+					<a href="hisResource.html" class="currTab">资源</a>
+					<a href="hisFriend.html" >好友</a>
+				</span>
+			</h4>
+			<div class="myResourceWrap">
+			 	 
+			</div>
+		</div>
+	</div>
+<script>
+ 
+</script>
+</body>
+</html>

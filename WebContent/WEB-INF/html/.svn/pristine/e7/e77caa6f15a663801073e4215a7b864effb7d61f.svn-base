@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav messageManageNav">
+				<a class="btn testZj systemZj" href="sendMessage.shtml">发布消息</a>
+				信息中心
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">我收到的消息</a>
+					<a href="javascript:;" index="1">我发布的消息</a>
+				</span>
+			</h4>
+			<div class="tabBox currBox">
+				<ul class="messageList myMessage ml20 mr20">
+					<li>
+						<h5>上课提醒:</h5>
+						<p>您购买到的“建筑师一级职称开课啦，由著名建筑大师。。。您购买到的“建筑师一级职称开课啦，由著名建筑大师筑师一级职称开课啦，由著名建筑大师。。。”</p>
+						<span class="time">2014-7-29 18:50</span>
+					</li>
+					<li>
+						<h5>上课提醒:</h5>
+						<p>您购买到的“建筑师一级职称开课啦，由著名建筑大师。。。您购买到的“建筑师一级职称开课啦，由著名建筑大师。。。”</p>
+						<span class="time">2014-7-29 18:50</span>
+					</li>
+				</ul>
+			</div>
+			<div class="tabBox">
+				<table class="normalTable messageListTable">
+					<tr>
+						<th class="messageTh">消息</th>
+						<th class="statusTh">状态</th>
+						<th class="handleTh">操作</th>
+					</tr>
+					<tr>
+						<td>
+							<ul class="messageList">
+								<li class="slideUp">
+									<h5>上课提醒:</h5>
+									<p>您购买到的“建筑师一级职称开课啦，由著名建筑大师。。。您购买到的“建筑师一级职称开课啦，由著名建筑大师。。。”</p>
+									<span class="time">2014-7-29 18:50</span>
+								</li>
+							</ul>
+						</td>
+						<td class="statusTd">已发布</td>
+						<td class="handleTd blue">展开</td>
+					</tr>
+					<tr>
+						<td>
+							<ul class="messageList">
+								<li>
+									<h5>上课提醒:</h5>
+									<p>您购买到的“建筑师一级职称开课啦，由著名建筑大师。。。您购买到的“建筑师一级职称开课啦，由著名建筑大师。。。”</p>
+									<span class="time">2014-7-29 18:50</span>
+								</li>
+							</ul>
+						</td>
+						<td class="statusTd">已发布</td>
+						<td class="handleTd red">收起</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+<script>
+	$(".handleTd").click(function() {
+		var li = $(this).siblings().children(".messageList").children("li");
+		if(li.hasClass("slideUp")) {
+			li.removeClass("slideUp");
+			$(this).html("收起").removeClass("blue").addClass("red");
+		} else {
+			li.addClass("slideUp");
+			$(this).html("展开").removeClass("red").addClass("blue");
+		}
+	})
+</script>
+</body>
+</html>

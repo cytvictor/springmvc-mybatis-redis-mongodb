@@ -1,0 +1,85 @@
+<div class="footer" id="footer">
+	<p>CopyRight&copy2007-2015阔地网络科技有限公司 增值电信业务经营许可证苏B2-20100157</p>
+</div>
+<script>
+	//搜索框交互
+	// var input_search = $('input.search');
+ //    var old_width = input_search.css('width');
+
+ //    input_search.bind('focusin', function() {
+ //        input_search.animate({'width': '240px'}, 500);
+	// 	input_search.removeAttr("placeholder");       
+ //    }).bind('focusout', function() {
+ //        input_search.animate({'width': old_width}, 500);
+ //        input_search.attr("placeholder", "Search"); 
+ //    });
+
+	//头部hover弹出框
+	(function(){
+		var _t;
+		$(".tipBox").hide();
+		$(".loginBar .userPhoto").hover(function(){
+			clearTimeout(_t);
+			$(".tipBox").show();
+		},function(){
+			_t = setTimeout('$(".tipBox").hide()', 300);
+		})
+		$(".tipBox").bind("mouseover", function(){
+			clearTimeout(_t);
+		})
+	})();
+	
+	// side导航
+	$(".sideNav a").click(function(){
+		$(".sideNav a").removeClass("selected");
+		$(this).addClass("selected");
+	})
+	// side班级选择
+	$(".classList").delegate("a", "click", function(){
+		$(this).removeClass("selected").addClass("selected");
+	})
+	// 加关注
+	$(".focus").click(function(){
+		if ($(this).html() == "+关注") {
+			$(this).html("&radic;&nbsp;已关注").css("color", "#666");
+		} else{
+			$(this).html("+关注").addClass("focused").css("color", "#219ee0");
+		}
+	})
+	//content的tab切换
+	$(".navTab a").click(function(){
+		var i = this.getAttribute("index");
+		console.log(i);
+		$(".currTab").removeClass("currTab");
+		$(".navTab a").eq(i).addClass("currTab");
+		$(".currBox").removeClass("currBox");
+		$(".tabBox").eq(i).addClass("currBox");
+	});
+	//测试中心--查看试卷tab切换
+	$(".klgList a").click(function(){
+		var thisWrap = $(this).parents(".knowledge");
+			thisWrap.find(".selected").removeClass("selected");
+			$(this).addClass("selected");
+		var thisCont = thisWrap.find(".klgCont");
+		for(var i=0; i<thisCont.length; i++){
+			if(thisCont.eq(i).hasClass("hidden")){
+			 	thisCont.eq(i).removeClass("hidden")
+			 }else{
+			 	thisCont.eq(i).addClass("hidden")
+			 }
+		};
+	});
+	//content内部二级菜单tab切换
+	$(".contentInNav").delegate("a", "click", function(){
+		var i = $(this).attr("index");
+		$(".contentInNav .selected").removeClass("selected");
+		$(this).addClass("selected");
+		$(".sourceList").addClass("hidden").eq(i).removeClass("hidden");
+	});
+
+	// 设置左侧side高度
+	$(function(){
+		var containerH = $('.container').height();
+		$('.side').height(containerH - 20);
+	});
+</script>

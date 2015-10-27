@@ -1,0 +1,40 @@
+<div class="side">
+	<div class="userMsg">
+		<div class="userPhoto">
+			<dt><img src="/public/img/index/testImg/parentPhoto.png" alt="" width="90" height="90"></dt>
+			<dd class="userName">古佳佳</dd>
+		</div>
+		<span>王奇奇的爸爸</span>
+
+		<div class="collectAndMsg">
+			<span>
+				<b>32</b>
+				<a href="javascript:;">收藏</a>
+			</span>
+			<span>
+				<b>5</b>
+				<a href="javascript:;">消息</a>
+			</span>
+		</div>
+		<div class="childrenMsg clearfix">
+			<img src="/public/img/index/testImg/studentPhoto.png" alt="" width="45" height="45"/>
+			<dl>
+				<dt>
+					<span class="name">王奇奇</span>
+					<a href="javascript:;" class="changeChild">切换</a>
+				</dt>
+				<dd>
+					京城中学 三年级(2)班
+				</dd>
+			</dl>
+		</div>
+	</div>
+
+	<ul class="sideNav">
+		<li class="noticeMenu"><a href="/html/parent/classInfo/classDync.shtml">班级通告</a></li>
+		<li class="trackMenu"><a href="/html/parent/studyFollow/todayWork.shtml">学业分析</a></li>
+		<li class="storeMenu"><a href="/html/parent/shopping/shopping.shtml">资源中心</a></li>
+		<li class="activeMenu"><a href="/html/parent/onlineCourse/onlineCourse.shtml">我的互动</a></li>
+		<li class="liveMenu"><a href="/html/parent/onlineAnswerQs/onlineAnswerQs.shtml">实时观摩</a></li>
+	</ul>
+</div>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/parent.css" />
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav noticeNav">
+				班级通告
+				<span class="navTab">
+					<a href="javascript:;"  class="currTab" index="0">班级动态</a>
+					<a href="javascript:;" index="1">老师动态</a>
+					<a href="msgInter.shtml" index="2">信息互动</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="myHomeWrap">
+					<!--  动态  -->
+					<div class="feedWrap">
+						<p id="platsetList"><span id="latsetPubName">XXX</span>等动态有更新</p>
+						
+						<ul class="newsWrap" id="feedList"></ul>
+						<p id="morePub" class="evenMore">更多动态......</p>
+					</div>
+					<div class="classRec">
+						<div class="qualityClass">
+							<h5>精品课推荐</h5>
+							<div class="classBox clearfix">
+								<a href=""><img src="/public/img/index/testImg/test.png" width="120" height="90" alt=""></a>
+								<dl>
+									<dt>高三数学模拟考试</dt>
+									<dd>播放次数：18</dd>
+									<dd><a href="" class="btn">收藏</a></dd>
+								</dl>
+							</div>
+						</div>
+						<div class="wclassRec">
+							<h5>微课程推荐</h5>
+							<div class="classBox clearfix">
+								<a href=""><img src="/public/img/index/testImg/test.png" width="120" height="90" alt=""></a>
+								<dl>
+									<dt>高三数学模拟考试</dt>
+									<dd>播放次数：18</dd>
+									<dd><a href="" class="btn">收藏</a></dd>
+								</dl>
+							</div>
+							<div class="classBox clearfix">
+								<a href=""><img src="/public/img/index/testImg/test.png" width="120" height="90" alt=""></a>
+								<dl>
+									<dt>高三数学模拟考试</dt>
+									<dd>播放次数：18</dd>
+									<dd><a href="" class="btn">收藏</a></dd>
+								</dl>
+							</div>
+						</div>
+						<div class="teachSource">
+							<h5>教育资源推送</h5>
+							<div class="classBox clearfix">
+								<a href="javascript:;" class="title">我国省行政单位简称的由来</a>
+								<div class="teachBoxDetail">
+									<a href="javascript:;"><img src="/public/img/index/testImg/test.png" width="60" height="70" alt=""></a>
+									<dl>
+										<dd>查看次数：18</dd>
+										<dd><a href="" class="btn">收藏</a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="classBox clearfix">
+								<a href="javascript:;" class="title">我国省行政单位简称的由来</a>
+								<div class="teachBoxDetail">
+									<a href="javascript:;"><img src="/public/img/index/testImg/test.png" width="60" height="70" alt=""></a>
+									<dl>
+										<dd>查看次数：18</dd>
+										<dd><a href="" class="btn">收藏</a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+<script>
+	$(".teachBoxDetail:gt(0)").hide();
+	$(".teachSource .classBox").mouseover(function(){
+		$(this).children(".teachBoxDetail").show();
+		$(this).siblings().children(".teachBoxDetail").hide()
+	})
+</script>
+</body>
+</html>

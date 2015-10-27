@@ -1,0 +1,559 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/community.css">
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav homeNav myHd schoolActiveNav">
+				我的互动
+				<span class="navTab">
+					<a href="home.shtml" class="currTab" index="0">最新动态</a>
+					<a href="friends.shtml" index="1">我的关注</a>
+					<a href="messages.shtml" index="2">私信</a>
+				</span>
+				<span class="serachPerson" style="float:right;">
+					找人：<input type="text" placeholder="输入用户ID/姓名" />
+					<a href="javascript:;" style="font-size:14px;padding:5px 10px;color:#fff;background:#219ee0;">搜索</a>
+				</span>
+			</h4>
+			<div class="myHomeWrap">
+				<!--  动态  -->
+				<div class="feedWrap">
+					<div class="publishBox">
+						<textarea class="pubContent" id="pubContent"> </textarea>
+						<p class="ctrlBar">
+							<a class="btn pubBtn" id="pubBtn" href="javascript:;">发表</a>
+							<b id="spanInput">0/140</b>
+							<a class="addFace" id="faceBtn" href="javascript:;">表情</a>
+							<a class="addPic" href="javascript:;">
+								<span id="uploadImg">图片 </span>
+							</a>
+						</p>
+						<ul class="publishPic">
+							<li>
+								<img src="" />
+								<a href="javascript::" class="close">close</a>
+							</li>
+						</ul>
+					</div>
+					 
+					<p id="platsetList"><span id="latsetPubName">XXX</span>等动态有更新</p>
+				 	
+					<ul class="newsWrap">
+						<li class="feedItem" id="feed102">
+					       	<h5><a href="javascript:;" target="_blank" class="sName">方学生</a><span class="gray">05月04日 11:14</span></h5>
+					       	<div class="nCont">
+					       		<p>美女照片，快来看啊</p>
+					       		<div class="lightbox" >
+					       			<img class="lightPic" idx="0" src="" />
+					       			<img class="lightPic" idx="1" src="" />
+					       			<img class="lightPic" idx="2" src="" />
+					       		</div>
+					       	</div>
+					   		<p class="newsState">
+								<a href="javascript:;" feedId = "102" class="comm">评论(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="trans">转发(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="fav">赞(<span>0</span>)</a>
+							</p>
+							<div class="comment" id = "comment102">
+								<div class="commentOne">
+									<span class="arrow">◆</span>
+									<div class="commentBox">
+										<textarea class="sendComment"> </textarea>
+										<p class="commentSendBox">
+											<a class="btn pubBtn" href="javascript:;">发表</a>
+											<a class="face" href="javascript:;">表情</a>
+										</p>
+									</div>
+									<ul class="commentList">
+										<li class="picItem" id="reply2001">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师1：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2001" href="javascript:;">回复</a>
+													<a class="del" replyid="2001" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2001">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+								    	
+								    	<li class="picItem" id="reply2002">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师2：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2002" href="javascript:;">回复</a>
+													<a class="del" replyid="2002" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2002">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+									</ul>
+					  			</div>
+					  		 
+					  			<div class="forwardOne">
+						  			<span class="arrow">◆</span>
+									<textarea class="sendComment"> </textarea>
+									<p class="commentForwardBox">
+										<a class="btn pubBtn" href="javascript:;">发表</a>
+										<a class="face" href="javascript:;">表情</a>
+									</p>
+								</div>
+						 
+							</div>
+						</li>
+
+						<li class="feedItem" id="feed102">
+					       	<h5><a href="javascript:;" target="_blank" class="sName">方学生</a><span class="gray">05月04日 11:14</span></h5>
+					       	<div class="nCont">
+					       		<p>美女照片，快来看啊</p>
+					       		<div class="lightbox" >
+					       			<img class="lightPic" idx="0" src="" />
+					       			<img class="lightPic" idx="1" src="" />
+					       			<img class="lightPic" idx="2" src="" />
+					       		</div>
+					       	</div>
+					   		<p class="newsState">
+								<a href="javascript:;" feedId = "102" class="comm">评论(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="trans">转发(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="fav">赞(<span>0</span>)</a>
+							</p>
+							<div class="comment" id = "comment102">
+								<div class="commentOne">
+									<span class="arrow">◆</span>
+									<div class="commentBox">
+										<textarea class="sendComment"> </textarea>
+										<p class="commentSendBox">
+											<a class="btn pubBtn" href="javascript:;">发表</a>
+											<a class="face" href="javascript:;">表情</a>
+										</p>
+									</div>
+									<ul class="commentList">
+										<li class="picItem" id="reply2001">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师1：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2001" href="javascript:;">回复</a>
+													<a class="del" replyid="2001" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2001">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+								    	
+								    	<li class="picItem" id="reply2002">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师2：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2002" href="javascript:;">回复</a>
+													<a class="del" replyid="2002" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2002">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+									</ul>
+					  			</div>
+					  		 
+					  			<div class="forwardOne">
+						  			<span class="arrow">◆</span>
+									<textarea class="sendComment"> </textarea>
+									<p class="commentForwardBox">
+										<a class="btn pubBtn" href="javascript:;">发表</a>
+										<a class="face" href="javascript:;">表情</a>
+									</p>
+								</div>
+						 
+							</div>
+						</li>
+
+						<li class="feedItem" id="feed102">
+					       	<h5><a href="javascript:;" target="_blank" class="sName">方学生</a><span class="gray">05月04日 11:14</span></h5>
+					       	<div class="nCont">
+					       		<p>美女照片，快来看啊</p>
+					       		<div class="lightbox" >
+					       			<img class="lightPic" idx="0" src="" />
+					       			<img class="lightPic" idx="1" src="" />
+					       			<img class="lightPic" idx="2" src="" />
+					       		</div>
+					       	</div>
+					   		<p class="newsState">
+								<a href="javascript:;" feedId = "102" class="comm">评论(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="trans">转发(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="fav">赞(<span>0</span>)</a>
+							</p>
+							<div class="comment" id = "comment102">
+								<div class="commentOne">
+									<span class="arrow">◆</span>
+									<div class="commentBox">
+										<textarea class="sendComment"> </textarea>
+										<p class="commentSendBox">
+											<a class="btn pubBtn" href="javascript:;">发表</a>
+											<a class="face" href="javascript:;">表情</a>
+										</p>
+									</div>
+									<ul class="commentList">
+										<li class="picItem" id="reply2001">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师1：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2001" href="javascript:;">回复</a>
+													<a class="del" replyid="2001" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2001">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+								    	
+								    	<li class="picItem" id="reply2002">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师2：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2002" href="javascript:;">回复</a>
+													<a class="del" replyid="2002" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2002">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+									</ul>
+					  			</div>
+					  		 
+					  			<div class="forwardOne">
+						  			<span class="arrow">◆</span>
+									<textarea class="sendComment"> </textarea>
+									<p class="commentForwardBox">
+										<a class="btn pubBtn" href="javascript:;">发表</a>
+										<a class="face" href="javascript:;">表情</a>
+									</p>
+								</div>
+						 
+							</div>
+						</li>
+
+						<li class="feedItem" id="feed102">
+					       	<h5><a href="javascript:;" target="_blank" class="sName">方学生</a><span class="gray">05月04日 11:14</span></h5>
+					       	<div class="nCont">
+					       		<p>美女照片，快来看啊</p>
+					       		<div class="lightbox" >
+					       			<img class="lightPic" idx="0" src="" />
+					       			<img class="lightPic" idx="1" src="" />
+					       			<img class="lightPic" idx="2" src="" />
+					       		</div>
+					       	</div>
+					   		<p class="newsState">
+								<a href="javascript:;" feedId = "102" class="comm">评论(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="trans">转发(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="fav">赞(<span>0</span>)</a>
+							</p>
+							<div class="comment" id = "comment102">
+								<div class="commentOne">
+									<span class="arrow">◆</span>
+									<div class="commentBox">
+										<textarea class="sendComment"> </textarea>
+										<p class="commentSendBox">
+											<a class="btn pubBtn" href="javascript:;">发表</a>
+											<a class="face" href="javascript:;">表情</a>
+										</p>
+									</div>
+									<ul class="commentList">
+										<li class="picItem" id="reply2001">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师1：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2001" href="javascript:;">回复</a>
+													<a class="del" replyid="2001" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2001">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+								    	
+								    	<li class="picItem" id="reply2002">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师2：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2002" href="javascript:;">回复</a>
+													<a class="del" replyid="2002" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2002">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+									</ul>
+					  			</div>
+					  		 
+					  			<div class="forwardOne">
+						  			<span class="arrow">◆</span>
+									<textarea class="sendComment"> </textarea>
+									<p class="commentForwardBox">
+										<a class="btn pubBtn" href="javascript:;">发表</a>
+										<a class="face" href="javascript:;">表情</a>
+									</p>
+								</div>
+						 
+							</div>
+						</li>
+
+						<li class="feedItem" id="feed102">
+					       	<h5><a href="javascript:;" target="_blank" class="sName">方学生</a><span class="gray">05月04日 11:14</span></h5>
+					       	<div class="nCont">
+					       		<p>美女照片，快来看啊</p>
+					       		<div class="lightbox" >
+					       			<img class="lightPic" idx="0" src="" />
+					       			<img class="lightPic" idx="1" src="" />
+					       			<img class="lightPic" idx="2" src="" />
+					       		</div>
+					       	</div>
+					   		<p class="newsState">
+								<a href="javascript:;" feedId = "102" class="comm">评论(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="trans">转发(<span>0</span>)</a>
+								<a href="javascript:;" feedId = "102" class="fav">赞(<span>0</span>)</a>
+							</p>
+							<div class="comment" id = "comment102">
+								<div class="commentOne">
+									<span class="arrow">◆</span>
+									<div class="commentBox">
+										<textarea class="sendComment"> </textarea>
+										<p class="commentSendBox">
+											<a class="btn pubBtn" href="javascript:;">发表</a>
+											<a class="face" href="javascript:;">表情</a>
+										</p>
+									</div>
+									<ul class="commentList">
+										<li class="picItem" id="reply2001">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师1：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2001" href="javascript:;">回复</a>
+													<a class="del" replyid="2001" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2001">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+								    	
+								    	<li class="picItem" id="reply2002">
+											<a href="#" class="superPic"><img src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg"></a>
+											<div class="itemContent">
+												<a href="javascript:;" target="_blank" class="sName">老师2：</a>哈哈哈
+												<p>06月17日  10:17&nbsp;&nbsp;
+													<a class="reply" replyid="2002" href="javascript:;">回复</a>
+													<a class="del" replyid="2002" href="javascript:;">删除</a>
+												</p>
+												<div class="replyBox" id="to2002">
+													<textarea class="replyComment"> </textarea>
+													<p  class="commentReplyBox">
+														<a class="btn pubBtn"  href="javascript:;">评论</a>
+														<a class="face" href="javascript:;">表情</a>
+													</p>
+									     		</div>
+											</div>
+								    	</li>
+									</ul>
+					  			</div>
+					  		 
+					  			<div class="forwardOne">
+						  			<span class="arrow">◆</span>
+									<textarea class="sendComment"> </textarea>
+									<p class="commentForwardBox">
+										<a class="btn pubBtn" href="javascript:;">发表</a>
+										<a class="face" href="javascript:;">表情</a>
+									</p>
+								</div>
+						 
+							</div>
+						</li>
+					</ul>
+					<p id="morePub" class="evenMore">更多动态......</p>
+				</div>
+				
+				<div class="myRight">
+					<div class="visitWrap">
+						<div id="visitTags">
+							<a href="javascript:;" index="0" class="curr">谁看过我</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+							<a href="javascript:;" index="1">我看过谁</a>
+						</div>
+						<!-- 谁看过我  -->
+						<div class="visittagCont currBox">
+							<div class="visittagContBox">
+								<div class="recentVisit">			 	
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+								</div>
+								<p class="page">1/2<a href="javascript:;">下一页</a></p>
+							</div>
+							<p class="viewCount">今日访问
+								<span class="num ml10"> 2</span><br>总访问量
+								<span class="num ml10"> 31</span>
+							</p>
+						</div>
+						<!-- 我看过谁  -->
+						<div class="visittagCont">
+							<div class="visittagContBox">
+								<div class="recentVisit">			 	
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+								</div>
+								<p class="page"><a href="javascript:;">上一页</a>2/2</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+<!--#include virtual="../common/footer.shtml"-->
+<script>
+//表情
+$("#faceBtn").click(function(event){
+	/* 第三个参数cdRoot放绝对路径；第四个参数cb可以放回调函数 */
+	smile.show(event,$id("pubContent"),'../../../'); 
+});
+$(".face").click(function(event){
+	smile.show(event,$(this).parent().parent().find("textarea")[0],'../../../'); 
+});
+
+$(".publishPic").delegate(".close","click",function(){
+	$(this).parent().remove();
+});
+
+
+//上传图片实例化
+var params = {
+	fileType : "*.jpg;*.gif;*.png;*.jpeg;*.bmp;",
+	typeDesc : "图片",
+	sizeLimit : 1024*1024,
+	server: ""
+};
+var callback = {
+	noticeTypeError : function(d){
+		console.log("文件类型错误：只支持以下文件类型：" + d[0]);
+	},
+	noticeSizeError : function(d){
+		console.log("上传文件过大：限制大小：" + (d[0]/1024/1024)+"MB");
+	},
+	onOpen : function(name){
+		console.log(name);
+	},
+	onCancel : function(v){
+		console.log("取消选择框",v);
+	},
+	onProgress : function(d){
+		console.log(d[0],d[1]);
+		console.log("完成百分比：" + (d[0]/d[1]*100 >>0)+"%");
+	},
+	onComplete : function(d){
+		console.log(d);
+	}
+};
+var uploadSwf = new UploadFile($id("uploadImg"), "uploadSwf", "../../../public/flash/uploadFile.swf",params,callback);
+
+$("#visitTags a").click(function(){
+	var i = this.getAttribute("index");
+	$(".curr").removeClass("curr");
+	$(this).addClass("curr");
+	$(".currBox").removeClass("currBox");
+	$(".visittagCont").eq(i).addClass("currBox");
+});
+
+//动态评论相关
+$(".newsWrap").delegate(".comm","click",function(){
+	var _feedId =  this.getAttribute("feedId"),
+		_commentWrap = $("#comment"+_feedId);
+	_commentWrap.find(".commentOne").toggle();
+	_commentWrap.find(".forwardOne").hide();
+});
+$(".newsWrap").delegate(".trans","click",function(){
+	var _feedId =  this.getAttribute("feedId"),
+		_commentWrap = $("#comment"+_feedId);
+	_commentWrap.find(".forwardOne").toggle();
+	_commentWrap.find(".commentOne").hide();
+});
+$(".newsWrap").delegate(".reply","click",function(){
+	var _feedId =  this.getAttribute("replyId"),
+		_replyBox = $("#to"+_feedId),
+		_replyComment = _replyBox.find(".replyComment"),
+		_toName = $("#reply"+_feedId).find(".sName").html();
+	_replyBox.toggle();
+	if($.trim(_replyComment.val()) == "") _replyComment.val(_toName);
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+#Oracle BaseInfo
+baseinfo.datasource.driverClassName=oracle.jdbc.driver.OracleDriver
+#baseinfo.datasource.url=jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.200.91)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.200.92)(PORT=1521))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=testrrt2)))
+baseinfo.datasource.url=jdbc:oracle:thin:@10.1.200.35:1521:stxx
+baseinfo.datasource.username=baseinfo
+baseinfo.datasource.password=baseinfo
+baseinfo.datasource.initialSize=1
+baseinfo.datasource.maxActive=500
+baseinfo.datasource.minIdle=1
+baseinfo.datasource.maxWait=5000
+baseinfo.datasource.validationQuery=select 1 FROM DUAL
+baseinfo.datasource.testOnBorrow=false
+baseinfo.datasource.testOnReturn=false
+baseinfo.datasource.testWhileIdle=true
+baseinfo.datasource.timeBetweenEvictionRunsMillis=1800000
+
+
+#Oracle Resource
+resource.datasource.driverClassName=oracle.jdbc.driver.OracleDriver
+#resource.datasource.url=jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.200.91)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.200.92)(PORT=1521))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=testrrt2)))
+resource.datasource.url=jdbc:oracle:thin:@10.1.200.35:1521:stxx
+resource.datasource.username=resourcetest
+resource.datasource.password=resourcetest
+resource.datasource.initialSize=1
+resource.datasource.maxActive=500
+resource.datasource.minIdle=1
+resource.datasource.maxWait=5000
+resource.datasource.validationQuery=select 1 FROM DUAL
+resource.datasource.testOnBorrow=false
+resource.datasource.testOnReturn=false
+resource.datasource.testWhileIdle=true
+resource.datasource.timeBetweenEvictionRunsMillis=1800000
+
+
+#Oracle OnlineTest
+onlinetest.datasource.driverClassName=oracle.jdbc.driver.OracleDriver
+#onlinetest.datasource.url=jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.200.91)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.200.92)(PORT=1521))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=testrrt2)))
+onlinetest.datasource.url=jdbc:oracle:thin:@10.1.200.35:1521:stxx
+onlinetest.datasource.username=onlinetest
+onlinetest.datasource.password=onlinetest
+onlinetest.datasource.initialSize=1
+onlinetest.datasource.maxActive=500
+onlinetest.datasource.minIdle=1
+onlinetest.datasource.maxWait=5000
+onlinetest.datasource.validationQuery=select 1 FROM DUAL
+onlinetest.datasource.testOnBorrow=false
+onlinetest.datasource.testOnReturn=false
+onlinetest.datasource.testWhileIdle=true
+onlinetest.datasource.timeBetweenEvictionRunsMillis=1800000
+
+
+#Mongodb
+mongodb.host=10.1.200.211:30000,10.1.200.212:30000,10.1.200.213:30000
+mongodb.database=rrt
+mongodb.username=rrt
+mongodb.password=password
+mongodb.autoConnectRetry=true
+mongodb.connectTimeout=10000
+mongodb.connectionsPerHost=100
+mongodb.maxAutoConnectRetryTime=30000
+mongodb.maxWaitTime=15000
+mongodb.socketKeepAlive=true
+mongodb.socketTimeout=10000
+

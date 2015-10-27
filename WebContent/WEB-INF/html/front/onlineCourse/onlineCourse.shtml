@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav onlineCourseNav">
+				<a class="backup" href="#">&lt;&lt;返回</a>
+				在线课堂
+			</h4>
+			<div class="otContent">
+				<ul class="commonSelect">
+					<li>
+						<label>创建时间：</label>
+						<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="timeInput"/>
+						至：
+						<input type="text" class="timeInput"/>
+						<label>学段：</label>
+						<select>
+							<option>请选择</option>
+							<option>高一</option>
+						</select>
+						<label>学科：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>年级：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>分册：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+					</li>
+					<li>
+						<label>课堂名称：</label>
+						<input type="text" class="selectTitle" />
+						<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+					</li>
+				</ul>
+				<ul class="commonSelect needDashed pt15">
+					<li>
+						<label>发起课堂：</label>
+						<input type="text" class="selectTitle">
+						<a href="javascript:;" class="btn bgBlue ml40">发起课堂</a>
+						<a href="javascript:;" class="blue ml40">按搜索教师配置</a>
+					</li>
+				</ul>
+
+				<div class="courseAll">
+					<span class="classTab">
+						<a href="javascript:;" class="currTab" index="0">发起的课堂</a>
+						<a href="javascript:;" index="1">参加的课堂</a>
+					</span>
+					<div class="tabTable">
+						共<span class="blue">120</span>条数据
+						<table class="normalTable">
+							<tr>
+								<th>上课时间</th>
+								<th>发起学校</th>
+								<th>课堂名称</th>
+								<th>发起人</th>
+								<th>课堂状态</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td>2014-08-25 10:00</td>
+								<td>新密市直第一初中</td>
+								<td>全等三角形</td>
+								<td>许文强</td>
+								<td class="green">进行中</td>
+								<td><a href="javascript:;" class="blue phpaddress">进入课堂</a></td>
+							</tr>
+							<tr>
+								<td>2014-08-24 08:30</td>
+								<td>新密市城关镇中学</td>
+								<td>童趣</td>
+								<td>关山月</td>
+								<td class="green">进行中</td>
+								<td><a href="javascript:;" class="blue phpaddress">进入课堂</a></td>
+							</tr>
+							<tr>
+								<td>2014-08-23 10:30</td>
+								<td>景城中学</td>
+								<td>When is your birthday?</td>
+								<td>白珊珊</td>
+								<td class="green">进行中</td>
+								<td><a href="javascript:;" class="blue phpaddress">进入课堂</a></td>
+							</tr>
+							<tr>
+								<td>2014-08-22 14:00</td>
+								<td>新密市直第一初中</td>
+								<td>勾股定理</td>
+								<td>许文强</td>
+								<td class="green">进行中</td>
+								<td><a href="javascript:;" class="blue phpaddress">进入课堂</a></td>
+							</tr>
+							<tr>
+								<td>2014-08-22 13:00</td>
+								<td>新密市城关镇中学</td>
+								<td>在山的那边</td>
+								<td>关山月</td>
+								<td class="gray">已结束</td>
+								<td><a href="javascript:;" class="blue">上传录像</a></td>
+							</tr>
+							<tr>
+								<td>2014-08-22 10:00</td>
+								<td>新密市直第一初中</td>
+								<td>有理数和无理数</td>
+								<td>许文强</td>
+								<td class="gray">已结束</td>
+								<td><a href="javascript:;" class="blue">查看课堂点播</a></td>
+							</tr>
+							<tr>
+								<td>2014-08-21 10:00</td>
+								<td>景城中学</td>
+								<td>This is my sister</td>
+								<td>白珊珊</td>
+								<td class="gray">已结束</td>
+								<td><a href="javascript:;" class="blue">查看课堂点播</a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="tabTable hidden">
+						共<span class="blue">0</span>条数据
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+<script>
+	$(".classTab a").click(function(){
+		$(this).addClass("currTab").siblings().removeClass("currTab");
+		var i = $(this).attr("index");
+		$(".tabTable").addClass("hidden");
+		$(".tabTable").eq(i).removeClass("hidden");
+	})
+</script>
+<script src="/public/js/phpaddress.js"></script>
+</body>
+</html>

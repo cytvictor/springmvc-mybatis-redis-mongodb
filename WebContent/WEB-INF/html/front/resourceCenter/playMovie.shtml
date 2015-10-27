@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<script type="text/javascript" src="/public/js/photoScroll.js"></script>
+	<script>
+	$(document).ready(function(){
+		events.addEvent(window,"load",function(){
+			scrollHori.init();
+			autoPlay.init();
+		});
+		// 高清普清切换
+		// $(".videoFormat>.videoBtn").click(function(){
+		// $(this).addClass("selected").siblings().removeClass("selected");
+		// })
+		//视频播放按钮效果
+		$(".videoMask").click(function(){
+			$(this).fadeOut();
+			// $(".videoBtn")[0].click();
+		})
+		$(".videoBtn").click(function(){
+			$(".videoMask").fadeOut();
+			$(this).addClass("bgBlue").siblings(".videoBtn").removeClass("bgBlue");
+		})
+	})
+	</script>
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<h4 class="movieBreadNav">
+			<a href="resourceCenter.shtml" class="backup">&nbsp;&nbsp;返回</a>
+			汉语言文学(第一节)
+		</h4>
+		<div class="movieContent clearfix">
+			<div class="movie">
+				<div class="videoMask"></div>
+				<div class="photoScroll-2" id="photo-scroll">
+					<a id="rollLeft" class="rollMenu" href="javascript:;">
+						<img width="28" height="50" alt="" src="/public/img/common/scroll-left2.png" />
+					</a>
+					<a id="rollRight" class="rollMenu" href="javascript:;">
+						<img width="28" height="50" alt="" src="/public/img/common/scroll-right2.png" />
+					</a>
+					<div id="rollBox">
+						<ul id="rollList">	
+							<li class="selected">
+								<a href=""><img style="height:450px" src=""></a>
+							</li>
+							<li class="selected">
+								<a href=""><img style="height:450px" src=""></a>
+							</li>
+							<li class="selected">
+								<a href=""><img style="height:450px" src=""></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="movieMsg">
+				<h5>课程信息</h5>
+				<ul>
+					<li>
+						评分：
+						<span class="star-rating">
+							<span class="current-rating star1">
+							</span>
+						</span>
+						<span class="ml20"><b class="red">9.8</b>分</span>
+					</li>
+					<li>
+						<span class="setWidth">学段：初中</span>
+						<span class="setWidth">知识点：汉语言文学</span>
+					</li>
+					<li>
+						<span class="setWidth">学科：语文</span>
+						<span class="setWidth">发布人：SPRING</span>
+					</li>
+					<li>
+						<span class="setWidth">年级：初一</span>
+						<span class="setWidth">发布时间：6月8日16:00</span>
+					</li>
+					<li>
+						<span class="setWidth">分册：上册</span>
+						<span class="setWidth">时长：120分钟</span>
+					</li>
+					<li>
+						<span>章节：汉语言文学</span>
+					</li>
+					<li>
+						<span class="setWidth">在线观看数：<b class="red">1546</b>次</span>
+						<span class="setWidth">收藏次数：<b class="red">123</b>次</span>
+					</li>
+				</ul>
+				<div class="submitBtn">
+					<a href="javascript:;" class="btn videoBtn videoBtn0">高清</a>
+					<a href="javascript:;" class="btn mr20 videoBtn videoBtn1">普清</a>
+					<a href="javascript:;" class="btn">收藏</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

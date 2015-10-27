@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css" />
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav onlineAnswerQsNav">
+				<a class="backup" href="onlineAnswerQs.shtml">&lt;&lt;返回</a>
+				<a class="btn testZj" href="javascript:;">视频答疑</a>
+				查看问题
+			</h4>
+			<div class="otContent">
+				<label>标题：</label>
+				<input type="text">
+				<label class="ml40">学科：</label>
+				<select name="" id="">
+					<option value="">请选择</option>
+				</select>
+				<div>
+					这里放编辑器
+				</div>
+				<!-- 上传附件 -->
+				<div class="uploadAcc mt40">
+					上传附件：<input type="text" /> <a href="javascript:;" class="btn bgGreen">浏览</a>
+				</div>
+
+				<div class="mt40">
+					<a href="javascript:;" class="btn bgGreen">提交问题</a>
+					<a href="javascript:;" class="btn ml40">取消</a>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

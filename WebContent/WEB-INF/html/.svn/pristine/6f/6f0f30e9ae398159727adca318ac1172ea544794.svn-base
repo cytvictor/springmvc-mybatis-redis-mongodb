@@ -1,0 +1,20 @@
+<div class="header"id="header">
+	<a href="javascript:;" class="logo">
+		<img src="/public/img/admin/logo.png" alt="人人通" />
+	</a>
+	<span class="mainNav">
+		<a href="javascript:;" class="personalAccount"><i></i>个人帐号</a>
+		<a href="javascript:;" class="systemSet selected"><i></i>系统设置</a>
+		<a href="javascript:;" class="baseSet"><i></i>基础设置</a><a href="javascript:;" class="organizationSet"><i></i>机构管理</a>
+		<a href="javascript:;" class="userSearch"><i></i>用户查询</a>
+		<a href="javascript:;" class="sourceManage"><i></i>资源中心</a>
+		<a href="javascript:;" class="adManage"><i></i>广告管理</a>
+		<a href="javascript:;" class="realtimeClass"><i></i>实时课程</a>
+		<a href="javascript:;" class="contentManage"><i></i>内容管理</a>
+		<a href="javascript:;" class="moneyManage"><i></i>资金管理</a>
+	</span>
+	<span class="exit">
+		<em>你好，admin！</em>
+		<a href="javascript:;" class="exitBtn"><i></i>退出</a>
+	</span>
+</div>

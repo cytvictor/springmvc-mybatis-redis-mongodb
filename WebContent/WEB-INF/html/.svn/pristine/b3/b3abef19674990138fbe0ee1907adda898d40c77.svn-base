@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+	<style>
+		.normalTable td{text-align: left;}
+	</style>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav otherschoolNav">
+				<a class="backup" href="javascript:;" onclick="history.back();">&lt;&lt;返回</a>
+				分校管理
+			</h4>
+			<div class="otContent">
+				<table class="normalTable">
+					<tr>
+						<th>学校名称</th>
+						<td>新密市嵩山路小学</td>
+						<th>学段</th>
+						<td>
+							<label><input type="checkbox" name="" id=""> 小学</label>&nbsp;&nbsp;
+							<label><input type="checkbox" name="" id=""> 初中</label>&nbsp;&nbsp;
+							<label><input type="checkbox" name="" id=""> 高中</label>
+						</td>
+					</tr>
+					<tr>
+						<th>地址</th>
+						<td><input type="text" value="新密市嵩山路" /></td>
+						<th>联系人</th>
+						<td><input type="text" value="蒋老师" /></td>
+					</tr>
+					<tr>
+						<th>邮箱</th>
+						<td><input type="text" value="laols@rrt.com" /></td>
+						<th>联系电话</th>
+						<td>111</td>
+					</tr>
+					<tr>
+						<th>账号</th>
+						<td>xinmi</td>
+						<th>密码</th>
+						<td><a href="javascript:;" class="btn" onclick="alert('新密码为...')">重置密码</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

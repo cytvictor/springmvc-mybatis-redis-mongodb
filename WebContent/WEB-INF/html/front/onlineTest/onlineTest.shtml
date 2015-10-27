@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<style>
+		.commonSelect input,
+		.commonSelect select{margin-right: 10px;width: 85px;}
+	</style>
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="btn testZj" href="zj.shtml">组卷</a>
+				测试中心
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">我的试卷</a>
+					<a href="javascript:;" index="1">已布置</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="tabBox shareExam currBox">
+					<ul class="commonSelect">
+						<li>
+							<label>创建时间：</label>
+							<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="timeInput" style="margin-right:0;"/>
+							至：
+							<input type="text" class="timeInput"/>
+							<label>学段：</label>
+							<select>
+								<option>请选择</option>
+								<option>高一</option>
+							</select>
+							<label>学科：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>年级：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>分册：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+						</li>
+						<li>
+							<label>章节：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>试卷类型：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+						</li>
+					</ul>
+					<table class="normalTable">
+						<tr>
+							<th><input type="checkbox" /></th>
+							<th>试卷名称</th>
+							<th>学科</th>
+							<th>试卷类型</th>
+							<th>题目数</th>
+							<th>总分</th>
+							<th>创建日期</th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" /></td>
+							<td>诗歌《离骚》讲解</td>
+							<td>语文</td>
+							<td>每周测试</td>
+							<td>50</td>
+							<td>120</td>
+							<td>2014-10-12</td>
+							<td>
+								<a href="javascript:;" class="green">布置</a>
+								<a href="checkTest-new.shtml" class="blue">查看</a>
+								<a href="javascript:;" class="red">删除</a>
+							</td>
+						</tr>
+					</table>
+					
+					<a href="javascript:;" class="btn deleteAll">批量删除</a>
+
+				</div>
+
+				<div class="tabBox myTestPaper">
+					已布置
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+<script>
+$(function(){
+	$(".normalTable tr td:nth-child(2)").css({"text-align":"left", "max-width":"400px"});
+	$(".normalTable tr td:nth-child(2) img").css({"width:":"200px !important", "height":"150px !important"});
+});
+</script>
+</body>
+</html>

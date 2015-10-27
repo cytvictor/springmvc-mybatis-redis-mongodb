@@ -1,0 +1,39 @@
+<div class="side">
+	<!-- <ul>
+		<li class="sideList">
+			<a href="javascript:;">角色管理</a>
+			<ul class="menuBox">
+				<li><a href="javascript:;">帐号角色</a></li>
+				<li><a href="javascript:;">部门角色</a></li>
+			</ul>
+		</li>
+		<li class="sideList">
+			<a href="javascript:;">帐号管理</a>
+			<ul class="menuBox">
+				<li><a href="javascript:;">帐号管理</a></li>
+			</ul>
+		</li>
+	</ul> -->
+	<h4 href="javascript:;" class="sideList">
+		<b>角色管理</b>
+		<span class="hidden">
+			<a href="javascript:;">帐号角色</a>
+			<a href="javascript:;">部门角色</a>
+		</span>
+	</h4>
+
+	<h4 href="javascript:;" class="sideList">
+		<b>帐号管理</b>
+		<span class="hidden">
+			<a href="javascript:;">帐号列表</a>
+		</span>
+	</h4>
+
+	<h4 href="javascript:;" class="sideList">
+		<b>日志管理</b>
+		<span class="hidden">
+			<a href="javascript:;">日志管理</a>
+		</span>
+	</h4>
+
+</div>

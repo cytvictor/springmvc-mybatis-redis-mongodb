@@ -1,0 +1,5 @@
+<li id="file_6">
+	<div style="" id="file_6_div">
+		<a onclick="clickimg(this)" filename="Tulips.jpg" src="/rrt_henan/ImageServlet/1a869269-aadf-4e0c-bc18-26023b5020a9.jpg" class="file" href="javascript:;" id="file_6_alert"><b class="blue" id="file_6_name" title="Tulips.jpg">Tulips.jpg</b></a><span class="size" id="file_6_size">0.62M</span><span class="uploadBar uploadDone green" id="file_6_percent">已完成</span><span class="deleteUpload" id="file_6_delete"><a onclick="deleteProgres('6','/rrt_henan')" href="javascript:;">删除</a></span>
+	</div>
+</li>

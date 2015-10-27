@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="#">&lt;&lt;返回</a>测试统计
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">测试统计</a>
+					<a href="javascript:;" index="1">试卷解析统计</a>
+				</span>
+			</h4>
+			<div class="otaContent">
+				<div class="tabBox detailStat currBox">
+					<div class="classNav">
+						<a href="javascript:;" class="selected">一班</a>
+						<a href="javascript:;">二班</a>
+						<a href="javascript:;">三班</a>
+					</div>
+					<div class="classAllAnalysis clearfix">
+						<label>班级总统计</label>
+						<a href="javascript:;" class="blue exportData">点击导出数据</a>
+						<table class="normalTable">
+							<tr>
+								<th>提交人数</th>
+								<th>最高得分</th>
+								<th>最低得分</th>
+								<th>平均分</th>
+								<th>及格率</th>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>98</td>
+								<td>35</td>
+								<td>82</td>
+								<td>72%</td>
+							</tr>
+						</table>
+					</div>
+					<div class="classDetail">
+						<table class="normalTable clearfix">
+							<label>班级详细</label>
+							<input type="text" placeholder="按学生姓名搜索" class="searchByStName" />
+							<tr>
+								<th>提交时间</th>
+								<th>姓名</th>
+								<th>得分</th>
+								<th>排名</th>
+								<th>正确率</th>
+								<th>错题数</th>
+								<th>按时提交</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td>2014.05.26</td>
+								<td>李一伟</td>
+								<td>78</td>
+								<td>1</td>
+								<td>65%</td>
+								<td>35道</td>
+								<td>是</td>
+								<td><a href="" class="blue">答题详情</a></td>
+							</tr>
+							<tr>
+								<td>2014.05.26</td>
+								<td>李一伟</td>
+								<td>78</td>
+								<td>1</td>
+								<td>65%</td>
+								<td>35道</td>
+								<td>是</td>
+								<td><a href="" class="blue">答题详情</a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="tabBox testAnalysis">
+					这里是试卷解析
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

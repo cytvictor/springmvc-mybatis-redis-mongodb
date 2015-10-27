@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="onlineTest2.shtml">&lt;&lt;返回</a>
+				在线批阅
+			</h4>
+			<div class="topicControlBar">
+				<span class="prev btn">上一题</span>
+				<span class="next btn">下一题</span>
+			</div>
+
+			<div class="testWrap">
+				<div class="testTimu">
+					<h5>
+						作业
+						<span>本套试卷还有<b class="blue">xx</b>道题未批阅</span>
+					</h5>
+					<div class="timuCont">
+						要批的题目
+					</div>
+				</div>
+				<div class="testAnswer">
+					<h5>
+						提交人：郭晓晓
+						<span>共有<b class="red">76</b>人提交，已批给<b class="blue">45</b>人，还有<b class="red">xx</b>道题未批阅</span>
+					</h5>
+					<div class="answerCont mb20">
+						
+					</div>
+
+					<div class="evaluateCont">
+						老师点评：<br>
+						<textarea name="" id="" style="width:800px;height:120px;margin-top:10px;"></textarea>
+						<div class="mb20 mt20">
+							评分：<input type="text" /> 分
+							<span class="ml40" style="color:#888;">(该道题满分为2分，老师打分不能大于该分值)</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="submitBtn" style="border-bottom: 1px solid #ccc;margin-bottom:30px;">
+					<a href="#" class="btn">提交并批阅下一个</a>
+				</div>
+
+				<div class="studentSelBar">
+					<a href="javascript:;" id="prevbt" class="prev"></a>
+					<a href="javascript:;" id="nextbt" class="next"></a>
+					<div id="banner" class="photoBox">
+						<ul class="clearfix">
+							<li>
+								<img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" />
+								<span>黄成</span>
+							</li>
+							<li>
+								<img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" />
+								<span>黄成</span>
+							</li>
+							<li><img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" /></li>
+							<li><img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" /></li>
+							<li><img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" /></li>
+							<li><img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" /></li>
+							<li><img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" /></li>
+							<li><img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" /></li>
+							<li><img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" /></li>
+							<li><img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" /></li>
+							<li><img src="/public/img/index/testImg/student2.png" alt="" width="60" height="60" /></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+			<div class="topicControlBar">
+				<span class="prev btn">上一题</span>
+				<span class="next btn">下一题</span>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+<script>
+var li_Width=74;
+var banner_Li_Num=$('#banner li').length;
+$('#banner ul').css({'width':li_Width*banner_Li_Num,'marginLeft':-li_Width});
+
+function prevbt(){
+	$('#prevbt').unbind('click');
+	$('#banner li:last').detach().insertBefore('#banner li:first').parents('ul').css('marginLeft',-li_Width*2).stop(true).animate({marginLeft:-li_Width},300,
+	function(){
+	$('#prevbt').bind('click',prevbt);
+	});
+}
+function nextbt(){
+	$('#nextbt').unbind('click');
+	$('#banner ul').stop(true).animate({marginLeft:-li_Width*2},300,function(){
+	$('#banner ul').css('marginLeft',-li_Width).find('li:first').insertAfter('#banner li:last');
+	$('#nextbt').bind('click',nextbt);
+});
+}
+
+$('#prevbt').click(function(){
+	prevbt();
+});
+$('#nextbt').click(function(){
+	nextbt();
+});
+
+$('#banner ul li').click(function(){
+	$('#banner ul li').removeClass('selected');
+	$(this).addClass('selected');
+})
+</script>
+</body>
+</html>

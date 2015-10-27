@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/community.css"/>
+</head>
+<body>
+<!--#include virtual="../common/header.shtml"-->
+<div class="container">
+	<!--#include virtual="../common/side-visitor.shtml"-->
+	<div class="content">
+		<div class="otContent">
+			<div class="myHomeWrap">
+				<!--  动态  -->
+				<div class="feedWrap" style="padding-right:10px;">
+					<p id="platsetList"><span id="latsetPubName">XXX</span>等动态有更新</p>
+					
+					<ul class="newsWrap" id="feedList"></ul>
+					<p id="morePub" class="evenMore">更多动态......</p>
+				</div>
+				<div class="myRight">
+					<div class="visitWrap">
+						<div id="visitTags">
+							<a href="javascript:;" index="0" class="curr">谁看过我</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+							<a href="javascript:;" index="1">我看过谁</a>
+						</div>
+						<!-- 谁看过我  -->
+						<div class="visittagCont currBox">
+							<div class="visittagContBox">
+								<div class="recentVisit">			 	
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+								</div>
+								<p class="page">1/2<a href="javascript:;">下一页</a></p>
+							</div>
+							<p class="viewCount">今日访问
+								<span class="num ml10"> 2</span><br>总访问量
+								<span class="num ml10"> 31</span>
+							</p>
+						</div>
+						<!-- 我看过谁  -->
+						<div class="visittagCont">
+							<div class="visittagContBox">
+								<div class="recentVisit">			 	
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+									<a title="方学生" href="#"><img alt="方学生" src="http://58.210.137.42:8088/stxx/public/img/common/avatar.jpg">方学生</a>
+								</div>
+								<p class="page"><a href="javascript:;">上一页</a>2/2</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--#include virtual="../common/footer.shtml"-->
+<script>
+	$("#visitTags a").click(function(){
+		var i = this.getAttribute("index");
+		$(".curr").removeClass("curr");
+		$(this).addClass("curr");
+		$(".currBox").removeClass("currBox");
+		$(".visittagCont").eq(i).addClass("currBox");
+	});
+
+	//动态评论相关
+	$(".newsWrap").delegate(".comm","click",function(){
+		var _feedId =  this.getAttribute("feedId"),
+			_commentWrap = $("#comment"+_feedId);
+		_commentWrap.find(".commentOne").toggle();
+		_commentWrap.find(".forwardOne").hide();
+	});
+	$(".newsWrap").delegate(".trans","click",function(){
+		var _feedId =  this.getAttribute("feedId"),
+			_commentWrap = $("#comment"+_feedId);
+		_commentWrap.find(".forwardOne").toggle();
+		_commentWrap.find(".commentOne").hide();
+	});
+	$(".newsWrap").delegate(".reply","click",function(){
+		var _feedId =  this.getAttribute("replyId"),
+			_replyBox = $("#to"+_feedId),
+			_replyComment = _replyBox.find(".replyComment"),
+			_toName = $("#reply"+_feedId).find(".sName").html();
+		_replyBox.toggle();
+		if($.trim(_replyComment.val()) == "") _replyComment.val(_toName);
+	});
+</script>
+</body>
+</html>

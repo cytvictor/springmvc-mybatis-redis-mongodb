@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css">
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="onlineTest.shtml">&lt;&lt;返回</a>
+				测试统计
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">测试任务统计</a>
+					<a href="javascript:;" index="1">巩固测试统计</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="tabBox currBox">
+					<ul class="testMsg mb10">
+						<li class="mb20">
+							<span>学段：初中</span>
+							<span>学科：语文</span>
+							<span>年级：初一</span>
+							<span>分册：上册</span>
+						</li>
+						<li>
+							<span>标题：汉语言文学</span>
+						</li>
+					</ul>
+					<table class="normalTable">
+						<tr>
+							<th>来源</th>
+							<th>答题人数</th>
+							<th>平均得分</th>
+							<th>我的得分</th>
+							<th>答题正确率</th>
+							<th>错题数</th>
+							<th>我的错题解析</th>
+						</tr>
+						<tr>
+							<th>所有答案</th>
+							<td>45</td>
+							<td>79分</td>
+							<td>79分</td>
+							<td>79%</td>
+							<td>79道</td>
+							<td rowspan="2">错题解析</td>
+						</tr>
+						<tr>
+							<th>高三(1)班</th>
+							<td>45</td>
+							<td>79分</td>
+							<td>79分</td>
+							<td>79%</td>
+							<td>79道</td>
+						</tr>
+					</table>
+					<div class="testPart">
+						<h4>试卷解析</h4>
+						<div class="singleChoice">
+							<h5>一、单选题</h5>
+							<ul class="mb20 timu">
+								<li class="mb10 mt10">1、[<span class="YoN red">答对</span>]离骚的作者是谁</li>
+								<li><label class="len60">选项A：</label>陶渊明<li>
+								<li><label class="len60">选项B：</label>李白</li>
+								<li><label class="len60">选项C：</label>屈原</li>
+								<li><label class="len60">选项D：</label>杜甫</li>
+								<img src="/public/img/index/testImg/test.png" alt="" width="120" height="90"/>
+							</ul>
+							<ul>
+								<li>
+									<label>正确答案：</label><b>C</b>
+									<label>我的选择：</label><b>C</b>
+									<label>难度系数：</label><b class="orange">3</b>
+								</li>
+								<li>
+									<label>选择A的人数：</label><b class="orange">3</b>人
+									<label>选择B的人数：</label><b class="orange">56</b>人
+									<label>选择C的人数：</label><b class="orange">25</b>人
+									<label>选择D的人数：</label><b class="orange">39</b>人
+								</li>
+							</ul>
+
+							<div class="knowledge">
+								<div class="klgList">
+									<a href="javascript:;" class="selected">习题解析</a>
+									<a href="javascript:;">知识点</a>
+								</div>
+								<div class="klgCont">
+									<p>
+										选项A，陶渊明，为《桃花源记》作者。为南朝宋初诗人，思想家。
+										<a href="javascript:;" class="movieAnalysisBtn btn bgBlue">点击解析视频</a>
+									</p>
+								</div>
+								<div class="klgCont hidden">
+									<span>知识点名称</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="multiChoice">
+							<h5>二、多选题</h5>
+							<ul class="mb20 timu">
+								<li class="mb10 mt10">1、[<span class="YoN red">答对</span>]离骚的作者是谁</li>
+								<li><label class="len60">选项A：</label>陶渊明<li>
+								<li><label class="len60">选项B：</label>李白</li>
+								<li><label class="len60">选项C：</label>屈原</li>
+								<li><label class="len60">选项D：</label>杜甫</li>
+								<img src="../../../public/image/testImg/test.png" alt="" />
+							</ul>
+							<ul>
+								<li>
+									<label>正确答案：</label><b>C、D</b>
+									<label>我的选择：</label><b>C、D</b>
+									<label>难度系数：</label><b class="orange">3</b>
+								</li>
+							</ul>
+
+							<div class="knowledge">
+								<div class="klgList">
+									<a href="javascript:;" class="selected">习题解析</a>
+									<a href="javascript:;">知识点</a>
+								</div>
+								<div class="klgCont">
+									<p>
+										选项A，陶渊明，为《桃花源记》作者。为南朝宋初诗人，思想家。
+										<a href="javascript:;" class="movieAnalysisBtn btn bgBlue">点击解析视频</a>
+									</p>
+								</div>
+								<div class="klgCont hidden">
+									<span>知识点名称</span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="tabBox testAnalysis">
+					<a href="javascript:;" class="btn">巩固测试</a>
+					<table class="normalTable">
+						<tr>
+							<th>次数</th>
+							<th>得分</th>
+							<th>答题数</th>
+							<th>正确率</th>
+							<th>错题数</th>
+							<th>错题解析</th>
+						</tr>
+						<tr>
+							<th>第一次</th>
+							<td>79分</td>
+							<td>100道</td>
+							<td>79%</td>
+							<td>13道</td>
+							<td>错题解析</td>
+						</tr>
+						<tr>
+							<th>第二次</th>
+							<td>79分</td>
+							<td>100道</td>
+							<td>79%</td>
+							<td>13道</td>
+							<td>错题解析</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

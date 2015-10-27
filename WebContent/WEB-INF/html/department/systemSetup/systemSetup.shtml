@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/department.css">
+	<style>
+		.switch-list{padding-left: 40px;}
+		.switch-list li{margin-bottom: 20px;width: 400px;color: #333;}
+		.switch-btn{display: inline-block;width:60px;height:31px;float: right;background: url(/public/img/index/btn-on-off.png) no-repeat 0 0;vertical-align: middle;}
+		.switch-btn-on{background-position: 0 -31px;}
+	</style>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav system-setupNav">
+				系统设置
+				<span class="navTab">
+					<a href="news.shtml" index="0" class="currTab">角色互通</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<p class="mb20 mt20 pl20" style="font-size:16px;">各角色空间互通设置，互通的角色可以互相添加关注，然后相互查看最新动态。发布私信。进入对方空间。</p>
+				<ul class="switch-list">
+					<li>班级教师与学生间互动通<a class="switch-btn switch-btn-on" href="javascript:;"></a></li>
+					<li>班级教师与学生家长间互通<a class="switch-btn switch-btn-on" href="javascript:;"></a></li>
+					<li>校内教师与教师间互通<a class="switch-btn switch-btn-on" href="javascript:;"></a></li>
+					<li>班级家长与家长间互通<a class="switch-btn switch-btn-on" href="javascript:;"></a></li>
+					<li>班级学生与学生间互通<a class="switch-btn switch-btn-on" href="javascript:;"></a></li>
+					<li>校内所有角色间互通<a class="switch-btn" href="javascript:;"></a></li>
+					<li>全站所有角色间互通<a class="switch-btn" href="javascript:;"></a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+<script>
+	$(".switch-btn").click(function(){
+		if($(this).hasClass("switch-btn-on")){
+			$(this).removeClass("switch-btn-on");
+		} else {
+			$(this).addClass("switch-btn-on");
+		}
+	});
+</script>
+</body>
+</html>

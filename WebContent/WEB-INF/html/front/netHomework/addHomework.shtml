@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="netHomework.shtml">&lt;&lt;返回</a>
+				添加作业
+			</h4>
+			<ul class="detailBox noUnderline">
+				<li>
+					<label class="cName lh30"><b class="red">&lowast;</b>作业名称：</label>
+					<div class="cCont">
+						<input type="text" class="titleName longTitle" style="width:700px;" />
+						<p>（提示：作业内容可选择添加文本，附件，习题，任意一种作业类型，也可以全部添加。）</p>
+					</div>
+				</li>
+				<li>
+					<label class="cName">作业描述：</label>
+					<div class="cCont">此处添加文本编辑器</div>
+				</li>
+
+				<li>
+					<label class="cName">作业附件：</label>
+					<ul class="cCont workAttach">
+						<li>
+							<b class="orange">本地资源上传</b>
+							<span>单个附件大小不能超过5M，最多可上传6个附件</span>
+						</li>
+						<li>
+							<b class="blue">上传附件的名称.doc</b>
+							<span class="size">大小4.8M</span>
+							<span class="uploadBar uploadIng blue">已上传 68%</span>
+							<span class="cancelUpload"><a href="javascript:;" class="red">取消上传</a></span>
+						</li>
+						<li>
+							<b class="blue">上传附件的名称.doc</b>
+							<span class="size">大小4.8M</span>
+							<span class="uploadBar uploadFail red">上传失败</span>
+							<span class="deleteUpload red"><a href="javascript:;" class="red">删除</a></span>
+						</li>
+						<li>
+							<b class="blue">上传附件的名称.doc</b>
+							<span class="size">大小4.8M</span>
+							<span class="uploadBar uploadDone green">已完成</span>
+							<span class="deleteUpload"><a href="javascript:;" class="red">删除</a></span>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<label class="cName">习题内容：</label>
+					<div class="cCont">
+						<a href="javascript:;" class="diaoyong" style="height:20px;line-height:20px;padding: 0 20px;color:#219ee0;border:1px dashed #219ee0;">调用习题</a>
+						<div class="singleChoice mt10 timu" style="margin-right: 50px;">
+							<ul>
+								<li class="title">1、离骚的作者是谁</li>
+								<li><label class="len60">选项A：</label>陶渊明</li>
+								<li><label class="len60">选项B：</label>李白</li>
+								<li><label class="len60">选项C：</label>屈原</li>
+								<li><label class="len60">选项D：</label>杜甫</li>
+							</ul>
+							<ul>
+								<li class="answer"><label>正确答案：</label><b>C</b> <label class="ml20">难度系数：</label><b class="orange">3</b></li>
+							</ul>
+							<div class="edit-bar">
+								<a href="javascript:;" class="btn bgRed">移出作业</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<label class="cName">接收人：</label>
+					<ul class="cCont">
+						<a href="javascript:;" class="blue">选择学生</a>
+						<div class="receiverName clearfix">
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+							<span>李洁<a href=""></a></span>
+						</div>
+					</ul>
+				</li>
+				<li>
+					<label class="cName">完成时间：</label>
+					<ul class="cCont">
+						<li>
+							<select style="width:100px;">
+								<option></option>
+								<option></option>
+							</select>
+						</li>
+						<li>
+							<input type="checkbox" name="" id="">暂不布置给学生
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="submitBtn">
+				<a href="" class="btn mr40">布置作业</a>
+				<a href="" class="cancel">取消</a>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+	<script>
+		$('.diaoyong').click(function(){
+			Win.open({
+				width: 1000,
+				height: 1000,
+				title: "选择习题",
+				url: "./diaoyong_pop.shtml?"
+			});
+		});
+	</script>
+</body>
+</html>

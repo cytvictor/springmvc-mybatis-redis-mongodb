@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css" />
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="btn testZj" href="selfZj.shtml">自测组卷</a>
+				测试中心
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">老师布置</a>
+					<a href="javascript:;" index="1">自主生成</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="tabBox shareExam currBox">
+					<ul class="commonSelect">
+						<li>
+							<label>创建时间：</label>
+							<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="timeInput"/>
+							至：
+							<input type="text" class="timeInput"/>
+							<label>学段：</label>
+							<select>
+								<option>请选择</option>
+								<option>高一</option>
+							</select>
+							<label>学科：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>年级：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>分册：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+						</li>
+						<li>
+							<label>章节：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>知识点：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<label>试卷类型：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<a href="javascript:;" class="btn bgGreen ml20">搜索</a>
+						</li>
+					</ul>
+					<table class="normalTable">
+						<tr>
+							<th></th>
+							<th>考题</th>
+							<th>创建人</th>
+							<th>科目</th>
+							<th>章节</th>
+							<th>状态</th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td><input type="checkbox" /></td>
+							<td>诗歌《离骚》讲解</td>
+							<td>李明</td>
+							<td>语文</td>
+							<td>第20课</td>
+							<td class="gray">未完成</td>
+							<td>
+								<a href="onlineTest-answer.shtml" class="blue">开始答题</a>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" /></td>
+							<td>诗歌《离骚》讲解</td>
+							<td>李明</td>
+							<td>语文</td>
+							<td>第20课</td>
+							<td class="green">已完成</td>
+							<td>
+								<a href="testAnalysis.shtml">查看结果</a>
+								<a href="javascript:;" class="blue">巩固测试</a>
+							</td>
+						</tr>
+					</table>
+					<input type="checkbox" class="ml25 mr20" />
+					<a href="javascript:;" class="btn deleteAll">批量删除</a>
+				</div>
+				<div class="tabBox myTestPaper">
+					这里是自主生成
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

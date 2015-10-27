@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<style>
+		.pull-btn{display: inline-block;height: 40px;width:20px;background: url(/public/img/index/arrselect.png) 0 -20px no-repeat;vertical-align: middle;position: absolute;right: 35px;}
+		.pull-btn.open{background-position: 0 15px;}
+		.edit-cont{display: none;}
+		.delete{position: absolute;right: 5px;}
+	</style>
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="javascript;;" onclick="window.history.back();">&lt;&lt;返回</a>
+				新建习题
+			</h4>
+			<div class="otContent">
+				<ul class="commonSelect">
+					<li>
+						<label>学段：</label>
+						<select name="" id=""><option value="">请选择</option></select>
+						<label>学科：</label>
+						<select name="" id=""><option value="">请选择</option></select>
+						<label>年级：</label>
+						<select name="" id=""><option value="">请选择</option></select>
+					</li>
+				</ul>
+				<div class="selectBox">
+					<h5>关联章节：</h5>
+					<ul>
+						<li>
+							<label>版本：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>章节：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>分册：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+						</li>
+						<li>
+							<a href="javascript" class="btn bgBlue">增加章节</a>
+						</li>
+						<li>
+							<label>章节：</label>
+							<span class="smallBlock chapBlock">
+								语文
+								<a href="javescript:;"></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="selectBox">
+					<h5>关联知识点：</h5>
+					<ul>
+						<li>
+							<label>分类：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+							<label>知识点：</label>
+							<select name="" id=""><option value="">请选择</option></select>
+						</li>
+						<li>
+							<a href="javascript" class="btn bgBlue">增加知识点</a>
+						</li>
+						<li>
+							<label>知识点：</label>
+							<span class="smallBlock chapBlock">
+								语文
+								<a href="javescript:;"></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+				
+				<ul class="selectList">
+					<li>
+						难度系数：
+						<select name="" id="">
+							<option value="">请选择</option>
+						</select>
+					</li>
+					<li class="exercise-type-select">
+						习题类型：
+						<label><input type="radio" name="timu" index="0" checked="checked" />单选题</label>
+						<label><input type="radio" name="timu" index="1" />多选题</label>
+						<label><input type="radio" name="timu" index="2" />填空题</label>
+						<label><input type="radio" name="timu" index="3" />解答题</label>
+					</li>
+				</ul>
+				<!-- 单选 -->
+				<ul class="exercise-type-box exercise-select-box">
+					<li class="clearfix">
+						<label style="float: left;">习题题干：</label>
+						<div class="cCont">这里放富文本编辑器
+							<ul class="">
+								<li>
+									<div style="background-color: #eee;padding-left: 10px;position:relative;">
+										选项A：<input type="text">
+										<a href="javascript:;" class="pull-btn"></a>
+										<a href="javascript:;" class="delete red">删除</a>
+									</div>
+									<div class="edit-cont">
+										123
+									</div>
+								</li>
+								<li>
+									<label>选项B：<input type="text"></label>
+								</li>
+								<li>
+									<label>正确答案：</label>
+									<input type="checkbox" /> 选项A
+									<input type="checkbox" class="ml20"/> 选项B
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="clearfix">
+						<label style="float: left;">习题解析：</label>
+						<div>这里放富文本编辑器</div>
+					</li>
+				</ul>
+
+				<!-- 多选 -->
+				<ul class="exercise-type-box" style="display:none;">
+					<li class="clearfix">
+						<label style="float: left;">习题题干：</label>
+						<div class="cCont">这里放富文本编辑器</div>
+					</li>
+					<li class="clearfix">
+						<label style="float: left;">习题解析：</label>
+						<div>这里放富文本编辑器</div>
+					</li>
+				</ul>
+
+				<!-- 填空 -->
+				<ul class="exercise-type-box" style="display:none;">
+					<li class="clearfix">
+						<label style="float: left;">习题题干：</label>
+						<div class="cCont">这里放富文本编辑器</div>
+					</li>
+					<li class="clearfix">
+						<label style="float: left;">习题解析：</label>
+						<div>这里放富文本编辑器</div>
+					</li>
+					<li class="clearfix">
+						<label style="float: left;margin-left: 28px;">答案：</label>
+						<div class="cCont multi-choice-answer">
+							<input type="radio" name="" id="" />独立答案
+							<input type="radio" name="" id="" />组合答案
+							<table class="normalTable">
+								<tr>
+									<th class="special">
+										<span class="lb">填空</span>
+										<span class="rt">答案容错</span>
+									</th>
+									<th>答案1</th>
+									<th>答案2</th>
+									<th>答案3</th>
+									<th>答案4</th>
+								</tr>
+								<tr>
+									<th>第一空</th>
+									<td class="edit-pop-btn"></td>
+									<td class="edit-pop-btn"></td>
+									<td class="edit-pop-btn"></td>
+									<td class="edit-pop-btn"></td>
+								</tr>
+								<tr>
+									<th>第二空</th>
+									<td class="edit-pop-btn"></td>
+									<td class="edit-pop-btn"></td>
+									<td class="edit-pop-btn"></td>
+									<td class="edit-pop-btn"></td>
+								</tr>
+							</table>
+						</div>
+					</li>
+				</ul>
+
+				<a href="javascript:;" class="btn bgBlue" style="margin:10px 0 10px 70px;">上传习题解析</a>
+
+				<div class="submitBtn">
+					<a class="btn mr20">提交保存</a>
+					<a href="javascript:; ml20">清空</a>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+<script>
+	$('.exercise-type-select input').click(function(){
+		var index = $(this).attr('index');
+		$('.exercise-type-box').hide().eq(index).show();
+	});
+
+
+	$('.pull-btn').on('click', function(){
+		if ( !$(this).hasClass('open') ) {
+			$(this).addClass('open');
+			$(this).parent().next('.edit-cont').slideDown();
+		} else {
+			$(this).removeClass('open');
+			$(this).parent().next('.edit-cont').slideUp();
+		}
+	});
+
+	// 弹出表格
+	$('.edit-pop-btn').on('click', function(){
+		var html = "<div>123</div>"
+		Win.open({
+			title:"输入答案",
+			width: 400,
+			height: 300,
+			html: html
+		});
+	});
+</script>
+</body>
+</html>

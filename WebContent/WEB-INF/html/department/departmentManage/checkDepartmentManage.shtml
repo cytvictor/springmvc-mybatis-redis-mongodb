@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/department.css" />
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="backup" href="departmentManage.shtml">&lt;&lt;返回</a>
+				查看详情
+			</h4>
+			<div class="otContent">
+				<table class="departmentTable normalTable">
+					<tr>
+						<th>名称</th>
+						<td>河南省教育厅</td>
+						<th>行政等级</th>
+						<td>省级</td>
+					</tr>
+					<tr>
+						<th>地址</th>
+						<td>河南省郑州市工业园区</td>
+						<th>联系人</th>
+						<td>唯正路</td>
+					</tr>
+					<tr>
+						<th>邮箱</th>
+						<td>gongyeyuanqu@163.com</td>
+						<th>联系电话</th>
+						<td>0123-12345678</td>
+					</tr>
+					<tr>
+						<th>帐号</th>
+						<td>administrator</td>
+						<th>密码</th>
+						<td><a href="javascript:;" class="resetpassword blue">密码重置</a></td>
+					</tr>
+					<tr>
+						<th>辖区管理</th>
+						<td>河南省</td>
+						<th>&nbsp;</th>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

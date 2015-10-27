@@ -1,0 +1,384 @@
+/*头部*/
+.headerInner,
+.navInner{width: 1200px;margin: 0 auto;position: relative;}
+.container{width: 1200px;margin: 0 auto;/*background: url(../img/index/containerBg.png) repeat-y 0 0;*/}
+.header, .nav {min-width: 1200px;}
+.header{height: 46px;background: #219ee0;padding: 10px 0;}
+/* .logo{margin-left: 65px;} */
+.logo img{vertical-align: middle;}
+.headerInner .manageName{border-left: 1px solid #ccc;color: #fff;font-size: 20px;margin-left: 20px;padding-left: 20px;vertical-align: middle;}
+.header-right{display: inline;}
+.searchBar{padding-left: 80px;}
+.search{font-size: 14px;padding: 5px 15px;width: 260px;border: none;vertical-align: middle;border-radius: 3px;}
+.searchBtn{display: inline-block;width: 18px;height: 18px;background: #fff url(../img/index/indexSprite.png) no-repeat 0px -399px;margin-left: -30px;margin-bottom: -5px;}
+
+.loginBar{position: absolute;right: 0px;top: 15px;}
+.loginBar li{float: left;margin: 0 7px;padding-bottom:5px;_display: inline;}
+.loginBar .userName a{color: #fff;font-size: 14px;}
+.loginBar .news a{background: url(../img/index/indexSprite.png) no-repeat 0px -320px;display: inline-block;width: 23px;height: 23px;position: relative;}
+.loginBar .news i{position: absolute;left: -7px;top: -7px;display: inline-block;background: url(../img/index/indexSprite.png) no-repeat -1px -361px;width: 18px;height: 18px;line-height:18px;font-size:10px;font-style: normal;text-align: center;}
+.loginBar .userPhoto img{border-radius: 50%;margin-top: -15px;width: 45px;height: 45px;display: inline-block;border: 1px solid #fff;}
+.userPhoto{position: relative;}
+.tipBox{position: absolute;top: 41px;left: -90px;width: 190px;padding: 20px 10px 20px 10px;background: #fff;z-index: 99999;font-size: 14px;color: #666;}
+.tipBox a{color: #666;}
+.tipBox .tipList{width: 70px;height:30px;line-height:30px;display: block;float: left;padding-left: 25px;background: url(../img/index/listSprite.png) no-repeat 5px -233px;}
+.tipBox .quit{margin-left: 60px;color: #fff;}
+.tipBox .trangle{font-size: 28px;display: block;position: absolute;top: -20px;left: 106px;color: #fff;}
+.tipBox .personalData{background-position: 5px -273px;}
+.tipBox .privateLetter{background-position: 5px -311px;}
+.tipBox .msg{background-position: 5px -30px;}
+.tipBox .uploadSource{background-position: 5px -113px;}
+.tipBox .viewRecord{background-position: 5px -353px;}
+.tipBox .myCollect{background-position: 5px -193px;}
+.tipBox .myConcern{background-position: 5px -73px;}
+.tipBox .workPlace{background-position: 5px -233px;}
+/*导航*/
+.nav{height: 47px;background:#373f46;font-size: 18px;overflow: hidden;}
+.nav a{color: #fff;}
+.navInner li{float: left;height: 47px;line-height: 47px;width: 146px;}
+.navInner li.selected{background: #fff;}
+.navInner li.selected a{color:#666;}
+.navInner li:hover{background: #fff;}
+.navInner li:hover a{background-position: 0 -421px;color:#666 !important;}
+.navInner .bestCourse:hover a{background-position: 0 -461px;}
+.navInner .microCourse:hover a{background-position: 0 -501px;}
+.navInner .talentShow:hover a{background-position: 0 -541px;}
+.navInner .teachSource:hover a{background-position: 0 -581px;}
+.navInner .tutorCourse:hover a{background-position: 0 -581px;}
+.navInner .syncCourse:hover a{background-position: 0 -621px;}
+.navInner li.index{width:100px;}
+.navInner li.index a{padding-left: 28px;background: url(../img/index/nav-home-icon.png) no-repeat 20px 19px;}
+.navInner li.index a.selected{background-position: 20px -32px;}
+.navInner li a{display:block;text-align: center;/*background: url(../img/index/indexSprite.png) 0 7px;padding-left: 28px;*/font-size: 20px;overflow: hidden;height: 47px;}
+.navInner a.selected{display:block;text-align: center;/*background: url(../img/index/indexSprite.png) 0 -421px;padding-left: 28px;*/color:#fff;}
+
+.navInner .bestCourse a.selected{background-position: 0 -461px;}
+.navInner .microCourse a.selected{background-position: 0 -501px;}
+.navInner .talentShow a.selected{background-position: 0 -541px;}
+.navInner .teachSource a.selected{background-position: 0 -581px;}
+.navInner .tutorCourse a.selected{background-position: 0 -581px;}
+.navInner .syncCourse a.selected{background-position: 0 -621px;}
+.navInner .bestCourse a{background-position: 0 -30px;}
+.navInner .microCourse a{background-position: 0 -71px;}
+.navInner .talentShow a{background-position: 0 -111px;}
+.navInner .tutorCourse a{background-position: 0 -152px;}
+.navInner .syncCourse a{background-position: 0 -192px;}
+.navInner .teachSource a{background-position: 0 -152px;}
+
+/*侧栏*/
+.side{width: 262px;text-align: center;color: #fff;font-size: 14px;float:left;background-color: #f8f7f7;}
+.userMsg{background: #219ee0;padding: 20px 30px;}
+.side .userMsg dl dt{font-size: 18px;}
+.side .userMsg dl dd{font-size: 16px;}
+.side .userPhoto{position: relative;display: inline-block;}
+.side .userPhoto img{border-radius: 50%;border: 1px solid #fff;width: 90px;height: 90px;display: block;margin: 0 auto;}
+.side .userPhoto .userName{background: #1986c0;border-radius: 3px;padding: 0 10px;display: inline-block;position: relative;top: -15px;*zoom: 1;*display: inline;font-size: 16px;}
+.side .userPhoto2{position: relative;display: inline-block;vertical-align: top;margin-top: 15px;margin-left: 28px;}
+.side .userPhoto2 img{border-radius: 50%;border: 1px solid #fff;width: 60px;height: 60px;display: block;margin: 0 auto;margin-bottom: 2px;opacity: 0.7;*filter:alpha(opacity=70);}
+/*.side .userPhoto2 dd span{background-color: #ff9600;padding: 0 10px;border-radius: 3px;}*/
+/*.side .changeUserBox{background: url(../img/index/rightArr.png) no-repeat 105px 35px;}*/
+.changeUserBox .changeIdentity a{background-color: #ff9600;padding: 2px 10px;border-radius: 5px;}
+.changeUserBox .changeIdentity{margin-bottom: 10px;}
+
+.side dl dd span{background: url(../img/index/indexSprite3.png) no-repeat;padding-left: 20px;margin: 0 5px;}
+.side .school{background-position: 0 4px;}
+.side .schoolD{display: block;height: 48px;line-height: 24px;word-break: break-all;overflow: hidden;}
+.side .schoolManager{background-position: 0 -37px;}
+.side .personalMsg{background-position: 0 -77px;}
+.side dl a{color: #fff;}
+.collectAndMsg{display:block;width: 180px;height:56px;background: url(../img/index/collectAndMsg.png) no-repeat 0 0;margin: 20px auto 5px;color: #666;}
+.collectAndMsg a{color: #666;}
+.collectAndMsg span{display: inline-block;margin-top: 5px;width: 60px;}
+.collectAndMsg span b{display: block;/*color: #52ade4;*/}
+.collectAndMsg2{background: url(../img/index/collectAndMsg2.png) no-repeat 0 0}
+
+.sideNav{min-height: 500px;}
+.sideNav li{height: 50px;line-height: 50px;border-bottom: 1px solid #b8ffe5;font-size: 18px;}
+.sideNav li a{color: #333;background: url(../img/index/indexSprite.png) no-repeat -70px 14px;display: block;height: 50px;padding-left: 30px;font-size: 20px;}
+.sideNav li a:hover,
+.sideNav li a.selected{border-right: 10px solid #28f4fb;background-color: #3fd4ff;color: #fff;background-position: -350px 14px;}
+.sideNav .netHomework a{background-position: -70px -26px;}
+.sideNav .onlineTutor a{background-position: -70px -66px;}
+.sideNav .onlineCourse a{background-position: -70px -106px;}
+.sideNav .onlineAnswerQs a{background-position: -70px -146px;}
+.sideNav .resourceCenter a{background-position: -70px -186px;}
+.sideNav .messageManage a{background-position: -70px -223px;}
+.sideNav .myClass a{background-position: -70px -266px;}
+.sideNav .newsMenu a{background-position: -70px -466px;}
+.sideNav .schoolActiveMenu a{background-position: -70px -704px;}
+.sideNav .test-library a{background-position: -70px -744px;}
+.sideNav .error-text a{background-position: -70px -784px;}
+.sideNav .systemSetup a{background-position: -70px -828px;}
+.sideNav .otherschoolMenu a{background-position: -70px -868px;}
+/*工作台*/
+.sideNav .workspace a{background-position: -70px -506px;padding-left: 48px;}
+.sideNav .onlineWatch a{background-position: -70px -546px;}  
+.sideNav .datastatsMenu a{background-position: -70px -586px;}
+.sideNav .userMenu a{background-position: -70px -621px;}
+.sideNav .adminMenu a{background-position: -70px -666px;padding-left: 48px;}
+
+
+.sideNav .noticeMenu a{background-position: -70px -306px;}
+.sideNav .trackMenu a{background-position: -70px -346px;}
+.sideNav .storeMenu a{background-position: -70px -186px;}
+.sideNav .myBuy a{background-position: -70px -907px;}
+.sideNav .activeMenu a{background-position: -70px -386px;}
+.sideNav .liveMenu a{background-position: -70px -426px;}
+.sideNav .noticeMenu a.selected,
+.sideNav .noticeMenu a:hover{background-position: -350px -306px;}
+.sideNav .trackMenu a.selected,
+.sideNav .trackMenu a:hover{background-position: -350px -346px;}
+.sideNav .storeMenu a.selected,
+.sideNav .storeMenu a:hover{background-position: -350px -186px;}
+.sideNav .myBuy a.selected,
+.sideNav .myBuy a:hover{background-position: -350px -907px;}
+.sideNav .activeMenu a.selected,
+.sideNav .activeMenu a:hover{background-position: -350px -386px;}
+.sideNav .liveMenu a.selected,
+.sideNav .liveMenu a:hover{background-position: -350px -426px;}
+.sideNav .newsMenu a.selected,
+.sideNav .newsMenu a:hover{background-position: -350px -466px;}
+.sideNav .schoolActiveMenu a.selected,
+.sideNav .schoolActiveMenu a:hover{background-position: -350px -704px;}
+.sideNav .test-library a.selected,
+.sideNav .test-library a:hover{background-position: -350px -744px;}
+.sideNav .error-text a.selected,
+.sideNav .error-text a:hover{background-position: -350px -784px;}
+.sideNav .systemSetup a.selected,
+.sideNav .systemSetup a:hover{background-position: -350px -828px;}
+.sideNav .otherschoolMenu a.selected,
+.sideNav .otherschoolMenu a:hover{background-position: -350px -868px;}
+/*工作台*/
+.sideNav .workspace a.selected,
+.sideNav .workspace a:hover{background-position: -350px -506px;}
+
+.sideNav .onlineWatch a.selected,
+.sideNav .onlineWatch a:hover{background-position: -350px -544px;}
+.sideNav .datastatsMenu a.selected,
+.sideNav .datastatsMenu a:hover{background-position: -350px -586px;}
+.sideNav .userMenu a.selected,
+.sideNav .userMenu a:hover{background-position: -350px -621px;}
+.sideNav .adminMenu a.selected,
+.sideNav .adminMenu a:hover{background-position: -350px -666px;}
+.sideNav .netHomework a.selected,
+.sideNav .netHomework a:hover{background-position: -350px -26px;}
+.sideNav .onlineTutor a.selected,
+.sideNav .onlineTutor a:hover{background-position: -350px -66px;}
+.sideNav .onlineCourse a.selected,
+.sideNav .onlineCourse a:hover{background-position: -350px -106px;}
+.sideNav .onlineAnswerQs a.selected,
+.sideNav .onlineAnswerQs a:hover{background-position: -350px -146px;}
+.sideNav .resourceCenter a.selected,
+.sideNav .resourceCenter a:hover{background-position: -350px -186px;}
+.sideNav .messageManage a.selected,
+.sideNav .messageManage a:hover{background-position: -350px -223px;}
+.sideNav .myClass a.selected,
+.sideNav .myClass a:hover{background-position: -350px -266px;}
+
+.sideNav .classLi{height: auto;}
+.sideNav .classLi span{*display: block;}
+.sideNav .classList a{display: block;margin-left: 70px;padding-left:50px;text-align:left;height: 30px;line-height: 30px;color: #666;margin-top: 5px;background: none;font-size: 14px;overflow: hidden;}
+.sideNav .classList a.selected,
+.sideNav .classList a:hover{background: #d9f6ff url(../img/index/classDot.gif) no-repeat 20px 50%;border-right: none;color: #3fd4ff;}
+
+.focus{display:block;width: 60px;height: 20px;margin: 0 auto;background: #fff;color: #219ee0;margin-top: 10px;}
+.focused{}
+/*content里面内容下的tab切换*/
+.contentInNav{margin: 20px 0 3px 0;display: block;}
+.contentInNav a{margin-right: 20px;height: 28px;line-height: 28px;padding: 5px 20px;}
+.contentInNav a.selected{background: #219ee0;color: #fff;}
+
+/*底部*/
+.footer{text-align: center;margin-top: 110px;margin-bottom: 50px;min-width: 1200px;}
+.footer p{color:#888;}
+.footer p a{color:#888;margin: 2px 5px;}
+
+/* 评分 */
+.star-rating{background: url("../img/index/starIcon.gif") repeat-x scroll 0 -14px rgba(0, 0, 0, 0);display: inline-block;height: 14px;position: relative;width: 80px;vertical-align: top;margin-top: 3px;}
+.current-rating{background: url("../img/index/starIcon.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);height: 14px;position: absolute;z-index: 1}
+.star1{width: 8px;}
+.star2{width: 16px;}
+.star3{width: 24px;}
+.star4{width: 32px;}
+.star5{width: 40px;}
+.star6{width: 48px;}
+.star7{width: 56px;}
+.star8{width: 64px;}
+.star9{width: 72px;}
+.star10{width: 80px;}
+
+.star-rating{position:relative;display:inline-block;width:80px;height:14px;background:url(../img/index/starIcon.gif) repeat-x 0 -14px;}
+.star-rating li{float:left;padding:0 !important;}
+.star-rating li a{position:absolute;width:8px;height:14px;z-index:20;background-image:none;outline:none;}
+.star-rating li a:hover{left:0;z-index:1;background:url(../img/index/starIcon.gif) 0 0;}
+.star-rating a.star1{left:0;}
+
+.star-rating a.star2 {left:8px;}
+.star-rating a.star3 {left:16px;}
+.star-rating a.star4 {left:24px;}
+.star-rating a.star5 {left:32px;}
+.star-rating a.star6 {left:40px;}
+.star-rating a.star7 {left:48px;}
+.star-rating a.star8 {left:56px;}
+.star-rating a.star9 {left:64px;}
+.star-rating a.star10{left:72px;}
+.star-rating a.star1:hover {width:8px;}
+.star-rating a.star2:hover {width:16px;}
+.star-rating a.star3:hover {width:24px;}
+.star-rating a.star4:hover {width:32px;}
+.star-rating a.star5:hover {width:40px;}
+.star-rating a.star6:hover {width:48px;}
+.star-rating a.star7:hover {width:56px;}
+.star-rating a.star8:hover {width:64px;}
+.star-rating a.star9:hover {width:72px;}
+.star-rating a.star10:hover{width:80px;}
+.current-rating{position:absolute;z-index:1;height:14px;background:url(../img/index/starIcon.gif) 0 0;}
+
+/* 表情 */
+#smileBox{position:absolute;z-index:1100;padding:3px 6px 10px;background:url("../img/common/bg_face.png") no-repeat;}
+#smileBox ul{width:248px;height:191px;overflow:hidden;background:#fff;}
+#smileBox li{float:left;}
+#smileBox li img{display:block;width:25px;padding:2px;border:1px solid #fff;cursor:pointer;}
+#smileBox li img:hover{border-color:#DFE6F6;}
+#msgFace_ie6{position:absolute;z-index:-1;left:0;top:0;width:248px;height:191px;}
+
+.titleName,
+.detailBox .titleName{width: 400px;}
+
+
+.addMsg h5{border-bottom: 1px solid #ccc;width: 200px;font-weight: normal;margin-bottom: 30px;padding-bottom: 5px;padding-left: 10px;}
+
+/*正在建设页面*/
+.building{width: 490px;margin: 0 auto;margin-top: 150px;}
+
+/*左右cName和cCont布局*/
+.cName{float: left;width: 100px;text-align: right;padding-right: 15px;vertical-align: middle;} 
+.cCont{overflow: hidden;zoom:1;}
+.cCont b{font-weight: normal;}
+
+.uploadImg{position:relative;width:60px;height:25px;display:inline-block;vertical-align:middle;overflow:hidden;}
+.uploadImg span{position:absolute;top:0;left:0;width:100%;height:100%;z-index: 10;overflow:hidden;}
+.uploadImg object{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;zoom:1;filter:alpha(opacity=0);z-index: 2;background:#f00;}
+
+/*sendSMSBox*/
+.sendSMSBoxLeft {float: left;width: 40px;text-align: right;}
+.sendSMSBoxRight {margin-left: 50px;margin-bottom: 5px;}
+.sendSMSBoxRight input {width: 200px;}
+.sendSMSBoxRight textarea {width: 100%;height: 120px;}
+.sendSMSBoxRightCount {float: right;display: block;height: 22px;line-height: 22px;}
+.sendSMSBoxRight .addFace {
+	float: left;
+}
+.sendSMSBoxRight-uploadImg {
+	color: #666;
+    display: inline-block;
+    height: 22px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 60px;
+    line-height: 22px;
+}
+
+.sendSMSBoxRight-uploadImg .webuploader-pick {
+    background: url("../img/common/pic.gif") no-repeat scroll 0 50%;
+    padding-left: 30px;
+}
+
+
+
+.webuploader-container {
+	position: relative;
+}
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}
+
+.placeholderWaper {
+	position: relative;
+}
+.placeholderWaper label {
+	color: #757575;
+    font-size: 14px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: none;
+}
+.searchBar.placeholderWaper label {
+	line-height: 27px;
+	height: 27px;
+    margin-left: 80px;
+    margin-top: -4px;
+    padding-left: 14px;
+    width: 250px;
+}
+
+.navInner .colorBar{position: absolute;right: 0;padding:0;top:13px;width: auto;height: auto;}
+.navInner .colorBar:hover{background: none !important;}
+.colorBar span{display: block;float:left;margin-right:16px;width: 19px;height: 19px;border: 1px solid transparent;cursor: pointer;}
+.colorBar span.selected{border-color: #fff;}
+.colorBar .color-btn{background: url(../img/index/color-change.png) no-repeat 0 0;margin-right: 0;}
+.colorBar .color-btn.selected{border-color: transparent;}
+.nav {background-color: #323232;}
+.color0, .color0 .header,.color0 .side .userMsg,.color0 .largeBox2 h5{background-color: #96ADBD;}
+.color0 .side .userPhoto .userName{background-color: #617B8C;}
+.color0 .sideNav li{border-color: #96ADBD;}
+.color0 .sideNav li a:hover,
+.color0 .sideNav li a.selected {background-color: #617B8C;border-right: 10px solid #d4eeff;color: #fff;}
+.color0 .largeBox2 h5{border-color: #617B8C;font-size: 20px;}
+
+.color1, .color1 .header,.color1 .side .userMsg,.color1 .largeBox2 h5{background-color: #D1AC65;}
+.color1 .side .userPhoto .userName{background-color:  #B99245;}
+.color1 .sideNav li{border-color: #D1AC65;}
+.color1 .sideNav li a:hover,
+.color1 .sideNav li a.selected {background-color: #B99245; border-right: 10px solid #ffd074;color: #fff;}
+.color1 .largeBox2 h5{border-color: #B99245;}
+
+.color2, .color2 .header,.color2 .side .userMsg,.color2 .largeBox2 h5{background-color: #87ACF0;}
+.color2 .side .userPhoto .userName{background-color:  #5C89DC;}
+.color2 .sideNav li{border-color: #87ACF0;}
+.color2 .sideNav li a:hover,
+.color2 .sideNav li a.selected {background-color: #5C89DC; border-right: 10px solid #c2d7ff;color: #fff;}
+.color2 .largeBox2 h5{border-color: #5C89DC;}
+
+.color3, .color3 .header,.color3 .side .userMsg,.color3 .largeBox2 h5{background-color: #62D2DD;}
+.color3 .side .userPhoto .userName{background-color:  #1AA9B7;}
+.color3 .sideNav li{border-color: #62D2DD;}
+.color3 .sideNav li a:hover,
+.color3 .sideNav li a.selected {background-color: #1AA9B7; border-right: 10px solid #69f3ff;color: #fff;}
+.color3 .largeBox2 h5{border-color: #1AA9B7;}
+
+.color4, .color4 .header,.color4 .side .userMsg,.color4 .largeBox2 h5{background-color: #59D66E;}
+.color4 .side .userPhoto .userName{background-color:  #29B941;}
+.color4 .sideNav li a:hover,
+.color4 .sideNav li a.selected {background-color: #29B941;/* border-right: 10px solid #fff;*/color: #fff;}
+.color4 .largeBox2 h5{border-color: #29B941;}
+
+.color5, .color5 .header,.color5 .side .userMsg,.color5 .largeBox2 h5{background-color: #219EE0;}
+.color5 .side .userPhoto .userName{background-color:  #1887BF;}
+.color5 .sideNav li a:hover,
+.color5 .sideNav li a.selected {background-color: #1887BF;/* border-right: 10px solid #fff;*/color: #fff;}
+.color5 .largeBox2 h5{border-color: #1887BF;}
+
+.color6, .color6 .header,.color6 .side .userMsg,.color6 .largeBox2 h5{background-color: #7D8391;}
+.color6 .side .userPhoto .userName{background-color:  #F7AB00;}
+.color6 .sideNav li a:hover,
+.color6 .sideNav li a.selected {background-color: #F7AB00; border-right: 10px solid #fff209;color: #fff;}
+
+
+
+/* 在线答疑star */
+.normalTable .star{background:url(../img/index/star.png);width:20px;height:20px;display:inline-block;margin-left:5px;vertical-align:bottom;}
+
+/* 进度条 */
+.process{margin:5px 0 ;height:10px;}
+.process-bar{width:200px;height:10px;background-color:#ccc;position:relative;display:inline-block;}
+.process-value{height:10px;position:absolute;left:0;top:0;background-color:#C7EDCC;}
+.process-num{float:none !important;}

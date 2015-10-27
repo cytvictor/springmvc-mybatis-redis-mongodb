@@ -1,0 +1,447 @@
+package com.codyy.rrt.resource.controller;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.codyy.rrt.base.Page;
+import com.codyy.rrt.base.Pageable;
+import com.codyy.rrt.base.easyui.RequestUtils;
+import com.codyy.rrt.base.util.DateUtils;
+import com.codyy.rrt.base.util.PropertyUtils;
+import com.codyy.rrt.commons.CommonsConstant;
+import com.codyy.rrt.commons.entity.LoginUser;
+import com.codyy.rrt.resource.common.Constants;
+import com.codyy.rrt.resource.model.BaseUser;
+import com.codyy.rrt.resource.model.ResourceColumn;
+import com.codyy.rrt.resource.model.ResourceDistribute;
+import com.codyy.rrt.resource.model.ResourceDistributeTarget;
+import com.codyy.rrt.resource.model.ResourceHold;
+import com.codyy.rrt.resource.model.ResourcePush;
+import com.codyy.rrt.resource.model.Resources;
+import com.codyy.rrt.resource.service.BaseUserService;
+import com.codyy.rrt.resource.service.ResourceDistributeService;
+import com.codyy.rrt.resource.service.SkeletonService;
+
+/**
+ * 机构；资源访问首页
+ * 省
+ * 市
+ * 县
+ */
+@SuppressWarnings({ "rawtypes", "unchecked" })
+@Controller
+@RequestMapping("/front/orgresource/")
+public class ResourceOrgController extends ResourceBaseController {
+
+	private static final long serialVersionUID = 1L;
+
+	@Autowired
+	private BaseUserService baseUserService;
+	@Autowired
+	private ResourceDistributeService resourceDistributeService;
+	@Resource
+	private SkeletonService skeletonService;
+
+	// private static Logger logger =
+	// Logger.getLogger(ResourceOrgController.class);
+	private static final Set<String> moduleSet = new HashSet<String>();
+	static {
+		moduleSet.add("higherpush"); // 上级推送
+		moduleSet.add("lowerpush"); // 下级上报
+		moduleSet.add("uploaded"); // 机构上传
+		moduleSet.add("shared"); // 共享资源
+	}
+
+	/**
+	 * 栏目切换：共享资源，上级推送，下级上报，机构上传
+	 */
+	@RequestMapping("{module}")
+	public String list(HttpServletRequest request, HttpServletResponse response, @PathVariable String module) {
+		return toListPage(request, module, "");
+	}
+
+	/**
+	 * 类别切换：精品课程，微课程，教学资源，才艺展示，轻松一刻
+	 */
+	@RequestMapping("{module}/{id}")
+	public String list(HttpServletRequest request, HttpServletResponse response, @PathVariable String module, @PathVariable String id) {
+		return toListPage(request, module, id);
+	}
+
+	/**
+	 * 资源显示列表
+	 */
+	private String toListPage(HttpServletRequest request, String module, String id) {
+		if (moduleSet.contains(module)) {
+			LoginUser loginUser = getLoginUser(request);
+
+			// 只有学校管理员才能访问
+			if (!CommonsConstant.USER_TYPE_ORG.equals(loginUser.getUserType()) && !CommonsConstant.USER_TYPE_ORG_MANAGER.equals(loginUser.getUserType()) && !CommonsConstant.USER_TYPE_TEACH_ORG_MANAGER.equals(loginUser.getUserType())) {
+				return "front/resource/no_permission";
+			}
+
+			request.setAttribute("loginUser", loginUser);
+			request.setAttribute("resourceUrl", "orgresource"); // 资源根Url
+			request.setAttribute("module", module);
+			List<ResourceColumn> listResourceColumn = skeletonService.findAllResourceColumn();
+			request.setAttribute("listResourceColumn", listResourceColumn);
+
+			ResourceColumn resourceColumn = null;
+			if (StringUtils.isEmpty(id) && CollectionUtils.isNotEmpty(listResourceColumn)) {
+				id = listResourceColumn.get(0).getId();
+				resourceColumn = listResourceColumn.get(0);
+			} else {
+				resourceColumn = skeletonService.findResourceColumnById(id);
+			}
+
+			request.setAttribute("resourceColumn", resourceColumn); // 资源栏目
+			request.setAttribute("resourceColumnId", id);
+			return "front/resource/condition";
+		}
+		return "front/common/error/404";
+	}
+
+	/**
+	 * 资源显示列表
+	 * 
+	 * @param request
+	 * @param response
+	 * @param module 必填，模块
+	 * @param resourceColumnId
+	 * @param semesterId
+	 * @param classlevelId
+	 * @param disciplineId
+	 * @param resourceCatalogFirstId
+	 * @param resourceCatalogSecondId
+	 * @param startTime
+	 * @param endTime
+	 * @param resourceName
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("{module}/content")
+	public String content(HttpServletRequest request, HttpServletResponse response, @PathVariable String module, String resourceColumnId, String semesterId, String classlevelId, String disciplineId, String resourceCatalogFirstId, String resourceCatalogSecondId, String startTime, String endTime, String resourceName) throws Exception {
+		if (moduleSet.contains(module)) {
+			LoginUser loginUser = getLoginUser(request);
+			Page page = RequestUtils.buildPage(request);
+			page.setPageCountData(6);
+			if (loginUser != null) {
+				Date st = null;
+				Date et = null;
+				if (StringUtils.isNotBlank(startTime)) {
+					st = DateUtils.parseDate(startTime, "yyyy-MM-dd HH:mm");
+				}
+				if (StringUtils.isNotBlank(endTime)) {
+					et = DateUtils.parseDate(endTime, "yyyy-MM-dd HH:mm");
+				}
+				String orgId = baseUserService.findOrgIdByOrgUserId(loginUser.getUserId());
+				if (orgId == null)
+					return null;
+				
+				String orgIdType = "";
+				if(CommonsConstant.USER_TYPE_TEACH_ORG_MANAGER.equals(loginUser.getUserType())){//教育局查询用电教管帐号
+					orgIdType = loginUser.getJyjOrgId();
+					module = "shared";
+				} else {//电教管
+					orgIdType = orgId;
+				}
+
+				if (module.equals("uploaded")) {
+					Pageable<Resources> pageable = resourceUserService.findUploadedResource(semesterId, classlevelId, disciplineId, resourceCatalogFirstId, resourceCatalogSecondId, resourceName, resourceColumnId, st, et, Constants.HOLD_TYPE_ORG, orgIdType, page);
+					String pageStr = ResourcePageUtil.buildPageInfo(pageable);
+					request.setAttribute("list", pageable.getList());
+					request.setAttribute("pageStr", pageStr);
+					List<String> ids = PropertyUtils.getProperties(pageable.getList(), "id");
+					// 推送状态
+					List<ResourcePush> pushs = resourcePushService.findPushPusherRecord(Constants.HOLD_TYPE_ORG, orgIdType, ids);
+					Map<String, ResourcePush> pushMap = new HashMap<String, ResourcePush>();
+					for (ResourcePush push : pushs) {
+						pushMap.put(push.getResourceId(), push);
+					}
+					request.setAttribute("pushMap", pushMap);
+					// 下发状态
+					List<ResourceDistribute> distributes = resourceDistributeService.findDistributeRecord(Constants.HOLD_TYPE_ORG, orgIdType, ids);
+					Map<String, ResourceDistribute> distributeMap = new HashMap<String, ResourceDistribute>();
+					for (ResourceDistribute distribute : distributes) {
+						distributeMap.put(distribute.getResourceId(), distribute);
+					}
+					request.setAttribute("distributeMap", distributeMap);
+				} else if (module.equals("lowerpush")) {
+					Pageable<ResourcePush> pageable = resourcePushService.findPushReciveRecord(semesterId, classlevelId, disciplineId, resourceCatalogFirstId, resourceCatalogSecondId, resourceName, resourceColumnId, st, et, Constants.HOLD_TYPE_ORG, orgIdType, page);
+					String pageStr = ResourcePageUtil.buildPageInfo(pageable);
+					request.setAttribute("list", pageable.getList());
+					request.setAttribute("pageStr", pageStr);
+					// 查询收到的ResourcePush再往上推送的状态
+					Set<String> nextPushIds = new HashSet<String>();
+					for (ResourcePush push : pageable.getList()) {
+						if (StringUtils.isNotBlank(push.getNextResourcePushId()))
+							nextPushIds.add(push.getNextResourcePushId());
+					}
+					List<ResourcePush> nextPushs = resourcePushService.findByResourcePushIds(nextPushIds);
+					Map<String, ResourcePush> nextPushMap = new HashMap<String, ResourcePush>();
+					for (ResourcePush nextPush : nextPushs) {
+						nextPushMap.put(nextPush.getId(), nextPush);
+					}
+					request.setAttribute("nextPushMap", nextPushMap);
+				} else if (module.equals("higherpush")) {
+					Pageable<ResourceDistributeTarget> pageable = resourceDistributeService.findDistributeTargetRecord(semesterId, classlevelId, disciplineId, resourceCatalogFirstId, resourceCatalogSecondId, resourceName, resourceColumnId, st, et, Constants.HOLD_TYPE_ORG, orgIdType, page);
+					String pageStr = ResourcePageUtil.buildPageInfo(pageable);
+					request.setAttribute("list", pageable.getList());
+					request.setAttribute("pageStr", pageStr);
+					// 查询上级下发的资源再往下下发的状态
+					Set<String> nextDistributeIds = new HashSet<String>();
+					for (ResourceDistributeTarget target : pageable.getList()) {
+						if (StringUtils.isNotBlank(target.getNextResourceDistributeId()))
+							nextDistributeIds.add(target.getNextResourceDistributeId());
+					}
+					List<ResourceDistribute> nextDistributes = resourceDistributeService.findByDistributeIds(nextDistributeIds);
+					Map<String, ResourceDistribute> nextDistributeMap = new HashMap<String, ResourceDistribute>();
+					for (ResourceDistribute nextDistribute : nextDistributes) {
+						nextDistributeMap.put(nextDistribute.getId(), nextDistribute);
+					}
+					request.setAttribute("nextDistributeMap", nextDistributeMap);
+				} else if (module.equals("shared")) {
+					Pageable<ResourceHold> pageable = resourceUserService.findHoldResource(semesterId, classlevelId, disciplineId, resourceCatalogFirstId, resourceCatalogSecondId, resourceName, resourceColumnId, st, et, Constants.HOLD_TYPE_ORG, orgIdType, page);
+					String pageStr = ResourcePageUtil.buildPageInfo(pageable);
+					request.setAttribute("list", pageable.getList());
+					request.setAttribute("pageStr", pageStr);
+				}
+			}
+			request.setAttribute("resourceUrl", "orgresource"); // 资源根Url
+			request.setAttribute("module", module);
+		}
+		return "front/resource/org/org_" + module;
+	}
+
+	@ResponseBody
+	@RequestMapping("/content")
+	public List content(HttpServletRequest request, HttpServletResponse response) {
+		LoginUser loginUser = getLoginUser(request);
+		BaseUser user = baseUserService.findByBaseUserId(loginUser.getUserId());
+		Page page = RequestUtils.buildPage(request);
+		page.setPageCountData(14);
+		String orgId = null;
+		if (user.getUserType().equals(CommonsConstant.USER_TYPE_ORG)) {
+			orgId = user.getBaseOrgId();
+		} else if (user.getUserType().equals(CommonsConstant.USER_TYPE_ORG_MANAGER)) {
+			orgId = user.getBaseOrgId();
+		} else if (user.getUserType().equals(CommonsConstant.USER_TYPE_TEACH_ORG_MANAGER)) {
+			orgId = user.getBaseOrgId();
+		}
+		List ls = new ArrayList();
+		if (orgId == null) {
+			return ls;
+		}
+		Pageable<ResourcePush> pageable = resourcePushService.findPushReciveRecord(null, null, null, null, null, null, null, null, null, Constants.HOLD_TYPE_ORG, orgId, page);
+		Pageable<ResourceDistributeTarget> pageableDT = resourceDistributeService.findDistributeTargetRecord(null, null, null, null, null, null, null, null, null, Constants.HOLD_TYPE_ORG, orgId, page);
+		List<ResourcePush> rps = pageable.getList();
+		List<ResourceDistributeTarget> rdts = pageableDT.getList();
+		// 将获取的数据放入数组中
+		Object[] obs = new Object[28];
+		for (int i = 0; i < rps.size(); i++) {
+			obs[i] = rps.get(i);
+		}
+
+		for (int i = 0; i < rdts.size(); i++) {
+			obs[i + rps.size()] = rdts.get(i);
+		}
+
+		// 将数组按照时间排序
+		// int leng=obs.length;
+
+		int len = rps.size() + rdts.size();
+		int i, j;
+		Object temp;
+		for (i = 1; i <= len; i++) {
+			for (j = len - 1; j >= 1; j--) {
+				Date t1 = (obs[j] instanceof ResourcePush) ? ((ResourcePush) obs[j]).getCreateTime() : ((ResourceDistributeTarget) obs[j]).getCreateTime();
+				Date t2 = (obs[j - 1] instanceof ResourcePush) ? ((ResourcePush) obs[j - 1]).getCreateTime() : ((ResourceDistributeTarget) obs[j - 1]).getCreateTime();
+				// if (n2[j] > n2[j - 1]) {
+				if (t1.after(t2)) {
+					temp = obs[j];
+					obs[j] = obs[j - 1];
+					obs[j - 1] = temp;
+				}
+			}
+		}
+		for (int k = 0; k < 14; k++) {
+			if (obs[k] != null) {
+				ls.add(obs[k]);
+			}
+		}
+		return ls;
+	}
+
+	@ResponseBody
+	@RequestMapping("{module}/contentlist")
+	public List contentlist(HttpServletRequest request, HttpServletResponse response, @PathVariable String module, String resourceColumnId, String semesterId, String classlevelId, String disciplineId, String resourceCatalogFirstId, String resourceCatalogSecondId, String startTime, String endTime, String resourceName, Integer pageCount) throws Exception {
+		List ls = new ArrayList();
+		if (moduleSet.contains(module)) {
+			LoginUser loginUser = getLoginUser(request);
+			BaseUser user = baseUserService.findByBaseUserId(loginUser.getUserId());
+			Page page = RequestUtils.buildPage(request);
+			page.setPageCountData(pageCount);
+			if (user != null) {
+				Date st = null;
+				Date et = null;
+				if (StringUtils.isNotBlank(startTime)) {
+					st = DateUtils.parseDate(startTime, "yyyy-MM-dd HH:mm");
+				}
+				if (StringUtils.isNotBlank(endTime)) {
+					et = DateUtils.parseDate(endTime, "yyyy-MM-dd HH:mm");
+				}
+				String orgId = null;
+				if (user.getUserType().equals(CommonsConstant.USER_TYPE_ORG)) {
+					orgId = user.getBaseOrgId();
+				} else if (user.getUserType().equals(CommonsConstant.USER_TYPE_ORG_MANAGER)) {
+					orgId = user.getBaseOrgId();
+				} else if (user.getUserType().equals(CommonsConstant.USER_TYPE_TEACH_ORG_MANAGER)) {
+					orgId = user.getBaseOrgId();
+				}
+				// System.out.println("orgId="+orgId);
+				if (orgId == null)
+					return null;
+
+				if (module.equals("uploaded")) {
+					Pageable<Resources> pageable = resourceUserService.findUploadedResource(semesterId, classlevelId, disciplineId, resourceCatalogFirstId, resourceCatalogSecondId, resourceName, resourceColumnId, st, et, Constants.HOLD_TYPE_ORG, orgId, page);
+					String pageStr = ResourcePageUtil.buildPageInfo(pageable);
+					request.setAttribute("list", pageable.getList());
+					request.setAttribute("pageStr", pageStr);
+					List<String> ids = PropertyUtils.getProperties(pageable.getList(), "id");
+					// 推送状态
+					List<ResourcePush> pushs = resourcePushService.findPushPusherRecord(Constants.HOLD_TYPE_ORG, orgId, ids);
+					Map<String, ResourcePush> pushMap = new HashMap<String, ResourcePush>();
+					for (ResourcePush push : pushs) {
+						pushMap.put(push.getResourceId(), push);
+					}
+					request.setAttribute("pushMap", pushMap);
+					// 下发状态
+					List<ResourceDistribute> distributes = resourceDistributeService.findDistributeRecord(Constants.HOLD_TYPE_ORG, orgId, ids);
+					Map<String, ResourceDistribute> distributeMap = new HashMap<String, ResourceDistribute>();
+					for (ResourceDistribute distribute : distributes) {
+						distributeMap.put(distribute.getResourceId(), distribute);
+					}
+					request.setAttribute("distributeMap", distributeMap);
+					return pageable.getList();
+				} else if (module.equals("lowerpush")) {
+					Pageable<ResourcePush> pageable = resourcePushService.findPushReciveRecord(semesterId, classlevelId, disciplineId, resourceCatalogFirstId, resourceCatalogSecondId, resourceName, resourceColumnId, st, et, Constants.HOLD_TYPE_ORG, orgId, page);
+					String pageStr = ResourcePageUtil.buildPageInfo(pageable);
+					// for (ResourcePush res : pageable.getList()) {
+					// res.setBaseUserName(res.getResources()
+					// .getBaseUserName());
+					// }
+					request.setAttribute("list", pageable.getList());
+					request.setAttribute("pageStr", pageStr);
+					// 查询收到的ResourcePush再往上推送的状态
+					Set<String> nextPushIds = new HashSet<String>();
+					for (ResourcePush push : pageable.getList()) {
+						if (StringUtils.isNotBlank(push.getNextResourcePushId()))
+							nextPushIds.add(push.getNextResourcePushId());
+					}
+					List<ResourcePush> nextPushs = resourcePushService.findByResourcePushIds(nextPushIds);
+					Map<String, ResourcePush> nextPushMap = new HashMap<String, ResourcePush>();
+					for (ResourcePush nextPush : nextPushs) {
+						nextPushMap.put(nextPush.getId(), nextPush);
+					}
+					request.setAttribute("nextPushMap", nextPushMap);
+					// return pageable.getList();
+					List<ResourcePush> list = pageable.getList();
+
+					// } else if (module.equals("higherpush")){
+
+					Pageable<ResourceDistributeTarget> pageableh = resourceDistributeService.findDistributeTargetRecord(semesterId, classlevelId, disciplineId, resourceCatalogFirstId, resourceCatalogSecondId, resourceName, resourceColumnId, st, et, Constants.HOLD_TYPE_ORG, orgId, page);
+					// String pageStrh =
+					// ResourcePageUtil.buildPageInfo(pageableh);
+					// request.setAttribute("list", pageableh.getList());
+					// request.setAttribute("pageStr", pageStrh);
+					// 查询上级下发的资源再往下下发的状态
+					Set<String> nextDistributeIds = new HashSet<String>();
+					for (ResourceDistributeTarget target : pageableh.getList()) {
+						if (StringUtils.isNotBlank(target.getNextResourceDistributeId()))
+							nextDistributeIds.add(target.getNextResourceDistributeId());
+					}
+					for (ResourceDistributeTarget res : pageableh.getList()) {
+						res.setBaseUserName(res.getBaseUserName());
+					}
+					List<ResourceDistribute> nextDistributes = resourceDistributeService.findByDistributeIds(nextDistributeIds);
+					Map<String, ResourceDistribute> nextDistributeMap = new HashMap<String, ResourceDistribute>();
+					for (ResourceDistribute nextDistribute : nextDistributes) {
+						nextDistributeMap.put(nextDistribute.getId(), nextDistribute);
+					}
+					// request.setAttribute("nextDistributeMap",
+					// nextDistributeMap);
+					// return pageableh.getList();
+
+					List<ResourceDistributeTarget> hlist = pageableh.getList();
+
+					// List<Object> result = new ArrayList<Object>();
+
+					// 将获取的数据放入数组中
+					Object[] obs = new Object[pageCount * 2];
+					for (int i = 0; i < list.size(); i++) {
+						obs[i] = list.get(i);
+					}
+
+					for (int i = 0; i < hlist.size(); i++) {
+						obs[i + list.size()] = hlist.get(i);
+					}
+
+					// 将数组按照时间排序
+					// int leng=obs.length;
+
+					int len = list.size() + hlist.size();
+					int i, j;
+					Object temp;
+					for (i = 1; i <= len; i++) {
+						for (j = len - 1; j >= 1; j--) {
+							Date t1 = (obs[j] instanceof ResourcePush) ? ((ResourcePush) obs[j]).getCreateTime() : ((ResourceDistributeTarget) obs[j]).getCreateTime();
+							Date t2 = (obs[j - 1] instanceof ResourcePush) ? ((ResourcePush) obs[j - 1]).getCreateTime() : ((ResourceDistributeTarget) obs[j - 1]).getCreateTime();
+							// if (n2[j] > n2[j - 1]) {
+							if (t1.after(t2)) {
+								temp = obs[j];
+								obs[j] = obs[j - 1];
+								obs[j - 1] = temp;
+							}
+						}
+					}
+					for (int k = 0; k < pageCount; k++) {
+						if (obs[k] != null) {
+							ls.add(obs[k]);
+						}
+					}
+					return ls;
+
+				} else if (module.equals("shared")) {
+					Pageable<ResourceHold> pageable = resourceUserService.findHoldResource(semesterId, classlevelId, disciplineId, resourceCatalogFirstId, resourceCatalogSecondId, resourceName, resourceColumnId, st, et, Constants.HOLD_TYPE_ORG, orgId, page);
+					String pageStr = ResourcePageUtil.buildPageInfo(pageable);
+					for (ResourceHold res : pageable.getList()) {
+						res.setBaseUserName(res.getBaseUserName());
+					}
+					request.setAttribute("list", pageable.getList());
+					request.setAttribute("pageStr", pageStr);
+					return pageable.getList();
+				}
+			}
+			// request.setAttribute("module", module);
+			// request.setAttribute("type", type);
+		}
+		return null;
+	}
+}

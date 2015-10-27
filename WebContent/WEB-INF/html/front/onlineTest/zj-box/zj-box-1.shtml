@@ -1,0 +1,104 @@
+<!-- 知识点选题 -->
+<div class="select-exercise-box" style="display:block;">
+	<div class="left-nav">
+		<ul>
+			<li>
+				<a href="javascript:;" class="arr arr-1"></a><a href="javascript:;" class="title floor-1">数与式</a>
+				<ul class="cont">
+					<li>
+						<a href="javascript:;" class="arr arr-1"></a><a href="javascript:;" class="title floor-2">有理数</a>
+						<ul class="cont">
+							<li>
+								<a href="javascript:;"  class="floor-3">正数和负数</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="info">
+			<span style="width:120px;display:inline-block;">已选题目(12)</span>
+			<a href="javascript:;" class="red">全部清空</a>
+			<table class="normalTable">
+				<tr>
+					<td>选择题</td>
+					<td>3</td>
+					<td>20%</td>
+					<td><a href="javascript:;"><img src="/public/img/index/delete1.gif" alt=""></a></td>
+				</tr>
+				<tr>
+					<td>填空题</td>
+					<td>4</td>
+					<td>30%</td>
+					<td><a href="javascript:;"><img src="/public/img/index/delete1.gif" alt=""></a></td>
+				</tr>
+				<tr>
+					<td>解答题</td>
+					<td>5</td>
+					<td>40%</td>
+					<td><a href="javascript:;"><img src="/public/img/index/delete1.gif" alt=""></a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="right-cont">
+		<p class="tag">
+			全部题型
+			<a href="javascript:;" class="selected">单选题</a>
+			<a href="javascript:;">多选题</a>
+			<a href="javascript:;">填空题</a>
+			<a href="javascript:;">解答题</a>
+		</p>
+		<p class="tag">
+			全部难度
+			<a href="javascript:;" class="selected">容易</a>
+			<a href="javascript:;">较易</a>
+			<a href="javascript:;">一般</a>
+			<a href="javascript:;">较难</a>
+			<a href="javascript:;">困难</a>
+		</p>
+		<p class="mb10">共计 <span class="red">102212</span> 题<span class="fs12 ml10">（提示：点击题目内容即可查看到答案和解析内容）</span></p>
+		<div class="text-box">
+			<div class="info">
+				<span>组卷次数： <span class="red">48</span></span>
+				<span class="ml">知识点：5.9有理数的混合运算</span>
+				<span class="ml">难易度：<span class="red">9</span></span>
+				<span class="ml">更新日期：2014-06-05</span>
+			</div>
+			<div class="text">
+				<div class="title">已知世运会、亚运会、奥运会分别于公元2009年、2010年、2012年举办，若这三项运动会均每四年举办一次，则这三项运动会均不在下列哪一年举办？（）</div>
+				<ul class="select">
+					<li>A . 公元2070年</p>
+					<li>B . 公元2071年</p>
+					<li>C . 公元2072年</p>
+					<li>D . 公元2073年</p>
+				</ul>
+			</div>
+			
+			<span class="edit">
+				<a class="btn bgBlue" href="javascript:;">加入试卷</a>
+			</span>
+		</div>
+		<div class="text-box">
+			<div class="info">
+				<span>组卷次数： <span class="red">48</span></span>
+				<span class="ml">知识点：5.9有理数的混合运算</span>
+				<span class="ml">难易度：<span class="red">9</span></span>
+				<span class="ml">更新日期：2014-06-05</span>
+			</div>
+			<div class="text">
+				<div class="title">已知世运会、亚运会、奥运会分别于公元2009年、2010年、2012年举办，若这三项运动会均每四年举办一次，则这三项运动会均不在下列哪一年举办？（）</div>
+				<ul class="select">
+					<li>A . 公元2070年</p>
+					<li>B . 公元2071年</p>
+					<li>C . 公元2072年</p>
+					<li>D . 公元2073年</p>
+				</ul>
+			</div>
+			
+			<span class="edit">
+				<a class="btn bgRed" href="javascript:;">移出试卷</a>
+			</span>
+		</div>
+	</div>
+</div>

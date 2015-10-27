@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 别名，注意区别原生态的名称如：int、double、map、list、object等 -->
+	<typeAliases>
+		<typeAlias alias="baseAttacheFile" type="com.codyy.rrt.resource.model.BaseAttacheFile" />
+		<typeAlias alias="resource" type="com.codyy.rrt.resource.model.Resources" />
+		<typeAlias alias="resourceKnowledge" type="com.codyy.rrt.resource.model.ResourceKnowledge" />
+		<typeAlias alias="resourceLabel" type="com.codyy.rrt.resource.model.ResourceLabel" />
+		<typeAlias alias="resourceImage" type="com.codyy.rrt.resource.model.ResourceImage" />
+	</typeAliases>
+	
+</configuration>

@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/student.css" />
+</head>
+<body>
+	<!--#include virtual="/html/front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav netWorkNav">
+				<a href="netHomework.shtml" class="backup">&lt;&lt;返回</a>
+				查看作业
+			</h4>
+			<div class="otContent" style="position:relative;">
+				<div class="wanTime">完成时间：2014-09-17</div>
+				<ul class="detailBox">
+					<li>
+						<label class="cName">作业名称：</label>
+						<h5 class="cCont">诗歌《离骚》讲解</h5>
+					</li>
+				</ul>
+				<div class="testPart" style="padding-left:30px;">
+					<h5 style="margin-bottom:10px;">习题作业</h5>
+					<div class="singleChoice">
+						<h5>一、单选题</h5>
+						<ul class="mb20 timu">
+							<li class="mb10 mt10">1、[<span class="YoN red">答对</span>]离骚的作者是谁</li>
+							<li><label class="len60">选项A：</label>陶渊明<li>
+							<li><label class="len60">选项B：</label>李白</li>
+							<li><label class="len60">选项C：</label>屈原</li>
+							<li><label class="len60">选项D：</label>杜甫</li>
+							<img src="/public/img/index/testImg/test.png" alt="" width="120" height="90"/>
+						</ul>
+						<ul>
+							<li><label>正确答案：</label><b>C</b> <label>我的选项：</label>C</li>
+							
+						</ul>
+
+						<div class="knowledge">
+							<div class="klgList">
+								<a href="javascript:;" class="selected">老师点评</a>
+								<a href="javascript:;">习题解析</a>
+								<a href="javascript:;">知识点</a>
+							</div>
+							<div class="klgCont">
+								<p>
+									选项A，陶渊明，为《桃花源记》作者。为南朝宋初诗人，思想家。
+									<a href="javascript:;" class="movieAnalysisBtn btn bgBlue">点击解析视频</a>
+								</p>
+							</div>
+							<div class="klgCont hidden">
+								<span>知识点名称</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="multiChoice">
+						<h5>二、多选题</h5>
+						<ul class="mb20 timu">
+							<li class="mb10 mt10">1、[<span class="YoN red">答对</span>]离骚的作者是谁</li>
+							<li><label class="len60">选项A：</label>陶渊明<li>
+							<li><label class="len60">选项B：</label>李白</li>
+							<li><label class="len60">选项C：</label>屈原</li>
+							<li><label class="len60">选项D：</label>杜甫</li>
+							<img src="../../../public/image/testImg/test.png" alt="" />
+						</ul>
+						<ul>
+							<li><label>正确答案：</label><b>C、D</b> <label>难度系数：</label>C、D</li>
+						</ul>
+
+						<div class="knowledge">
+							<div class="klgList">
+								<a href="javascript:;" class="selected">老师点评</a>
+								<a href="javascript:;">习题解析</a>
+								<a href="javascript:;">知识点</a>
+							</div>
+							<div class="klgCont">
+								<p>
+									选项A，陶渊明，为《桃花源记》作者。为南朝宋初诗人，思想家。
+									<a href="javascript:;" class="movieAnalysisBtn btn bgBlue">点击解析视频</a>
+								</p>
+							</div>
+							<div class="klgCont hidden">
+								<span>知识点名称</span>
+							</div>
+						</div>
+					</div>
+					<div class="subjectiveItem">
+						<h5>三、主观题</h5>
+						<ul class="mb20 timu">
+							<li class="mb10 mt10">1、离骚的作者是谁
+								<span class="testDifficulty">难度系数：<b class="orange">3</b></span>
+							</li>
+							<img src="/public/img/index/testImg/test.png" alt="" width="120" height="90"/>
+						</ul>
+						<div class="knowledge">
+							<div class="klgList">
+								<a href="javascript:;" class="selected">习题解析</a>
+								<a href="javascript:;">习题解析</a>
+								<a href="javascript:;">知识点</a>
+							</div>
+							<div class="klgCont">
+								<p>
+									选项A，陶渊明，为《桃花源记》作者。为南朝宋初诗人，思想家。
+									<a href="javascript:;" class="movieAnalysisBtn btn bgBlue">点击解析视频</a>
+								</p>
+							</div>
+							<div class="klgCont hidden">
+								<span>知识点名称</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="textWork">
+					<h5 class="pl30" style="margin:20px 0 10px 0;">文本作业</h5>
+					<ul class="detailBox">
+						<li>
+							<label class="cName">作业内容：</label>
+							<p class="cCont">诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解</p>
+						</li>
+						<li>
+							<label class="cName">我的作业：</label>
+							<div class="cCont">我写的</div>
+						</li>
+					</ul>
+					<div class="knowledge pl30">
+						<div class="klgList">
+							<a href="javascript:;" class="selected">习题解析</a>
+							<a href="javascript:;">习题解析</a>
+							<a href="javascript:;">知识点</a>
+						</div>
+						<div class="klgCont">
+							<p>
+								选项A，陶渊明，为《桃花源记》作者。为南朝宋初诗人，思想家。
+								<a href="javascript:;" class="movieAnalysisBtn btn bgBlue">点击解析视频</a>
+							</p>
+						</div>
+						<div class="klgCont hidden">
+							<span>知识点名称</span>
+						</div>
+					</div>
+				</div>
+				<div class="enclosureWork">
+					<h5 class="pl30" style="margin:20px 0 10px 0;">附件作业</h5>
+					<ul class="detailBox">
+						<li>
+							<label class="cName">作业内容：</label>
+							<p>
+								<span class="cCont downLoad blue">诗歌《离骚》讲解.doc </span>大小12m
+								<a href="" class="downLink blue ml40">下载</a>
+							</p>
+						</li>
+					</ul>
+
+					<ul class="detailBox">
+						<li>
+							<label class="cName">上传附件：</label>
+							<div class="cCont">
+								<a href="#" class="btn">上传作业</a>
+								<p>
+									<a href="javascript:;" class="blue">诗歌《离骚》读后感</a>
+									<span class="ml20">大小4.8m</span>
+									<a href="javascript:;" class="close ml20 red">X</a>
+								</p>
+							</div>
+						</li>
+					</ul>
+					<div class="knowledge pl30">
+						<div class="klgList">
+							<a href="javascript:;" class="selected">习题解析</a>
+							<a href="javascript:;">习题解析</a>
+							<a href="javascript:;">知识点</a>
+						</div>
+						<div class="klgCont">
+							<p>
+								选项A，陶渊明，为《桃花源记》作者。为南朝宋初诗人，思想家。
+								<a href="javascript:;" class="movieAnalysisBtn btn bgBlue">点击解析视频</a>
+							</p>
+						</div>
+						<div class="klgCont hidden">
+							<span>知识点名称</span>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- <ul class="detailBox">
+					<li>
+						<label class="cName">作业名称：</label>
+						<h5 class="cCont">诗歌《离骚》讲解</h5>
+					</li>
+					<li>
+						<label class="cName">作业内容：</label>
+						<p class="cCont">诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解诗歌《离骚》讲解</p>
+					</li>
+					<li>
+						<label class="cName">附件：</label>
+						<p>
+							<span class="cCont downLoad blue">诗歌《离骚》讲解.doc </span>大小12m
+							<a href="" class="downLink">下载</a>
+						</p>
+
+					</li>
+					<li class="border-bottom">
+						<label class="cName">完成时间：</label>
+						<span class="cCont">2014-5-26</span>
+					</li>
+				</ul>
+				<ul class="detailBox">
+					<li>
+						<label class="cName">答案：</label>
+						<div class="cCont">这里是答案内容</div>
+					</li>
+					<li>
+						<label class="cName">上传附件：</label>
+						<a href="javascript:;" class="blue">读后感</a>
+						<span class="ml20">大小4.8m</span>
+						<a href="javascript:;" class="close ml20 red">X</a>
+					</li>
+					<li>
+						<label class="cName">老师评价：</label>
+						<input type="radio" checked="1">完全正确
+					</li>
+					<li>
+						<label class="cName">老师评语：</label>
+						<div class="cCont">这对于一位这对于一位这对于一位这对于一位</div>
+					</li>
+					<li>
+						<label class="cName">老师评分：</label>
+						<span class="orange">100</span>分
+					</li>
+					<li>
+						<span class="orange ml60">等待老师批改...</span>
+					</li>
+				</ul> -->
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

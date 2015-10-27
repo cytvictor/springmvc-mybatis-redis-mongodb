@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav onlineAnswerQsNav">
+				<a class="btn testZj" href="javascript:;">视频答疑</a>
+				答疑中心
+			</h4>
+			<div class="otContent">
+				<ul class="commonSelect mb20">
+					<li>
+						<label>标题：</label>
+						<input type="text">
+						<label class="ml40">学科：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label class="ml40">状态：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<a class="btn bgBlue ml20" href="javascript:;">搜索</a>
+					</li>
+				</ul>
+				<table class="normalTable">
+					<tr>
+						<th><input type="checkbox" /></th>
+						<th>问题名称</th>
+						<th>提问人</th>
+						<th>学科</th>
+						<th>提问时间</th>
+						<th>状态</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td><input type="checkbox" /></td>
+						<td>镁元素是谁发现的</td>
+						<td>李明</td>
+						<td>语文</td>
+						<td>2014-07-20 11:45</td>
+						<td class="blue">已解答</td>
+						<td>
+							<a href="checkAnswerQs.shtml" class="blue">查看</a>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" /></td>
+						<td>镁元素是谁发现的</td>
+						<td>李明</td>
+						<td>语文</td>
+						<td>2014-07-20 11:45</td>
+						<td>未解答</td>
+						<td>
+							<a href="checkAnswerQs.shtml" class="blue">解答</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

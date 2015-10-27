@@ -1,0 +1,92 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div class="side"  style="height:1200px;">
+	<div class="userMsg">
+		<div class="changeUserBox">
+			<dl class="userPhoto">
+				<dt><img src="${sessionScope.session_domain_config.basedata}/HeadImageServlet/${sessionScope.session_login_user.headPic }" alt="" width="90" height="90" id="sideHeadPic"></dt>
+				<dd class="userName">${sessionScope.session_login_user.realName }</dd>
+			</dl>
+			<c:if test="${not empty session_login_user.rAccountId }">
+				<div class="changeIdentity">
+					<a style="color: white;" href="javascript:;" onclick="changeAccountId(this);" accountId="${session_login_user.rAccountId }">切换到家长空间</a>
+				</div>	
+			</c:if>
+		</div>
+
+		<dl>
+			<a href="${sessionScope.session_domain_config.dynamic }/front/visitor/visitorIndex.html?id=${sessionScope.session_login_user.schoolId }"><dt>${sessionScope.session_login_user.schoolName}</dt></a>
+			<dd>
+				<c:if test="${!empty sessionScope.session_login_user.permission }">
+						<span class="schoolManager">
+							<a href="${sessionScope.session_domain_config.basedata}/front/teacherManageSchool.html">学校管理</a>
+						</span>
+					</c:if>
+				<span class="personalMsg"><a style="color: white;" href="${sessionScope.session_domain_config.basedata}/front/personalData/personalDataIndex.html">个人资料</a></span>
+			</dd>
+		</dl>
+		<div class="collectAndMsg">
+			<span>
+				<b id="resourceFavoriteCnt">0</b>
+				<a href="${sessionScope.session_domain_config.resource }/front/resource/favorite.html">收藏</a>
+			</span>
+			<span>
+				<b id="informationCount">0</b>
+				<a href="${sessionScope.session_domain_config.information }/information/page/informationPage.do?infoType=MESSAGES&sideClick=sideClick">信息</a>
+			</span>
+		</div>
+	</div>
+
+	<ul class="sideNav">
+		<li class="schoolActiveMenu"><a href="${sessionScope.session_domain_config.dynamic }/front/dynamic/index.html">最新动态</a></li>
+		<li class="test-library"><a href="${session_domain_config.onlinetest }/teacher/questionLib/toSharedLib.html">题库</a></li>
+		<li class="onlineTest"><a href="${session_domain_config.onlinetest }/teacher/onlineTest/index.html">测试中心</a></li>
+		<li class="netHomework"><a href="${session_domain_config.homework }/front/teacherHomework/teacherHomeworkList.html?sideClick=sideClick">作业中心</a></li>
+		<li class="error-text"><a href="${session_domain_config.onlinetest }/teacher/wrongQstBook/toWrongQstBook.html">错题本</a></li>
+		<c:if test="${sessionScope.deploySysConfig.onlineAnswerFlag eq 'Y' }">
+			<li class="onlineTutor"><a href="${session_domain_config.onlineanswer }/front/onlineTutor/teacher/showOnlineTutor.do">在线辅导</a></li>
+		</c:if>
+		<c:if test="${sessionScope.deploySysConfig.onlineClassFlag eq 'Y' }">
+			<li class="onlineCourse"><a href="${sessionScope.session_domain_config.platform}/front/teacher/toRealtimeView.html">在线课堂</a></li>
+		</c:if>
+		<li class="onlineAnswerQs"><a href="${session_domain_config.onlineanswer }/front/onlineAnswer/teacher/onlineAnswerPage.do?sideClick=sideClick">答疑中心</a></li>
+		<li class="resourceCenter"><a href="${session_domain_config.resource }/front/resource/uploaded.html">资源中心</a></li>
+		<li class="myBuy"><a href="${session_domain_config.resourcesearch }/front/resourcecart/showCartPage.html">我的购买</a></li>
+		<li class="newsMenu"><a href="${session_domain_config.information }/information/page/informationPage.do?infoType=NEWS&sideClick=sideClick">信息中心</a></li>
+		<li class="myClass"><a href="${session_domain_config.basedata }/front/teacher/myclass/myClassIndex.do?sideClick=sideClick" >我的班级</a></li>
+		<li class="liveAppointment"><a href="${session_domain_config.userCenter }/user/loginWithUrl.html?username=guojiaadmin&password=666666&url=${session_domain_config.onlineClass }/monitor/schoolNet/appointment/list.html">直录播课堂</a></li>
+		<li class="evaluation"><a href="${session_domain_config.userCenter }/user/loginWithUrl.html?username=guojiaadmin&password=666666&url=${session_domain_config.evaluation }/eva/index.html">资源评选</a></li>
+		<li class="prepareLession"><a href="${session_domain_config.userCenter }/user/loginWithUrl.html?username=guojiaadmin&password=666666&url=${session_domain_config.meeting }/prepareLesson/createList.html">集体备课</a></li>
+	</ul>
+</div>
+<script type="text/javascript">
+/**
+ * 切换身份
+ */
+function changeAccountId(obj){
+	var rAccountId = $(obj).attr("accountId");
+	if(rAccountId==""){
+		Win.alert("切换身份失败！");
+		return;
+	}
+	window.location.href = "${ctx}/common/autoLogin.do";
+	
+} ;
+// =================== 函数调用区域 =====================
+	$(function() {
+		getInformationNum() ;
+		getResourceFavoriteCnt();
+	}) ;
+		
+	function getInformationNum(){
+		$.getJSON("${sessionScope.session_domain_config.information}/information/management/countInformation.do?callback=?",function(data){
+				$("#informationCount").html(data);
+		});
+	} ;
+	
+	function getResourceFavoriteCnt(){
+		$.getJSON("${sessionScope.session_domain_config.resource}/front/resource/favorite/countResouce.do?callback=?", function(data){ 
+			$("#resourceFavoriteCnt").html(data);
+		});
+	}
+</script>

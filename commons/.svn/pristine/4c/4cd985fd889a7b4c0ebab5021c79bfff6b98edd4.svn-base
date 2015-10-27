@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.5.xsd
+		http://www.springframework.org/schema/data/repository http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd">
+		
+	<!-- redis  begin-->
+	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxIdle" value="${redis.maxIdle}" />
+		<property name="minIdle" value="${redis.minIdle}" />
+		<property name="maxWaitMillis" value="${redis.maxWaitMillis}" />
+		<property name="testOnBorrow" value="${redis.testOnBorrow}" />
+	</bean>
+	<bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="hostName" value="${redis.host}"/>
+		<property name="port" value="${redis.port}"/>
+		<property name="password" value="${redis.pass}"/>
+		<property name="poolConfig" ref="poolConfig"/>
+	</bean>
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+	</bean>
+	<!-- redis  end-->
+	
+	
+	<!-- mongodb  begin-->
+	<mongo:mongo id="mongo" replica-set="${mongodb.host}" write-concern="NONE">
+		<mongo:options 
+			auto-connect-retry="${mongodb.autoConnectRetry}" 
+			connect-timeout="${mongodb.connectTimeout}"
+			connections-per-host="${mongodb.connectionsPerHost}"
+			max-wait-time="${mongodb.maxWaitTime}"
+			socket-keep-alive="${mongodb.socketKeepAlive}"
+			socket-timeout="${mongodb.socketTimeout}"/>
+	</mongo:mongo>
+	<mongo:db-factory id="mongoDbFactory" mongo-ref="mongo"  dbname="${mongodb.database}"/>
+	
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />  
+    </bean>
+    <!-- mongodb  end-->
+    
+	<bean id="ssoConfig" class="com.codyy.rrt.commons.entity.SsoConfig">
+		<property name="appDomain"         value="${app.domain}"></property>
+		<property name="appRedirect"       value="${app.redirect}"></property>
+		<property name="appSessionTimeout" value="${app.session.timeout}"></property>
+	</bean>
+	
+	<bean id="appConfig" class="com.codyy.rrt.commons.entity.AppConfig">
+		<property name="uploadfolder"        value="${upload.folder}"/>
+		<property name="appSessionTimeout"   value="${appSessionTimeout}"/>
+		<property name="transServerIp"       value="${doctrans.server.ip}" />
+		<property name="transServerPort"     value="${doctrans.server.port}" />
+		<property name="transFolder"         value="${doctrans.folder}" />
+		<property name="transThread"         value="${doctrans.thread}" />
+		<property name="mp4transFolder"      value="${mp4trans.folder}" />
+		<property name="mp4transThread"      value="${mp4trans.thread}" />
+		<property name="printscreenFolder"   value="${printscreen.folder}" />
+		<property name="printscreenInternal" value="${printscreen.internal}" />
+		<property name="transferChars"       value="${security.transferchars}"></property>
+	</bean>
+	
+	<bean id="domainConfig" class="com.codyy.rrt.commons.entity.DomainConfig">
+		<property name="homework"	    value="${homework}"></property>	
+		<property name="sso"	        value="${sso}"></property>
+		<property name="basedata"	    value="${basedata}"></property>
+		<property name="information"	value="${information}"></property>
+		<property name="dynamic"	    value="${dynamic}"></property>
+		<property name="platform"	    value="${platform}"></property>
+		<property name="onlinetest"	    value="${onlinetest}"></property>
+		<property name="resourcesearch"	value="${resourcesearch}"></property>
+		<property name="resource"	    value="${resource}"></property>
+		<property name="onlineanswer"	value="${onlineanswer}"></property>
+		<property name="publicServer"	value="${publicServer}"></property>
+		<property name="dataStatistics"	value="${dataStatistics}"></property>
+		<property name="teleconference"	value="${teleconference}"></property>
+		<property name="pay"	        value="${pay}"></property>
+	</bean>
+	
+	
+
+</beans>

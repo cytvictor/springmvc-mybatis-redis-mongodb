@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+	<style>
+		.commonSelect select{margin-right: 40px;}
+	</style>
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav test-libraryNav">
+				<a class="btn testZj" href="createExercises.shtml">+ 新建习题</a>
+				题库
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">共享题库</a>
+					<a href="javascript:;" index="1">我的习题</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="tabBox currBox">
+					<ul class="commonSelect">
+						<li>
+							<label>学段：</label>
+							<select>
+								<option>请选择</option>
+								<option>高一</option>
+							</select>
+
+							<label>年级：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+
+							<label>学科：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+
+							<label>版本：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+						</li>
+						<li>
+							<label>分册：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+
+							<label>章节：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							
+							<label>习题类型：</label>
+							<select>
+								<option>请选择</option>
+							</select>
+							<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+						</li>
+					</ul>
+					<p style="margin:10px 0;color: #7f8b99;">共计10题（提示：点击题目内容即可查看到答案和解析内容）</p>
+					<div class="text-box">
+						<div class="info">
+							<span>组卷次数： <span class="red">48</span></span>
+							<span class="ml">知识点：5.9有理数的混合运算</span>
+							<span class="ml">难易度：<span class="red">9</span></span>
+							<span class="ml">更新日期：2014-06-05</span>
+							<span class="edit">
+								<a class="blue" href="editExercises.shtml">编辑</a>
+								<a class="red" href="javascript:;">删除</a>
+							</span>
+						</div>
+						<div class="text">
+							<div class="title">已知世运会、亚运会、奥运会分别于公元2009年、2010年、2012年举办，若这三项运动会均每四年举办一次，则这三项运动会均不在下列哪一年举办？（）</div>
+							<ul class="select">
+								<li>A . 公元2070年</p>
+								<li>B . 公元2071年</p>
+								<li>C . 公元2072年</p>
+								<li>D . 公元2073年</p>
+							</ul>
+						</div>
+						<p class="answer"><b>【答案】 B</b></p>
+						解析：
+						<div class="answer-analyze">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

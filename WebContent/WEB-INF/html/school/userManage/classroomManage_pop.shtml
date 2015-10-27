@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="/html/front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<style>
+	body{background: #fff;font-size: 14px;}
+</style>
+<body>
+	<ul class="classPop">
+		<li>
+			学段：
+			<select  class="mr20">
+				<option value="">请选择</option>
+			</select>
+			<label>年级：</label>
+			<select>
+				<option value="">请选择</option>
+			</select>
+		</li>
+		<li>
+			班级名称：
+			<input type="text" class="mr20"/>
+			<span class="gray">如(3)班</span>
+		</li>
+	</ul>
+	<div class="submitBtn">
+		<a href="" class="btn mr20">确定</a>
+		<a href="" class="btn ml20">取消</a>
+	</div>
+</body>
+</html>

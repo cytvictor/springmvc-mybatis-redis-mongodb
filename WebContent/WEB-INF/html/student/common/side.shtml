@@ -1,0 +1,36 @@
+<div class="side">
+	<div class="userMsg">
+		<div class="userPhoto">
+			<dt><img src="/public/img/index/testImg/tcPhoto.png" alt="" width="90" height="90"></dt>
+			<dd class="userName">张亚杰</dd>
+		</div>
+		<dl>
+			<dt>江苏苏州工业园区</dt>
+			<dd>
+				<span class="school">景城中学</span>
+				<span class="schoolManager">学校管理</span>
+			</dd>
+		</dl>
+		<div class="collectAndMsg">
+			<span>
+				<b>32</b>
+				<a href="javascript:;">收藏</a>
+			</span>
+			<span>
+				<b>5</b>
+				<a href="javascript:;">消息</a>
+			</span>
+		</div>
+	</div>
+
+	<ul class="sideNav">
+		<li class="onlineTest"><a href="/html/student/onlineTest/onlineTest.shtml">测试中心</a></li>
+		<li class="netHomework"><a href="/html/student/netHomework/netHomework.shtml">作业中心</a></li>
+		<li class="onlineTutor"><a href="/html/student/onlineTutor/onlineTutor.shtml">在线辅导</a></li>
+		<li class="onlineCourse"><a href="/html/student/onlineCourse/onlineCourse.shtml">在线课堂</a></li>
+		<li class="onlineAnswerQs"><a href="/html/student/onlineAnswerQs/onlineAnswerQs.shtml">答疑中心</a></li>
+		<li class="resourceCenter"><a href="/html/student/resourceCenter/resourceCenter.shtml">资源中心</a></li>
+		<li class="messageManage"><a href="/html/student/messageManage/messageManage.shtml">信息中心</a></li>
+		<li class="myClass"><a href="/html/student/myClass/myClass.shtml">我的班级</a></li>
+	</ul>
+</div>

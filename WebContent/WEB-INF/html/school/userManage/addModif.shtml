@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				用户管理
+				<span class="navTab">
+					<a href="userManage.shtml" index="0">花名册</a>
+					<a href="classroomManage.shtml" index="1">班级管理</a>
+					<a href="teacherManage.shtml" index="2">教师管理</a>
+					<a href="studentManage.shtml" index="3">学生管理</a>
+					<a href="parentManage.shtml" class="currTab" index="4">家长管理</a>
+				</span>
+			</h4>
+			<div class="basicMsg addMsg">
+				<h5>基本信息</h5>
+				<ul class="detailBox">
+					<li>
+						<label class="cName">ID：</label>
+						<input type="text" value="jz130001 ">
+					</li>
+					<li>
+						<label class="cName">姓名：</label>
+						<input type="text" value="18762671233">
+					</li>
+					<li>
+						<label class="cName">&nbsp;</label>
+						<span class="gray">初始密码为：666666</span>
+						<a href="javascript:;" class="btn bgBlue ml20">重置密码</a>
+					</li>
+					<li>
+						<label class="cName">学生姓名：</label>
+						<input type="text" value="金三胖">
+					</li>
+					<li>
+						<label class="cName">学生ID：</label>
+						<input type="text" value="130001">
+					</li>
+					<li>
+						<label class="cName">学生姓名：</label>
+						<input type="text" value="金小胖">
+					</li>
+					<li>
+						<label class="cName">学生ID：</label>
+						<input type="text" value="130001">
+					</li>
+				</ul>
+			</div>
+			<div class="submitBtn">
+				<a href="javascript:;" class="btn mr20">确定</a>
+				<a href="javascript:;" class="btn ml20">取消</a>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

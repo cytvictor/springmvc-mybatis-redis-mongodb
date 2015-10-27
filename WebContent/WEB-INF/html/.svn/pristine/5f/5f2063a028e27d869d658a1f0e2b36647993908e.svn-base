@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/parent.css" />
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		<div class="content">
+			<h4 class="contentNav">
+				学业分析
+				<span class="navTab">
+					<a href="todayWork.shtml" index="0">作业情况</a>
+					<a href="recentlyTest.shtml" index="1">考试情况</a>
+					<a href="javascript:;" class="currTab" index="2">成绩分析</a>
+					<a href="tcEvaluate.shtml" index="3">老师评价</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<div class="tabBox currBox">
+					<ul class="commonSelect">
+						<li>
+							<label>选择时间：</label>
+							<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="timeInput"/>
+							至：
+							<input type="text" class="timeInput"/>
+							<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+						</li>
+					</ul>
+				</div>
+				<span class="contentInNav">
+					<a href="javascript:;" class="selected">语文</a>
+					<a href="javascript:;">数学</a>
+					<a href="javascript:;">英语</a>
+					<a href="javascript:;">物理</a>
+					<a href="javascript:;">化学</a>
+					<a href="javascript:;">生物</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="/html/front/common/footer.shtml"-->
+</body>
+</html>

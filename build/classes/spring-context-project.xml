@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+		http://www.springframework.org/schema/data/repository http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd ">
+
+	<context:annotation-config />
+
+	<!-- 定义受环境影响易变的变量 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+				<value>classpath:app.properties</value>
+				<value>classpath:domain.properties</value>
+				<value>classpath:redis.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- resource数据源 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${resource.datasource.driverClassName}" />
+		<property name="url" value="${resource.datasource.url}" />
+		<property name="username" value="${resource.datasource.username}" />
+		<property name="password" value="${resource.datasource.password}" />
+		<property name="initialSize" value="${resource.datasource.initialSize}" />
+		<property name="maxActive" value="${resource.datasource.maxActive}" />
+		<property name="minIdle" value="${resource.datasource.minIdle}" />
+		<property name="maxWait" value="${resource.datasource.maxWait}" />
+		<property name="validationQuery" value="${resource.datasource.validationQuery}" />
+		<property name="testOnBorrow" value="${resource.datasource.testOnBorrow}" />
+		<property name="testOnReturn" value="${resource.datasource.testOnReturn}" />
+		<property name="testWhileIdle" value="${resource.datasource.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${resource.datasource.timeBetweenEvictionRunsMillis}" />
+	</bean>
+
+	<!-- 创建SqlSessionFactory，同时指定数据源 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 指定sqlMapConfig总配置文件 -->
+		<property name="configLocation">
+			<value>classpath:mapperResource/sqlmap-config-resource.xml</value>
+		</property>
+		<!--指定实体类映射文件，可以指定同时指定某一包以及子包下面的所有配置文件，mapperLocations和configLocation有一个即可，
+		当需要为实体类指定别名时，可指定configLocation属性，再在mybatis总配置文件中采用mapper引入实体类映射文件
+		但当如果用Spring Junit单元测试时，需要把mapper用此方式导入，否则mybatis的mapper.xml会加载不到 --> 
+		<property name="mapperLocations" value="classpath:mapperResource/*-mapper.xml"></property>
+	</bean>
+
+	<!-- 数据源，采用Spring和Mybatis整合的的另一种方式 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.codyy.rrt.resource.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+	<!-- 设定transactionManager -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+		
+		<!-- BaseInfo库 resource数据源 -->
+	<bean id="dataSourceForBaseInfo" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${baseinfo.datasource.driverClassName}" />
+		<property name="url" value="${baseinfo.datasource.url}" />
+		<property name="username" value="${baseinfo.datasource.username}" />
+		<property name="password" value="${baseinfo.datasource.password}" />
+		<property name="initialSize" value="${baseinfo.datasource.initialSize}" />
+		<property name="maxActive" value="${baseinfo.datasource.maxActive}" />
+		<property name="minIdle" value="${baseinfo.datasource.minIdle}" />
+		<property name="maxWait" value="${baseinfo.datasource.maxWait}" />
+		<property name="validationQuery" value="${baseinfo.datasource.validationQuery}" />
+		<property name="testOnBorrow" value="${baseinfo.datasource.testOnBorrow}" />
+		<property name="testOnReturn" value="${baseinfo.datasource.testOnReturn}" />
+		<property name="testWhileIdle" value="${baseinfo.datasource.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${baseinfo.datasource.timeBetweenEvictionRunsMillis}" />
+	</bean>
+
+	<!-- 创建SqlSessionFactory，同时指定数据源 -->
+	<bean id="sqlSessionFactoryForBaseInfo" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceForBaseInfo" />
+		<!-- 指定sqlMapConfig总配置文件 -->
+		<property name="configLocation">
+			<value>classpath:mapperBaseInfo/sqlmap-config-baseinfo.xml</value>
+		</property>
+		<!--指定实体类映射文件，可以指定同时指定某一包以及子包下面的所有配置文件，mapperLocations和configLocation有一个即可，
+		当需要为实体类指定别名时，可指定configLocation属性，再在mybatis总配置文件中采用mapper引入实体类映射文件
+		但当如果用Spring Junit单元测试时，需要把mapper用此方式导入，否则mybatis的mapper.xml会加载不到 --> 
+		<property name="mapperLocations" value="classpath:mapperBaseInfo/*-mapper.xml"></property>
+	</bean>
+
+	<!-- 数据源，采用Spring和Mybatis整合的的另一种方式 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.codyy.rrt.baseinfo.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryForBaseInfo" />
+	</bean>
+	
+	<!-- 导入其他applicationContext -->
+	<import resource="classpath:spring-context-resource.xml" />
+	<import resource="classpath:applicationContext-commons.xml" />
+
+</beans>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav"><a class="backup" href="onlineTest.shtml">&lt;&lt;返回</a>手动组卷</h4>
+			<div class="otContent">
+				<div class="tabBox shareExam currBox">
+					<ul class="detailBox noUnderline mt20">
+						<li>
+							<label class="cName"><b class="red"></b>试卷名称：</label>
+							<input type="text" class="titleName testName" /> 字数限制30个汉字以内
+						</li>
+						<li>
+							<label class="cName">试卷类型：</label>
+							<select class="cCont">
+								<option>选择试卷类型</option>
+							</select>
+						</li>
+						<li>
+							<label class="cName">学段：</label>
+							<select class="cCont">
+								<option>选择试卷类型</option>
+							</select>
+						</li>
+						<li>
+							<label class="cName">学科：</label>
+							<select class="cCont">
+								<option>选择试卷类型</option>
+							</select>
+						</li>
+						<li>
+							<label class="cName">年级：</label>
+							<select class="cCont">
+								<option>选择试卷类型</option>
+							</select>
+						</li>
+						<li>
+							<label class="cName">分册：</label>
+							<select class="cCont">
+								<option>选择试卷类型</option>
+							</select>
+						</li>
+						<li>
+							<label class="cName">章节：</label>
+							<a href="javascript:;" class="orange mr20">选择章节</a>章节可以选择一个或多个
+						</li>
+						<li>
+							<label class="cName">选择习题：</label>
+							<a href="javascript:;" class="orange">请选择需要生成试卷的习题</a>
+						</li>
+					</ul>
+					<table class="normalTable" id="otTable">
+						<tr>
+							<th>编号</th>
+							<th>考题</th>
+							<th>创建人</th>
+							<th>章节</th>
+							<th>知识点</th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>诗歌《离骚》讲解</td>
+							<td>李明</td>
+							<td>第20课</td>
+							<td>文言语法</td>
+							<td>
+								<a href="javascript:;" class="blue">查看</a>
+								<a href="javascript:;" class="red">删除</a>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>诗歌《离骚》讲解</td>
+							<td>李明</td>
+							<td>第20课</td>
+							<td>文言语法</td>
+							<td>
+								<a href="javascript:;" class="blue">查看</a>
+								<a href="javascript:;" class="red">删除</a>
+							</td>
+						</tr>
+					</table>
+					<p class="totalTopic blue">共计10道题</p>
+				</div>
+
+				
+				<p class="notes">注释：系统默认生成的每份试卷总分为100分，单道题得分按习题数量平均分配。</p>
+				<div class="submitBtn">
+					<a class="btn">生成试卷</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../common/footer.shtml"-->
+</body>
+</html>

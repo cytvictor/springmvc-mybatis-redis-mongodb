@@ -1,0 +1,87 @@
+package com.codyy.rrt.commons;
+
+import java.io.IOException;
+import java.util.Map;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.lang.StringUtils;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.redis.core.BoundHashOperations;
+import org.springframework.data.redis.core.StringRedisTemplate;
+
+import com.codyy.rrt.commons.entity.SysConfig;
+
+public class KeywordFilter implements Filter {
+
+	@Override
+	public void destroy() {
+	}
+
+	@Override
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
+		HttpServletRequest request = (HttpServletRequest) req;
+		KeywordWrapper wrapper = null;
+		if ("CLOSE".equals(getKeywordStateFromRedis())) {// 是否开启关键字过滤
+			chain.doFilter(req, resp);
+		} else {
+			try {// 过滤关键字和html标签
+				wrapper = new KeywordWrapper(request);// 重写request，保证之后从request中取值是通过该request
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			if (wrapper != null) {
+				chain.doFilter(wrapper, resp);
+			} else {
+				chain.doFilter(req, resp);
+			}
+		}
+	}
+
+	public void init(FilterConfig config) throws ServletException {
+	}
+
+	/**
+	 * 判定是否开启关键字屏蔽功能
+	 * 
+	 * @return
+	 */
+	private String getKeywordStateFromRedis() {
+		StringRedisTemplate template = SpringContext.getBean(StringRedisTemplate.class);
+		BoundHashOperations<String, String, String> operations = template.boundHashOps(CommonsConstant.KEYWORD_STATE);
+		Map<String, String> map = operations.entries();
+		String keywordState = map.get("keywordState");
+		if (StringUtils.isBlank(keywordState)) {// redies中已过期，从mongodb中查找并放入redis中
+			keywordState = getKeywordStateFromMongoDB();
+			if (keywordState == null) {
+				keywordState = "";
+			}
+			operations.put("keywordState", keywordState);
+		}
+		return keywordState;
+	}
+
+	/**
+	 * 从mongodb中获取关键字屏蔽状态（CLOSE，未开启，OPEN开启，详见SysConfig）
+	 * 
+	 * @return
+	 */
+	private String getKeywordStateFromMongoDB() {
+		MongoTemplate mongoTemplate = SpringContext.getBean(MongoTemplate.class);
+		Criteria criteria = Criteria.where("id").is(SysConfig.SYSCONFIG_KEYWORD);
+		Query query = new Query(criteria);
+		SysConfig sysConfig = mongoTemplate.findOne(query, SysConfig.class);
+		if (sysConfig == null) {
+			return "";
+		}
+		return sysConfig.getState();
+	}
+}

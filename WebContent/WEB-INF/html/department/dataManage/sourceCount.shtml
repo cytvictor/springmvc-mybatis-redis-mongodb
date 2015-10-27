@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/department.css" />
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				统计分析
+				<span class="navTab">
+					<a href="personsCount.shtml" index="0">人数统计</a>
+					<a href="javascript:;" class="currTab" index="1">资源数统计</a>
+					<a href="dataManage.shtml" index="2">动态查看</a>
+				</span>
+			</h4>
+			<div class="otContent clearfix">
+				<ul class="commonSelect">
+					<li>
+						<label>查看范围：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>市</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>县/市/区：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>学校：</label>
+						<input type="text" placeholder="输入学校名称" />
+						<a href="javascript:;" class="btn bgBlue ml20">查看</a>
+					</li>
+				</ul>
+				<span class="contentInNav">
+					<a class="selected" index="0" href="javascript:;">按日计算</a>
+					<a index="1" href="javascript:;">按周计算</a>
+					<a index="2" href="javascript:;">按月计算</a>
+				</span>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../front/common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="common/side.shtml"-->
+		
+	</div>
+	<!--#include virtual="../front/common/footer.shtml"-->
+</body>
+</html>

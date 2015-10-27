@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/department.css">
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="btn testZj" href="javascript:;">信息管理</a>
+				<a class="btn testZj" href="messageManage.shtml">发布信息</a>
+				信息管理
+				<span class="navTab">
+					<a href="news.shtml" index="0">新闻</a>
+					<a href="javascript:;" class="currTab" index="1">公告</a>
+					<a href="javascript:;" index="2">通知</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<h5 class="informTitle">公告</h5>
+				<ul class="informList">
+					<li>
+						<p>安全是学校工作得以顺利进行的前提条件，纪律是学习的保证</p>
+						<span class="departmentName">发布机构的名称</span>
+						<span>2014-7-31 20:39</span>
+						<a href="javascript:;" class="blue mr10 ml20">编辑</a>
+						<a href="javascript:;" class="red ml10">删除</a>
+					</li>
+					<li>
+						<p>安全是学校工作得以顺利进行的前提条件，纪律是学习的保证</p>
+						<span class="departmentName">发布机构的名称</span>
+						<span>2014-7-31 20:39</span>
+						<a href="javascript:;" class="blue mr10 ml20">编辑</a>
+						<a href="javascript:;" class="red ml10">删除</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 别名，注意区别原生态的名称如：int、double、map、list、object等 -->
+	<typeAliases>
+		<typeAlias alias="baseUser" type="com.codyy.rrt.resource.model.BaseUser" />
+		<typeAlias alias="baseClassLevel" type="com.codyy.rrt.resource.model.BaseClassLevel" />
+		<typeAlias alias="baseOrg" type="com.codyy.rrt.resource.model.BaseOrg" />
+		<typeAlias alias="baseSchool" type="com.codyy.rrt.resource.model.BaseSchool" />
+		
+		<typeAlias alias="baseSemester" type="com.codyy.rrt.resource.model.BaseSemester" />
+		<typeAlias alias="baseDiscipline" type="com.codyy.rrt.resource.model.BaseDiscipline" />
+		<typeAlias alias="baseVersion" type="com.codyy.rrt.resource.model.BaseVersion" />
+		<typeAlias alias="baseCatalog" type="com.codyy.rrt.resource.model.BaseCatalog" />
+		
+		<typeAlias alias="baseKnowledge" type="com.codyy.rrt.resource.model.BaseKnowledge" />
+		
+		<typeAlias alias="resourceColumn" type="com.codyy.rrt.resource.model.ResourceColumn" />
+		<typeAlias alias="baseResourceCatalog" type="com.codyy.rrt.resource.model.BaseResourceCatalog" />
+	</typeAliases>
+
+</configuration>

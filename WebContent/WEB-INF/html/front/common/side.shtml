@@ -1,0 +1,52 @@
+<div class="side">
+	<div class="userMsg">
+		<div class="changeUserBox">
+			<div class="userPhoto">
+				<dt><img src="/public/img/index/testImg/tcPhoto.png" alt="" width="90" height="90"></dt>
+				<dd class="userName">张亚杰</dd>
+			</div>
+			<div class="userPhoto2">
+				<dt><img src="/public/img/index/testImg/tcPhoto.png" alt="" width="90" height="90"></dt>
+				<dd><span>切换账号</span></dd>
+			</div>
+		</div>
+
+		<dl>
+			<dt>江苏苏州工业园区</dt>
+			<dd>
+				<span class="school">景城中学</span>
+				<span class="schoolManager">学校管理</span>
+			</dd>
+		</dl>
+		<div class="collectAndMsg">
+			<span>
+				<b>32</b>
+				<a href="javascript:;">收藏</a>
+			</span>
+			<span>
+				<b>5</b>
+				<a href="javascript:;">消息</a>
+			</span>
+		</div>
+	</div>
+
+	<ul class="sideNav">
+		<li class="schoolActiveMenu"><a href="/html/front/community/home.shtml">最新动态</a></li>
+		<li class="test-library"><a href="/html/front/test-library/index.shtml">题库</a></li>
+		<li class="onlineTest"><a href="/html/front/onlineTest/onlineTest.shtml">测试中心</a></li>
+		<li class="netHomework"><a href="/html/front/netHomework/netHomework.shtml">作业中心</a></li>
+		<li class="error-text"><a href="/html/front/error-text/index.shtml">错题本</a></li>
+		<li class="onlineTutor"><a href="/html/front/onlineTutor/onlineTutor.shtml">在线辅导</a></li>
+		<li class="onlineCourse"><a href="/html/front/onlineCourse/onlineCourse.shtml">在线课堂</a></li>
+		<li class="onlineAnswerQs"><a href="/html/front/onlineAnswerQs/onlineAnswerQs.shtml">答疑中心</a></li>
+		<li class="resourceCenter"><a href="/html/front/resourceCenter/resourceCenter.shtml">资源中心</a></li>
+		<li class="messageManage"><a href="/html/front/messageManage/messageManage.shtml">信息中心</a></li>
+		<li class="myClass"><a href="/html/front/myClass/myClass.shtml">我的班级</a></li>
+		<li class="classLi">
+			<span class="classList">
+			<a href="javascript:;">高一(1)班</a>
+			<a href="javascript:;">高二(1)班</a>
+			</span>
+		</li>
+	</ul>
+</div>

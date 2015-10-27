@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.codyy.rrt.baseinfo.mapper.BaseUserMapper">
+
+	<resultMap id="result" type="baseUser">
+		<result property="id" column="BASE_USER_ID" />
+		<result property="username" column="USERNAME" />
+		<result property="userType" column="USER_TYPE" />
+	</resultMap>
+	
+	<resultMap id="resultClassLevel" type="baseClassLevel">
+		<result property="id" column="BASE_CLASSLEVEL_ID" />
+		<result property="classLevelName" column="CLASSLEVEL_NAME" />
+		<result property="baseSemesterId" column="BASE_SEMESTER_ID" />
+		<result property="sort" column="SORT" />
+	</resultMap>
+	
+	<resultMap id="resultOrg" type="baseOrg">
+		<result property="id" column="BASE_ORG_ID" />
+		<result property="isVerify" column="ISVERIFY" />
+		<result property="orgName" column="ORG_NAME" />
+		<result property="orgLevel" column="ORG_LEVEL" />
+	</resultMap>
+	
+	<resultMap id="resultSchool" type="baseSchool">
+		<result property="id" column="BASE_SCHOOL_ID" />
+		<result property="schoolName" column="SCHOOL_NAME" />
+	</resultMap>
+
+	<select id="findByBaseUserId" resultMap="result" parameterType="string">
+		SELECT * FROM BASE_USER WHERE BASE_USER_ID = #{baseUserId}
+	</select>
+	
+	<!-- 根据用户id获取用户信息 -->
+	<select id="getUserInfoByUserId" resultType="java.util.Map" parameterType="java.lang.String">
+		SELECT U.HEAD_PIC AS headPic,U.REAL_NAME AS realName
+		FROM BASE_USER U
+		WHERE 
+		U.BASE_USER_ID = #{userId}
+	</select>
+	
+	<!-- 根据学校id获取学校超级管理员信息 -->
+	<select id="getUserInfoBySchoolId" resultType="java.util.Map" parameterType="java.lang.String">
+		SELECT U.HEAD_PIC AS headPic,SC.SCHOOL_NAME AS realName
+		FROM BASE_SCHOOL SC,BASE_USER U,BASE_SCHOOL_MANAGER SM
+		WHERE SC.BASE_SCHOOL_ID = SM.BASE_SCHOOL_ID
+		AND U.BASE_USER_ID = SM.BASE_USER_ID AND SM.ROLETYPE = 'ADMIN' AND SM.BASE_SCHOOL_ID = #{schoolId}
+	</select>
+	
+	<!-- 根据老师的userID查询所属学校ID -->
+	<select id="findSchoolIdByTeacherUserId" resultType="string" parameterType="string">
+		SELECT BASE_SCHOOL_ID FROM BASE_TEACHER WHERE BASE_USER_ID = #{teacherUserId}
+	</select>
+	
+	<!-- 根据老师的userID查询角色为班主任的班级的学生baseUserId -->
+	<select id="findStudentUserIdByHeadTeacherUserId" resultType="string" parameterType="string">
+		SELECT DISTINCT(s.BASE_USER_ID) FROM BASE_STUDENT s, BASE_CLASSROOM c, BASE_TEACHER t
+		WHERE s.BASE_CLASSROOM_ID = c.BASE_CLASSROOM_ID AND c.BASE_TEACHER_ID = t.BASE_TEACHER_ID 
+		AND t.BASE_USER_ID = #{teacherUserId}
+	</select>
+	
+	<!-- 根据老师的userID查询角色为任课老师的班级的学生baseUserId -->
+	<select id="findStudentUserIdByTeacherUserId" resultType="string" parameterType="string">
+		SELECT DISTINCT(s.BASE_USER_ID) FROM BASE_STUDENT s, BASE_CLASSROOM_TEACHER ct, BASE_TEACHER t
+		WHERE s.BASE_CLASSROOM_ID = ct.BASE_CLASSROOM_ID AND ct.BASE_TEACHER_ID = t.BASE_TEACHER_ID
+		AND t.BASE_USER_ID = #{teacherUserId}
+	</select>
+	
+	<!-- 根据学生的userID查询班主任的baseUserId -->
+	<select id="findHeadTeacherUserIdByStudentUserId" resultType="string" parameterType="string">
+		SELECT t.BASE_USER_ID FROM BASE_TEACHER t, BASE_CLASSROOM c, BASE_STUDENT s
+		WHERE t.BASE_TEACHER_ID = c.BASE_TEACHER_ID AND c.BASE_CLASSROOM_ID = s.BASE_CLASSROOM_ID 
+		AND s.BASE_USER_ID = #{studentUserId}
+	</select>
+	
+	<!-- 根据学生的userID查询学科的任课老师的baseUserId -->
+	<select id="findTeacherUserIdByStudentUserId" resultType="string" parameterType="map">
+		SELECT t.BASE_USER_ID FROM BASE_TEACHER t, BASE_CLASSROOM_TEACHER ct, BASE_STUDENT s
+		WHERE t.BASE_TEACHER_ID = ct.BASE_TEACHER_ID AND ct.BASE_CLASSROOM_ID = s.BASE_CLASSROOM_ID
+		AND s.BASE_USER_ID = #{studentUserId} AND ct.BASE_DISCIPLINE_ID = #{baseDisciplineId}
+	</select>
+	
+	<!-- 根据学校用户baseUserId查找学校Id -->
+	<select id="findSchoolIdBySchoolUserId" resultType="string" parameterType="string">
+		SELECT sm.BASE_SCHOOL_ID FROM BASE_SCHOOL_MANAGER sm WHERE sm.BASE_USER_ID = #{baseUserId}
+	</select>
+	
+	<!-- 根据机构用户baseUserId查找机构Id -->
+	<select id="findOrgIdByOrgUserId" resultType="string" parameterType="string">
+		SELECT ou.BASE_ORG_ID FROM BASE_ORG_USER ou WHERE ou.BASE_USER_ID = #{baseUserId}
+	</select>
+	
+	<!-- 根据机构用户baseUserId查找机构 -->
+	<select id="findOrgByOrgUserId" resultMap="resultOrg" parameterType="string">
+		SELECT o.BASE_ORG_ID, o.ORG_NAME, o.ISVERIFY, o.ORG_LEVEL
+		FROM BASE_ORG_USER ou, BASE_ORG o 
+		WHERE ou.BASE_ORG_ID = o.BASE_ORG_ID AND ou.BASE_USER_ID = #{baseUserId}
+	</select>
+	
+	<!-- 根据学校id查询所属机构id -->
+	<select id="findOrgIdBySchoolId" resultType="string" parameterType="string">
+		SELECT s.BASE_ORG_ID FROM BASE_SCHOOL s WHERE s.BASE_SCHOOL_ID = #{schoolId}
+	</select>
+	
+	<!-- 根据机构id查询父级机构id -->
+	<select id="findParentOrgIdByOrgId" resultType="string" parameterType="string">
+		SELECT o.PARENT_ORG_ID FROM BASE_ORG o WHERE o.BASE_ORG_ID = #{orgId}
+	</select>
+	
+	<!-- 根据学校Id查询学校的年级 -->
+	<select id="findClassLevelBySchoolId" resultMap="resultClassLevel" parameterType="string">
+		SELECT cl.* FROM BASE_CLASSLEVEL cl, BASE_SEMESTER s, SCHOOL_R_SEMESTER srs 
+		WHERE cl.BASE_SEMESTER_ID = s.BASE_SEMESTER_ID AND s.BASE_SEMESTER_ID = srs.BASE_SEMESTER_ID
+		AND srs.BASE_SCHOOL_ID = #{schoolId}
+		ORDER BY s.SORT, cl.SORT
+	</select>
+	
+	<!-- 根据学校Id和年级Id查询班主任的UserId -->
+	<select id="findHeadTeacherUserIdBySIdAndCLId" resultType="string" parameterType="map">
+		SELECT DISTINCT(t.BASE_USER_ID) FROM BASE_CLASSROOM c, BASE_TEACHER t 
+		WHERE c.BASE_TEACHER_ID = t.BASE_TEACHER_ID 
+		AND c.BASE_SCHOOL_ID = #{schoolId}
+		AND c.BASE_CLASSLEVEL_ID in (${baseClassLevelIds})
+	</select>
+	
+	<!-- 根据学校Id、年级Id和学科Id查询学科的任课老师的UserId -->
+	<select id="findTeacherUserIdBySIdAndClIdAndDId" resultType="string" parameterType="map">
+		SELECT DISTINCT(t.BASE_USER_ID) FROM BASE_CLASSROOM c, BASE_CLASSROOM_TEACHER ct, BASE_TEACHER t 
+		WHERE ct.BASE_CLASSROOM_ID = c.BASE_CLASSROOM_ID AND ct.BASE_TEACHER_ID = t.BASE_TEACHER_ID
+		AND c.BASE_SCHOOL_ID = #{schoolId} 
+		AND c.BASE_CLASSLEVEL_ID in (${baseClassLevelIds})
+		AND ct.BASE_DISCIPLINE_ID = #{baseDisciplineId}
+	</select>
+	
+	<!-- 根据机构Id查询下级机构集合 -->
+	<select id="findOrgByParentOrgId" resultMap="resultOrg" parameterType="string">
+		SELECT o.BASE_ORG_ID, o.ORG_NAME, o.ISVERIFY, o.ORG_LEVEL FROM BASE_ORG o WHERE o.PARENT_ORG_ID = #{baseOrgId} ORDER BY o.ORG_NAME
+	</select>
+	
+	<!-- 根据机构Id查询下级学校集合 -->
+	<select id="findSchoolByOrgId" resultMap="resultSchool" parameterType="string">
+		SELECT s.BASE_SCHOOL_ID, s.SCHOOL_NAME FROM BASE_SCHOOL s WHERE s.BASE_ORG_ID = #{baseOrgId} ORDER BY s.SCHOOL_NAME
+	</select>
+	
+	<!-- 根据机构Id查询机构 -->
+	<select id="findOrgByOrgId" resultMap="resultOrg" parameterType="string">
+		SELECT o.BASE_ORG_ID, o.ORG_NAME, o.ISVERIFY, o.ORG_LEVEL FROM BASE_ORG o WHERE o.BASE_ORG_ID = #{baseOrgId} 
+	</select>
+</mapper>

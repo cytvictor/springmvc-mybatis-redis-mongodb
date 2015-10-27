@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				<a class="btn testZj" href="javascript:;">信息管理</a>
+				<a class="btn testZj" href="messageManage.shtml">发布信息</a>
+				信息管理
+				<span class="navTab">
+					<a href="javascript:;" class="currTab" index="0">新闻</a>
+					<a href="inform.shtml" index="1">公告</a>
+					<a href="infrom.shtml" index="2">通知</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<ul class="detailBox mt20">
+					<li>
+						<label class="cName">标题：</label>
+						<input type="text" class="titleName">
+					</li>
+					<li>
+						<label class="cName">类型：</label>
+						<label><input type="radio" name="newsType" class="">新闻</label>
+						<label><input type="radio" name="newsType" class="ml20">公告</label>
+					</li>
+					<li>
+						<label class="cName">作者：</label>
+						<input type="text">
+						<label class="ml40">日期:</label>
+						<input type="text">
+					</li>
+					<li>
+						<label class="cName">内容：</label>
+						<div class="cCont">这里放编辑器</div>
+					</li>
+				</ul>
+				<div class="submitBtn">
+					<a href="javascript:;" class="btn mr20">提交</a>
+					<a href="javascript:;" class="ml20">取消</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

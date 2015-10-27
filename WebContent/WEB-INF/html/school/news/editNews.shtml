@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/myclass.css"/>
+	<link media="all" type="text/css" rel="stylesheet" href="/public/css/school.css"/>
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+
+		<div class="content">
+			<div class="otContent newsWrap">
+				<h4 class="contentNav">
+					<a class="backup" href="index.shtml">&lt;&lt;返回</a>
+					编辑新闻
+				</h4>
+				<ul class="detailBox noUnderline mt20">
+					<li>
+						<label class="cName">标题：</label>
+						<input type="text" class="titleName">
+					</li>
+					<li>
+						<label class="cName">类型：</label>
+						<label><input type="radio" class="" name="newsType"/>新闻</label>
+						<label><input type="radio" class="ml20" name="newsType"/>公告</label>
+					</li>
+					<li>
+						<label class="cName">作者：</label>
+						<input type="text">
+						<label class="ml40">日期:</label>
+						<input type="text">
+					</li>
+					<li>
+						<label class="cName">内容：</label>
+						<div class="cCont">这里放编辑器</div>
+					</li>
+				</ul>
+				<div class="submitBtn">
+					<a href="javascript:;" class="btn mr20">提交</a>
+					<a href="javascript:;" class="btn bgBlue ml20">取消</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>

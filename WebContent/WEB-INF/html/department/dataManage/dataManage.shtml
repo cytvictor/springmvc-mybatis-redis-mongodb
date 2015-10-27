@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<!--#include virtual="../../front/common/meta.shtml"-->
+	<link rel="stylesheet" href="/public/css/department.css" />
+</head>
+<body>
+	<!--#include virtual="../../front/common/header.shtml"-->
+	<div class="container">
+		<!--#include virtual="../common/side.shtml"-->
+		
+		<div class="content">
+			<h4 class="contentNav">
+				统计分析
+				<span class="navTab">
+					<a href="personsCount.shtml" index="0">人数统计</a>
+					<a href="sourceCount.shtml" index="1">资源数统计</a>
+					<a href="javascript:;" class="currTab" index="2">动态查看</a>
+				</span>
+			</h4>
+			<div class="otContent">
+				<ul class="commonSelect">
+					<li>
+						<label>用户名：</label>
+						<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" class="timeInput"/>
+						<label>动态内容关键字：</label>
+						<input type="text" />
+					</li>
+					<li>
+						<label>所在地：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>市</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>县/市/区：</label>
+						<select>
+							<option>请选择</option>
+						</select>
+						<label>学校：</label>
+						<input type="text" placeholder="输入学校名称" />
+						<a href="javascript:;" class="btn bgBlue ml20">搜索</a>
+					</li>
+				</ul>
+				<p class="blue mt20">共20000条数据</p>
+				<table class="normalTable" style="margin:0">
+					<tr>
+						<th>发布时间</th>
+						<th>发表人</th>
+						<th>动态类型</th>
+						<th>发表的内容</th>
+						<th>查看</th>
+					</tr>
+					<tr>
+						<td>yyyy-mm-dd hh:mm:ss</td>
+						<td>张三</td>
+						<td>学校</td>
+						<td>尼玛呀</td>
+						<td><a href="javascript;;">查看</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<!--#include virtual="../../front/common/footer.shtml"-->
+</body>
+</html>
